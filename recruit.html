@@ -72,15 +72,6 @@
   .page-hero-tagline { font-size: clamp(40px, 7vw, 72px); font-weight: 500; letter-spacing: 0.15em; color: var(--color-primary); margin: 32px 0 20px; line-height: 1.2; font-family: "Noto Sans JP", sans-serif; }
   .page-hero-lead { font-size: 15px; color: var(--color-text-light); max-width: 560px; margin: 0 auto; line-height: 2; }
 
-  /* Support */
-  .support { background: var(--color-bg); }
-  .support-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .support-card { background: #fff; border: 1px solid var(--color-border); border-radius: 8px; padding: 40px 28px; text-align: center; transition: var(--transition); }
-  .support-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(31, 95, 139, 0.08); }
-  .support-icon { width: 64px; height: 64px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: var(--color-primary); background: var(--color-accent); border-radius: 50%; }
-  .support-card h3 { font-size: 18px; font-weight: 500; margin-bottom: 10px; letter-spacing: 0.05em; }
-  .support-card p { font-size: 13px; color: var(--color-text-light); line-height: 1.9; }
-
   /* Position badges */
   .position-badges { display: flex; gap: 8px; flex-wrap: wrap; }
   .position-badges .badge-type {
@@ -283,7 +274,6 @@
   @media (max-width: 960px) {
     .features-grid { grid-template-columns: 1fr; }
     .contact-cards { grid-template-columns: 1fr; }
-    .support-grid { grid-template-columns: 1fr; }
     .positions-summary { grid-template-columns: 1fr; gap: 16px; }
   }
   @media (max-width: 768px) {
@@ -534,55 +524,6 @@
   </div>
 </section>
 
-<!-- Support -->
-<section class="support">
-  <div class="container">
-    <div class="section-head fade-in">
-      <p class="section-label">Support</p>
-      <h2 class="section-title">安心して働ける充実のサポート</h2>
-      <div class="section-title-bar"></div>
-    </div>
-    <div class="support-grid">
-      <div class="support-card fade-in">
-        <div class="support-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <h3>社会保険完備</h3>
-        <p>健康保険・厚生年金・雇用保険・労災保険を完備。安心して長く働ける土台を整えています。</p>
-      </div>
-      <div class="support-card fade-in">
-        <div class="support-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
-        </div>
-        <h3>賞与あり</h3>
-        <p>年2回の賞与支給(正社員)。昇給も年1回実施。頑張りをきちんと評価する制度を設けています。</p>
-      </div>
-      <div class="support-card fade-in">
-        <div class="support-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
-        </div>
-        <h3>研修・学会参加費補助</h3>
-        <p>外部研修・学会参加費の補助制度あり。スキルアップを積極的に後押しします。</p>
-      </div>
-      <div class="support-card fade-in">
-        <div class="support-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
-        </div>
-        <h3>ライフイベントに柔軟</h3>
-        <p>産休・育休の取得実績あり。お子様の行事やご家庭の都合にも、シフトで柔軟に対応します。</p>
-      </div>
-      <div class="support-card fade-in">
-        <div class="support-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-        </div>
-        <h3>交通費全額支給</h3>
-        <p>通勤交通費は全額支給。駅近(宝町駅徒歩30秒)で通勤のストレスがありません。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
 <!-- Positions -->
 <section class="positions" id="positions">
   <div class="container">
@@ -637,9 +578,8 @@
           <th>勤務時間</th>
           <td>
             <ul>
-              <li>月〜金 9:30〜13:30 / 14:30〜19:30 のうちでシフト制</li>
-              <li>週35時間勤務、週休2日(週休3日も応相談)</li>
-              <li>休憩あり(実働 8時間)</li>
+              <li>月〜金 9:30〜13:30 / 14:30〜18:30 のシフト制</li>
+              <li>1日8時間勤務・週休2日(週休3日も応相談)</li>
             </ul>
           </td>
         </tr>
@@ -809,10 +749,21 @@
           <td>
             <ul>
               <li>常勤:月給 215,000円〜342,000円(経験・能力による)</li>
-              <li>パート:時給 1,300円〜</li>
+              <li>パート:時給 1,400円〜</li>
               <li>試用期間(6ヶ月)中:月給 230,000円</li>
               <li>*固定残業代10時間分を含む</li>
               <li>昇給:あり(10年目まで定期昇給) / 賞与:年2回(常勤)</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>待遇・福利厚生</th>
+          <td>
+            <ul>
+              <li>交通費規定内支給(月2万円迄)</li>
+              <li>正社員登用あり</li>
+              <li>制服貸与</li>
+              <li>リファラル採用あり</li>
             </ul>
           </td>
         </tr>
