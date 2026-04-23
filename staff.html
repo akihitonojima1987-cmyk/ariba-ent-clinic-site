@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="岩佐耳鼻咽喉科のスタッフ紹介ページ。院長プロフィール、医師・看護師・スタッフをご紹介します。" />
+<title>スタッフ紹介 | 岩佐耳鼻咽喉科</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --color-primary: #1f5f8b;
+    --color-primary-light: #4a8bb8;
+    --color-accent: #e9f2f8;
+    --color-text: #2b2b2b;
+    --color-text-light: #6b6b6b;
+    --color-bg: #ffffff;
+    --color-bg-soft: #f7f9fb;
+    --color-border: #e5e9ed;
+    --max-width: 1200px;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Noto Sans JP", sans-serif; font-weight: 400; color: var(--color-text); line-height: 1.8; background: var(--color-bg); -webkit-font-smoothing: antialiased; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; transition: opacity var(--transition); }
+  a:hover { opacity: 0.7; }
+  .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  .header { position: fixed; top: 0; left: 0; right: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); z-index: 100; border-bottom: 1px solid var(--color-border); }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+  .logo { font-size: 18px; font-weight: 500; letter-spacing: 0.05em; color: var(--color-primary); }
+  .logo span { display: block; font-size: 11px; letter-spacing: 0.2em; color: var(--color-text-light); font-weight: 400; margin-top: 2px; }
+  .nav { display: flex; align-items: center; gap: 32px; }
+  .nav-list { display: flex; list-style: none; gap: 28px; }
+  .nav-list a { font-size: 14px; font-weight: 500; letter-spacing: 0.05em; position: relative; }
+  .nav-list a.active { color: var(--color-primary); }
+  .nav-list a::after { content: ""; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--color-primary); transition: width var(--transition); }
+  .nav-list a:hover::after, .nav-list a.active::after { width: 100%; }
+  .nav-list .has-submenu { position: relative; }
+  .nav-list .submenu-toggle::before { content: "▾"; font-size: 10px; margin-left: 6px; opacity: 0.55; display: inline-block; vertical-align: middle; transition: transform 0.2s; float: right; margin-top: 1px; }
+  .has-submenu:hover .submenu-toggle::before { transform: rotate(-180deg); opacity: 1; }
+  .submenu { position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%); background: #fff; list-style: none; padding: 10px 0; min-width: 200px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); border: 1px solid var(--color-border); border-radius: 4px; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease, top 0.2s ease; z-index: 101; }
+  .submenu::before { content: ""; position: absolute; top: -7px; left: 50%; transform: translateX(-50%); border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 7px solid #fff; }
+  .has-submenu:hover .submenu, .has-submenu:focus-within .submenu { opacity: 1; visibility: visible; top: 100%; }
+  .submenu li { display: block; }
+  .submenu a { display: block; padding: 10px 20px; font-size: 13px; font-weight: 400; white-space: nowrap; letter-spacing: 0.05em; color: var(--color-text); }
+  .submenu a::after { display: none !important; }
+  .submenu a:hover { background: #f4f7fa; color: var(--color-primary); }
+  .submenu a.active { color: var(--color-primary); font-weight: 500; }
+  .nav-tel { display: flex; align-items: center; gap: 6px; padding: 10px 20px; background: var(--color-primary); color: #fff; border-radius: 30px; font-size: 13px; font-weight: 500; letter-spacing: 0.05em; }
+  .nav-tel:hover { background: var(--color-primary-light); opacity: 1; }
+  .menu-btn { display: none; width: 32px; height: 32px; background: none; border: none; cursor: pointer; position: relative; }
+  .menu-btn span { display: block; width: 24px; height: 1px; background: var(--color-text); position: absolute; left: 4px; transition: var(--transition); }
+  .menu-btn span:nth-child(1) { top: 10px; }
+  .menu-btn span:nth-child(2) { top: 16px; }
+  .menu-btn span:nth-child(3) { top: 22px; }
+  .menu-btn.active span:nth-child(1) { top: 16px; transform: rotate(45deg); }
+  .menu-btn.active span:nth-child(2) { opacity: 0; }
+  .menu-btn.active span:nth-child(3) { top: 16px; transform: rotate(-45deg); }
+
+  /* Page Hero */
+  .page-hero {
+    height: 40vh;
+    min-height: 320px;
+    max-height: 440px;
+    padding-top: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e9f2f8 0%, #f7f9fb 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .page-hero::before {
+    content: "";
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 50%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(74, 139, 184, 0.12) 0%, transparent 60%);
+    border-radius: 50%;
+  }
+  .page-hero-inner { text-align: center; position: relative; z-index: 1; }
+  .page-hero-label { font-family: "Cormorant Garamond", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 12px; text-transform: uppercase; }
+  .page-hero-title { font-size: clamp(28px, 4vw, 42px); font-weight: 500; letter-spacing: 0.1em; color: var(--color-text); }
+
+  /* Breadcrumb */
+  .breadcrumb { padding: 20px 0; font-size: 13px; color: var(--color-text-light); background: var(--color-bg); border-bottom: 1px solid var(--color-border); }
+  .breadcrumb a { color: var(--color-primary); }
+  .breadcrumb span { margin: 0 8px; opacity: 0.5; }
+
+  /* Section common */
+  section { padding: 100px 0; }
+  .section-head { text-align: center; margin-bottom: 72px; }
+  .section-label { font-family: "Cormorant Garamond", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 12px; text-transform: uppercase; }
+  .section-title { font-size: clamp(26px, 3.5vw, 36px); font-weight: 500; letter-spacing: 0.1em; line-height: 1.5; }
+  .section-title-bar { width: 40px; height: 1px; background: var(--color-primary); margin: 24px auto 0; }
+
+  /* Director */
+  .director { background: var(--color-bg); }
+  .director-grid { display: grid; grid-template-columns: 2fr 3fr; gap: 72px; align-items: center; }
+  .director-photo {
+    aspect-ratio: 4 / 5;
+    background: linear-gradient(135deg, #e9f2f8 0%, #c5dceb 100%);
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+  .director-photo::after { content: ""; position: absolute; inset: 20px; border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 4px; }
+  .director-photo-icon { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: rgba(31, 95, 139, 0.3); }
+  .director-text .director-name-en { font-family: "Cormorant Garamond", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 8px; text-transform: uppercase; }
+  .director-text h3 { font-size: 28px; font-weight: 500; margin-bottom: 8px; letter-spacing: 0.05em; }
+  .director-text .director-role { font-size: 14px; color: var(--color-text-light); margin-bottom: 32px; letter-spacing: 0.05em; }
+  .director-message { padding: 24px; background: var(--color-bg-soft); border-left: 3px solid var(--color-primary); margin-bottom: 32px; font-size: 15px; line-height: 2; color: var(--color-text-light); }
+  .director-info { display: grid; grid-template-columns: 1fr; gap: 16px; }
+  .director-info-item { display: flex; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--color-border); font-size: 14px; }
+  .director-info-item:last-child { border-bottom: none; }
+  .director-info-item .label { flex-shrink: 0; width: 100px; font-weight: 500; color: var(--color-primary); }
+  .director-info-item .value { color: var(--color-text); line-height: 1.9; }
+  .director-info-item .value ul { list-style: none; padding: 0; }
+  .director-info-item .value ul li { position: relative; padding-left: 14px; }
+  .director-info-item .value ul li::before { content: "―"; position: absolute; left: 0; color: var(--color-primary-light); }
+
+  /* Staff (Doctors) */
+  .staff { background: var(--color-bg-soft); }
+
+  /* Doctor Profile (Centered style, no photo) */
+  .doctor-profile { background: #fff; border-radius: 12px; padding: 64px 56px; margin-bottom: 48px; border: 1px solid var(--color-border); transition: var(--transition); }
+  .doctor-profile:last-child { margin-bottom: 0; }
+  .doctor-profile:hover { box-shadow: 0 10px 40px rgba(31, 95, 139, 0.08); }
+
+  /* Doctor Hero (Centered name block) */
+  .doctor-hero { text-align: center; margin-bottom: 48px; padding-bottom: 40px; border-bottom: 1px solid var(--color-border); }
+  .doctor-hero-label { font-family: "Cormorant Garamond", serif; font-size: 13px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 16px; text-transform: uppercase; }
+  .doctor-hero-label::before,
+  .doctor-hero-label::after { content: ""; display: inline-block; width: 24px; height: 1px; background: var(--color-primary); vertical-align: middle; margin: 0 12px; opacity: 0.4; }
+  .doctor-hero-name { font-size: clamp(28px, 4vw, 36px); font-weight: 500; letter-spacing: 0.1em; color: var(--color-text); margin-bottom: 10px; }
+  .doctor-hero-furigana { font-size: 13px; letter-spacing: 0.25em; color: var(--color-text-light); margin-bottom: 14px; }
+  .doctor-hero-en { font-family: "Cormorant Garamond", serif; font-size: 13px; letter-spacing: 0.25em; color: var(--color-primary-light); margin-bottom: 20px; text-transform: uppercase; }
+  .doctor-hero-role { display: inline-block; padding: 6px 22px; background: var(--color-accent); color: var(--color-primary); border-radius: 30px; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; }
+
+  /* Doctor Section Heading */
+  .doctor-section { margin-bottom: 32px; }
+  .doctor-section:last-child { margin-bottom: 0; }
+  .doctor-section-title { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 500; letter-spacing: 0.15em; color: var(--color-primary); margin-bottom: 16px; }
+  .doctor-section-title::before { content: ""; width: 4px; height: 16px; background: var(--color-primary); border-radius: 2px; }
+
+  /* Doctor Bio / Message Card */
+  .doctor-bio-card,
+  .doctor-message-card { background: var(--color-bg-soft); border-radius: 10px; padding: 28px 32px; font-size: 14.5px; line-height: 2; color: var(--color-text); }
+  .doctor-bio-card ul { list-style: none; padding: 0; margin: 0; }
+  .doctor-bio-card ul li { position: relative; padding-left: 20px; line-height: 2; }
+  .doctor-bio-card ul li::before { content: ""; position: absolute; left: 0; top: 1em; transform: translateY(-50%); width: 8px; height: 8px; border-radius: 50%; background: var(--color-primary-light); }
+  .doctor-message-card { color: var(--color-text-light); font-size: 15px; }
+
+  /* Doctor Quals Grid (資格 + 所属学会 side-by-side) */
+  .doctor-quals-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+  .doctor-qual-card { background: var(--color-bg-soft); border-radius: 10px; padding: 24px 28px; }
+  .doctor-qual-card .doctor-section-title { margin-bottom: 14px; }
+  .doctor-qual-card ul { list-style: none; padding: 0; margin: 0; }
+  .doctor-qual-card ul li { position: relative; padding-left: 18px; font-size: 14px; line-height: 1.9; color: var(--color-text); }
+  .doctor-qual-card ul li::before { content: ""; position: absolute; left: 0; top: 0.85em; transform: translateY(-50%); width: 6px; height: 6px; border-radius: 50%; background: var(--color-primary-light); }
+  .staff-card { background: #fff; border-radius: 8px; overflow: hidden; transition: var(--transition); }
+  .staff-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(31, 95, 139, 0.08); }
+  .staff-photo { aspect-ratio: 1 / 1; background: linear-gradient(135deg, #e9f2f8 0%, #c5dceb 100%); position: relative; display: flex; align-items: center; justify-content: center; color: rgba(31, 95, 139, 0.4); }
+  .staff-body { padding: 20px; text-align: center; }
+  .staff-role { font-family: "Cormorant Garamond", serif; font-size: 12px; letter-spacing: 0.2em; color: var(--color-primary); margin-bottom: 4px; text-transform: uppercase; }
+  .staff-name { font-size: 16px; font-weight: 500; margin-bottom: 8px; letter-spacing: 0.05em; }
+  .staff-desc { font-size: 12px; color: var(--color-text-light); line-height: 1.8; }
+
+  /* Philosophy */
+  .philosophy { background: var(--color-bg); }
+  .philosophy-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+  .philosophy-quote { font-size: clamp(20px, 2.5vw, 26px); font-weight: 500; line-height: 1.8; letter-spacing: 0.05em; color: var(--color-text); margin-bottom: 32px; }
+  .philosophy-quote em { font-style: normal; color: var(--color-primary); }
+  .philosophy-desc { font-size: 15px; color: var(--color-text-light); line-height: 2; }
+
+  /* CTA */
+  .cta { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%); color: #fff; text-align: center; padding: 96px 0; }
+  .cta h2 { font-size: clamp(24px, 3vw, 32px); font-weight: 500; letter-spacing: 0.1em; margin-bottom: 16px; }
+  .cta p { font-size: 15px; opacity: 0.9; margin-bottom: 40px; line-height: 2; }
+  .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 36px; border-radius: 30px; font-size: 14px; font-weight: 500; letter-spacing: 0.1em; transition: var(--transition); border: 1px solid transparent; cursor: pointer; }
+  .btn-white { background: #fff; color: var(--color-primary); }
+  .btn-white:hover { transform: translateY(-2px); opacity: 1; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); }
+  .btn-outline-white { background: transparent; color: #fff; border-color: rgba(255, 255, 255, 0.5); }
+  .btn-outline-white:hover { background: rgba(255, 255, 255, 0.1); opacity: 1; }
+
+  /* Footer */
+  .footer { background: #2b2b2b; color: #fff; padding: 64px 0 32px; }
+  .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 32px; padding-bottom: 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+  .footer-logo { font-size: 18px; font-weight: 500; letter-spacing: 0.05em; margin-bottom: 12px; }
+  .footer-logo span { display: block; font-size: 11px; letter-spacing: 0.2em; opacity: 0.6; font-weight: 400; margin-top: 4px; }
+  .footer-address { font-size: 13px; opacity: 0.7; line-height: 2; }
+  .footer-nav { display: flex; gap: 32px; list-style: none; flex-wrap: wrap; }
+  .footer-nav a { font-size: 13px; opacity: 0.7; letter-spacing: 0.05em; }
+  .footer-nav a:hover { opacity: 1; }
+  .copyright { text-align: center; padding-top: 32px; font-size: 12px; opacity: 0.5; letter-spacing: 0.1em; font-family: "Cormorant Garamond", serif; }
+
+  /* Animations */
+  .mobile-book-bar { display: none; }
+  .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .director-grid { grid-template-columns: 1fr; gap: 48px; }
+    .doctor-profile { padding: 48px 32px; }
+    .doctor-quals-grid { grid-template-columns: 1fr; gap: 16px; }
+  }
+  @media (max-width: 768px) {
+    section { padding: 72px 0; }
+    .nav-list, .nav-tel { display: none; }
+    .menu-btn { display: block; }
+    .nav.open { position: fixed; top: 72px; left: 0; right: 0; background: #fff; border-top: 1px solid var(--color-border); padding: 24px; flex-direction: column; align-items: stretch; }
+    .nav.open .nav-list { display: flex; flex-direction: column; gap: 16px; }
+    .nav.open .submenu { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; border: none; padding: 8px 0 0 20px; background: transparent; min-width: 0; }
+    .nav.open .submenu::before { display: none; }
+    .nav.open .submenu a { padding: 8px 0; font-size: 13.5px; }
+    .nav.open .has-submenu { display: block; }
+    .nav.open .nav-tel { display: inline-flex; justify-content: center; margin-top: 16px; }
+    .section-head { margin-bottom: 48px; }
+    .doctor-profile { padding: 40px 24px; }
+    .doctor-hero { margin-bottom: 36px; padding-bottom: 28px; }
+    .doctor-bio-card, .doctor-message-card, .doctor-qual-card { padding: 20px 22px; }
+    body { padding-bottom: 64px; }
+    .mobile-book-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 99;
+      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.12);
+    }
+    .mobile-book-bar a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 18px 8px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: #fff;
+      text-decoration: none;
+    }
+    .mobile-book-bar a:hover { opacity: 1; }
+    .mobile-book-bar .mb-tel { background: var(--color-primary); }
+    .mobile-book-bar .mb-web { background: var(--color-primary-light); }
+  }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      岩佐耳鼻咽喉科
+      <span>IWASA ENT CLINIC</span>
+    </a>
+    <nav class="nav" id="nav">
+      <ul class="nav-list">
+        <li><a href="clinic.html">クリニック紹介</a></li>
+        <li class="has-submenu">
+          <a href="index.html#services" class="submenu-toggle">診療案内</a>
+          <ul class="submenu">
+            <li><a href="fees.html">費用について</a></li>
+            <li><a href="notices.html">書面掲示について</a></li>
+          </ul>
+        </li>
+        <li><a href="staff.html" class="active">スタッフ紹介</a></li>
+        <li><a href="recruit.html">求人情報</a></li>
+        <li><a href="faq.html">よくある質問</a></li>
+        <li><a href="index.html#info">アクセス</a></li>
+      </ul>
+      <a href="tel:0335678733" class="nav-tel">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        03-3567-8733
+      </a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-hero-label">Staff</p>
+    <h1 class="page-hero-title">スタッフ紹介</h1>
+  </div>
+</section>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <div class="container">
+    <a href="index.html">ホーム</a>
+    <span>/</span>
+    スタッフ紹介
+  </div>
+</div>
+
+<!-- Philosophy -->
+<section class="philosophy">
+  <div class="container">
+    <div class="philosophy-inner fade-in">
+      <div class="section-label" style="margin-bottom: 24px;">Our Team</div>
+      <p class="philosophy-quote">
+        患者様に <em>寄り添うこと</em> を<br />
+        チーム全員の共通理念として。
+      </p>
+      <p class="philosophy-desc">
+        耳鼻咽喉科専門医として、患者様お一人おひとりに<br />
+        安心して通っていただけるよう、心を込めて診療にあたります。
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Doctors -->
+<section class="staff">
+  <div class="container">
+    <div class="section-head fade-in">
+      <p class="section-label">Doctors</p>
+      <h2 class="section-title">医師紹介</h2>
+      <div class="section-title-bar"></div>
+    </div>
+
+    <!-- Doctor 1: 野島 曉人 -->
+    <div class="doctor-profile fade-in">
+      <div class="doctor-hero">
+        <p class="doctor-hero-label">医師</p>
+        <h3 class="doctor-hero-name">野島 曉人</h3>
+        <p class="doctor-hero-furigana">のじま あきひと</p>
+        <p class="doctor-hero-en">NOJIMA Akihito</p>
+        <span class="doctor-hero-role">耳鼻咽喉科専門医 / 一般耳鼻科</span>
+      </div>
+
+      <div class="doctor-section">
+        <h4 class="doctor-section-title">略歴</h4>
+        <div class="doctor-bio-card">
+          <ul>
+            <li>日本大学医学部 卒業</li>
+            <li>順天堂大学 耳鼻咽喉科 入局</li>
+            <li>江東病院 耳鼻咽喉科 部長</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="doctor-quals-grid">
+        <div class="doctor-qual-card">
+          <h4 class="doctor-section-title">資格</h4>
+          <ul>
+            <li>日本耳鼻咽喉科頭頸部外科学会 専門医</li>
+            <li>一般耳鼻科診療</li>
+          </ul>
+        </div>
+        <div class="doctor-qual-card">
+          <h4 class="doctor-section-title">所属学会</h4>
+          <ul>
+            <li>日本耳鼻咽喉科頭頸部外科学会</li>
+            <li>日本耳鼻咽喉科臨床学会</li>
+            <li>日本鼻科学会</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="doctor-section">
+        <h4 class="doctor-section-title">メッセージ</h4>
+        <div class="doctor-message-card">
+          地域の皆さまに安心して通っていただけるクリニックを目指し、丁寧な診療を心がけてまいります。耳・鼻・のどに関するお悩みがございましたら、どうぞお気軽にご相談ください。
+        </div>
+      </div>
+    </div>
+
+    <!-- Doctor 2: 野島 愛来 -->
+    <div class="doctor-profile fade-in">
+      <div class="doctor-hero">
+        <p class="doctor-hero-label">医師</p>
+        <h3 class="doctor-hero-name">野島 愛来</h3>
+        <p class="doctor-hero-furigana">のじま あいら</p>
+        <p class="doctor-hero-en">NOJIMA Aira</p>
+        <span class="doctor-hero-role">耳鼻咽喉科専門医 / 一般耳鼻科</span>
+      </div>
+
+      <div class="doctor-section">
+        <h4 class="doctor-section-title">略歴</h4>
+        <div class="doctor-bio-card">
+          <ul>
+            <li>初期臨床研修ののち、順天堂大学医学部 耳鼻咽喉科学教室 入局</li>
+            <li>関連病院にて研修、耳鼻咽喉科専門医資格を取得</li>
+            <li>都内クリニック勤務後、2026年6月 岩佐耳鼻咽喉科 勤務</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="doctor-quals-grid">
+        <div class="doctor-qual-card">
+          <h4 class="doctor-section-title">資格</h4>
+          <ul>
+            <li>日本耳鼻咽喉科頭頸部外科学会 専門医</li>
+            <li>一般耳鼻科診療</li>
+          </ul>
+        </div>
+        <div class="doctor-qual-card">
+          <h4 class="doctor-section-title">所属学会</h4>
+          <ul>
+            <li>日本耳鼻咽喉科頭頸部外科学会</li>
+            <li>日本耳鼻咽喉科臨床学会</li>
+            <li>日本鼻科学会</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="doctor-section">
+        <h4 class="doctor-section-title">メッセージ</h4>
+        <div class="doctor-message-card">
+          耳鼻咽喉科疾患全般の診療を行っております。お一人おひとりのお話に耳を傾け、患者様に寄り添った診療を大切にしております。気になる症状がございましたら、どうぞお気軽にご来院ください。
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container">
+    <h2>一緒に働く仲間を募集しています</h2>
+    <p>当院では、患者様のために誠実に働くスタッフを募集中です。<br />見学のみのご応募も歓迎しております。</p>
+    <div class="cta-actions">
+      <a href="recruit.html" class="btn btn-white">求人情報を見る</a>
+      <a href="tel:0335678733" class="btn btn-outline-white">お電話でお問い合わせ</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">岩佐耳鼻咽喉科<span>IWASA ENT CLINIC</span></div>
+        <p class="footer-address">〒104-0031 東京都中央区京橋2丁目12-4 光和ビル 2階<br />TEL: 03-3567-8733</p>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="clinic.html">クリニック紹介</a></li>
+        <li><a href="index.html#services">診療案内</a></li>
+        <li><a href="fees.html">費用について</a></li>
+        <li><a href="notices.html">書面掲示について</a></li>
+        <li><a href="staff.html">スタッフ紹介</a></li>
+        <li><a href="recruit.html">求人情報</a></li>
+        <li><a href="faq.html">よくある質問</a></li>
+        <li><a href="index.html#info">アクセス</a></li>
+      </ul>
+    </div>
+    <p class="copyright">© 2026 Iwasa ENT Clinic. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const nav = document.getElementById('nav');
+  menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('active');
+    nav.classList.toggle('open');
+  });
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      menuBtn.classList.remove('active');
+      nav.classList.remove('open');
+    });
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+<!-- Mobile Booking Bar (mobile only) -->
+<div class="mobile-book-bar">
+  <a href="tel:0335678733" class="mb-tel">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+    電話予約
+  </a>
+  <a href="#" class="mb-web">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    WEB予約
+  </a>
+</div>
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/245976356.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+</body>
+</html>

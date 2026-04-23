@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="岩佐耳鼻咽喉科の求人情報。看護師・臨床検査技師・診療放射線技師・看護助手・受付・医療事務を募集中。常勤・パート相談可。働きやすい環境と充実した福利厚生で、あなたのキャリアを応援します。" />
+<title>求人情報 | 岩佐耳鼻咽喉科</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --color-primary: #1f5f8b;
+    --color-primary-light: #4a8bb8;
+    --color-accent: #e9f2f8;
+    --color-text: #2b2b2b;
+    --color-text-light: #6b6b6b;
+    --color-bg: #ffffff;
+    --color-bg-soft: #f7f9fb;
+    --color-border: #e5e9ed;
+    --max-width: 1200px;
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Noto Sans JP", sans-serif; font-weight: 400; color: var(--color-text); line-height: 1.8; background: var(--color-bg); -webkit-font-smoothing: antialiased; }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; transition: opacity var(--transition); }
+  a:hover { opacity: 0.7; }
+  .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+  /* Header */
+  .header { position: fixed; top: 0; left: 0; right: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); z-index: 100; border-bottom: 1px solid var(--color-border); }
+  .header-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+  .logo { font-size: 18px; font-weight: 500; letter-spacing: 0.05em; color: var(--color-primary); }
+  .logo span { display: block; font-size: 11px; letter-spacing: 0.2em; color: var(--color-text-light); font-weight: 400; margin-top: 2px; }
+  .nav { display: flex; align-items: center; gap: 32px; }
+  .nav-list { display: flex; list-style: none; gap: 28px; }
+  .nav-list a { font-size: 14px; font-weight: 500; letter-spacing: 0.05em; position: relative; }
+  .nav-list a.active { color: var(--color-primary); }
+  .nav-list a::after { content: ""; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--color-primary); transition: width var(--transition); }
+  .nav-list a:hover::after, .nav-list a.active::after { width: 100%; }
+  .nav-list .has-submenu { position: relative; }
+  .nav-list .submenu-toggle::before { content: "▾"; font-size: 10px; margin-left: 6px; opacity: 0.55; display: inline-block; vertical-align: middle; transition: transform 0.2s; float: right; margin-top: 1px; }
+  .has-submenu:hover .submenu-toggle::before { transform: rotate(-180deg); opacity: 1; }
+  .submenu { position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%); background: #fff; list-style: none; padding: 10px 0; min-width: 200px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); border: 1px solid var(--color-border); border-radius: 4px; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease, top 0.2s ease; z-index: 101; }
+  .submenu::before { content: ""; position: absolute; top: -7px; left: 50%; transform: translateX(-50%); border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 7px solid #fff; }
+  .has-submenu:hover .submenu, .has-submenu:focus-within .submenu { opacity: 1; visibility: visible; top: 100%; }
+  .submenu li { display: block; }
+  .submenu a { display: block; padding: 10px 20px; font-size: 13px; font-weight: 400; white-space: nowrap; letter-spacing: 0.05em; color: var(--color-text); }
+  .submenu a::after { display: none !important; }
+  .submenu a:hover { background: #f4f7fa; color: var(--color-primary); }
+  .submenu a.active { color: var(--color-primary); font-weight: 500; }
+  .nav-tel { display: flex; align-items: center; gap: 6px; padding: 10px 20px; background: var(--color-primary); color: #fff; border-radius: 30px; font-size: 13px; font-weight: 500; letter-spacing: 0.05em; }
+  .nav-tel:hover { background: var(--color-primary-light); opacity: 1; }
+  .menu-btn { display: none; width: 32px; height: 32px; background: none; border: none; cursor: pointer; position: relative; }
+  .menu-btn span { display: block; width: 24px; height: 1px; background: var(--color-text); position: absolute; left: 4px; transition: var(--transition); }
+  .menu-btn span:nth-child(1) { top: 10px; }
+  .menu-btn span:nth-child(2) { top: 16px; }
+  .menu-btn span:nth-child(3) { top: 22px; }
+  .menu-btn.active span:nth-child(1) { top: 16px; transform: rotate(45deg); }
+  .menu-btn.active span:nth-child(2) { opacity: 0; }
+  .menu-btn.active span:nth-child(3) { top: 16px; transform: rotate(-45deg); }
+
+  /* Page Hero */
+  .page-hero { min-height: 520px; padding: 120px 0 80px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #e9f2f8 0%, #f7f9fb 100%); position: relative; overflow: hidden; }
+  .page-hero::before { content: ""; position: absolute; top: -20%; right: -10%; width: 50%; height: 80%; background: radial-gradient(circle, rgba(74, 139, 184, 0.12) 0%, transparent 60%); border-radius: 50%; }
+  .page-hero::after { content: ""; position: absolute; bottom: -30%; left: -10%; width: 50%; height: 80%; background: radial-gradient(circle, rgba(31, 95, 139, 0.08) 0%, transparent 60%); border-radius: 50%; }
+  .page-hero-inner { text-align: center; position: relative; z-index: 1; }
+  .page-hero-label { font-family: "Cormorant Garamond", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 16px; text-transform: uppercase; }
+  .page-hero-title { font-size: clamp(28px, 4vw, 42px); font-weight: 500; letter-spacing: 0.1em; color: var(--color-text); }
+  .page-hero-tagline { font-size: clamp(40px, 7vw, 72px); font-weight: 500; letter-spacing: 0.15em; color: var(--color-primary); margin: 32px 0 20px; line-height: 1.2; font-family: "Noto Sans JP", sans-serif; }
+  .page-hero-lead { font-size: 15px; color: var(--color-text-light); max-width: 560px; margin: 0 auto; line-height: 2; }
+
+  /* Support */
+  .support { background: var(--color-bg); }
+  .support-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .support-card { background: #fff; border: 1px solid var(--color-border); border-radius: 8px; padding: 40px 28px; text-align: center; transition: var(--transition); }
+  .support-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(31, 95, 139, 0.08); }
+  .support-icon { width: 64px; height: 64px; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: var(--color-primary); background: var(--color-accent); border-radius: 50%; }
+  .support-card h3 { font-size: 18px; font-weight: 500; margin-bottom: 10px; letter-spacing: 0.05em; }
+  .support-card p { font-size: 13px; color: var(--color-text-light); line-height: 1.9; }
+
+  /* Position badges */
+  .position-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+  .position-badges .badge-type {
+    display: inline-block;
+    padding: 4px 12px;
+    background: #fff;
+    color: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    font-size: 11px;
+    border-radius: 20px;
+    letter-spacing: 0.1em;
+  }
+
+  /* Positions Summary */
+  .positions-summary { max-width: 1100px; margin: 0 auto 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+  /* Positions Common Terms (shared table) */
+  .positions-common { max-width: 1100px; margin: 0 auto 48px; background: #fff; border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; }
+  .positions-common-head { padding: 18px 28px; background: var(--color-primary); color: #fff; font-size: 15px; font-weight: 500; letter-spacing: 0.08em; }
+  .positions-summary-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 32px 28px;
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+  }
+  .positions-summary-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-light));
+  }
+  .positions-summary-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(31, 95, 139, 0.08); }
+  .positions-summary-icon {
+    width: 56px; height: 56px;
+    margin: 0 auto 16px;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--color-primary);
+    background: var(--color-accent);
+    border-radius: 50%;
+  }
+  .positions-summary-card h3 { font-size: 18px; font-weight: 500; letter-spacing: 0.1em; margin-bottom: 8px; }
+  .positions-summary-card p { font-size: 13px; color: var(--color-text-light); line-height: 1.9; margin-bottom: 14px; }
+  .positions-summary-card a { display: inline-flex; align-items: center; gap: 6px; color: var(--color-primary); font-size: 13px; font-weight: 500; letter-spacing: 0.05em; }
+  .positions-summary-card a:hover { opacity: 0.7; }
+
+  /* Breadcrumb */
+  .breadcrumb { padding: 20px 0; font-size: 13px; color: var(--color-text-light); background: var(--color-bg); border-bottom: 1px solid var(--color-border); }
+  .breadcrumb a { color: var(--color-primary); }
+  .breadcrumb span { margin: 0 8px; opacity: 0.5; }
+
+  /* Section common */
+  section { padding: 100px 0; }
+  .section-head { text-align: center; margin-bottom: 72px; }
+  .section-label { font-family: "Cormorant Garamond", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 12px; text-transform: uppercase; }
+  .section-title { font-size: clamp(26px, 3.5vw, 36px); font-weight: 500; letter-spacing: 0.1em; line-height: 1.5; }
+  .section-title-bar { width: 40px; height: 1px; background: var(--color-primary); margin: 24px auto 0; }
+
+  /* Message */
+  .message { background: var(--color-bg); }
+  .message-inner { max-width: 800px; margin: 0 auto; text-align: center; }
+  .message-quote { font-size: clamp(20px, 2.5vw, 28px); font-weight: 500; line-height: 1.8; letter-spacing: 0.05em; color: var(--color-text); margin-bottom: 32px; }
+  .message-quote em { font-style: normal; color: var(--color-primary); }
+  .message-desc { font-size: 15px; color: var(--color-text-light); line-height: 2; text-align: left; }
+  .message-desc p { margin-bottom: 16px; }
+  .message-signature { margin-top: 40px; text-align: right; font-size: 14px; color: var(--color-text-light); }
+
+  /* Features */
+  .features { background: var(--color-bg-soft); }
+  .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; max-width: 960px; margin: 0 auto; }
+  .feature-card { background: #fff; padding: 40px 32px; border-radius: 8px; transition: var(--transition); border: 1px solid transparent; }
+  .feature-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(31, 95, 139, 0.08); border-color: var(--color-border); }
+  .feature-num { font-family: "Cormorant Garamond", serif; font-size: 36px; font-weight: 500; color: var(--color-primary); line-height: 1; margin-bottom: 16px; }
+  .feature-card h3 { font-size: 18px; font-weight: 500; margin-bottom: 12px; letter-spacing: 0.05em; }
+  .feature-card p { font-size: 14px; color: var(--color-text-light); line-height: 1.9; }
+
+  /* Positions */
+  .positions { background: var(--color-bg); }
+  .position-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    transition: var(--transition);
+  }
+  .position-card:hover { box-shadow: 0 10px 30px rgba(31, 95, 139, 0.06); }
+  .position-head {
+    padding: 24px 32px;
+    background: var(--color-bg-soft);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--color-border);
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .position-head h3 { font-size: 22px; font-weight: 500; letter-spacing: 0.05em; }
+  .position-head .position-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 12px;
+    border-radius: 30px;
+    letter-spacing: 0.1em;
+  }
+  .position-table { width: 100%; border-collapse: collapse; }
+  .position-table th, .position-table td {
+    padding: 18px 24px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: top;
+  }
+  .position-table th {
+    width: 180px;
+    background: var(--color-accent);
+    font-weight: 500;
+    color: var(--color-primary);
+    letter-spacing: 0.05em;
+  }
+  .position-table tr:last-child th, .position-table tr:last-child td { border-bottom: none; }
+  .position-table td ul { list-style: none; padding: 0; }
+  .position-table td ul li { position: relative; padding-left: 14px; margin-bottom: 4px; }
+  .position-table td ul li::before { content: "―"; position: absolute; left: 0; color: var(--color-primary-light); }
+
+  /* Flow */
+  .flow { background: var(--color-bg-soft); }
+  .flow-list { max-width: 800px; margin: 0 auto; position: relative; }
+  .flow-list::before {
+    content: "";
+    position: absolute;
+    left: 40px;
+    top: 40px;
+    bottom: 40px;
+    width: 1px;
+    background: var(--color-border);
+  }
+  .flow-item {
+    position: relative;
+    display: flex;
+    gap: 32px;
+    padding-bottom: 40px;
+    align-items: flex-start;
+  }
+  .flow-item:last-child { padding-bottom: 0; }
+  .flow-step {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--color-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  .flow-step .step-label { font-family: "Cormorant Garamond", serif; font-size: 10px; letter-spacing: 0.2em; color: var(--color-primary); text-transform: uppercase; }
+  .flow-step .step-num { font-family: "Cormorant Garamond", serif; font-size: 24px; font-weight: 500; color: var(--color-primary); line-height: 1; }
+  .flow-content { flex: 1; padding-top: 12px; }
+  .flow-content h3 { font-size: 18px; font-weight: 500; margin-bottom: 8px; letter-spacing: 0.05em; }
+  .flow-content p { font-size: 14px; color: var(--color-text-light); line-height: 1.9; }
+
+  /* Contact */
+  .contact { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%); color: #fff; text-align: center; padding: 96px 0; }
+  .contact h2 { font-size: clamp(24px, 3vw, 32px); font-weight: 500; letter-spacing: 0.1em; margin-bottom: 16px; }
+  .contact p { font-size: 15px; opacity: 0.9; margin-bottom: 40px; line-height: 2; }
+  .contact-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 720px; margin: 0 auto; }
+  .contact-card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 32px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2); }
+  .contact-card .label { font-family: "Cormorant Garamond", serif; font-size: 12px; letter-spacing: 0.2em; opacity: 0.8; margin-bottom: 12px; text-transform: uppercase; }
+  .contact-card .value { font-family: "Cormorant Garamond", serif; font-size: 28px; font-weight: 500; color: #fff; letter-spacing: 0.05em; display: block; margin-bottom: 8px; }
+  .contact-card .note { font-size: 12px; opacity: 0.8; letter-spacing: 0.05em; }
+
+  /* Footer */
+  .footer { background: #2b2b2b; color: #fff; padding: 64px 0 32px; }
+  .footer-inner { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 32px; padding-bottom: 40px; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+  .footer-logo { font-size: 18px; font-weight: 500; letter-spacing: 0.05em; margin-bottom: 12px; }
+  .footer-logo span { display: block; font-size: 11px; letter-spacing: 0.2em; opacity: 0.6; font-weight: 400; margin-top: 4px; }
+  .footer-address { font-size: 13px; opacity: 0.7; line-height: 2; }
+  .footer-nav { display: flex; gap: 32px; list-style: none; flex-wrap: wrap; }
+  .footer-nav a { font-size: 13px; opacity: 0.7; letter-spacing: 0.05em; }
+  .footer-nav a:hover { opacity: 1; }
+  .copyright { text-align: center; padding-top: 32px; font-size: 12px; opacity: 0.5; letter-spacing: 0.1em; font-family: "Cormorant Garamond", serif; }
+
+  /* Animations */
+  .mobile-book-bar { display: none; }
+  .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .features-grid { grid-template-columns: 1fr; }
+    .contact-cards { grid-template-columns: 1fr; }
+    .support-grid { grid-template-columns: 1fr; }
+    .positions-summary { grid-template-columns: 1fr; gap: 16px; }
+  }
+  @media (max-width: 768px) {
+    section { padding: 72px 0; }
+    .nav-list, .nav-tel { display: none; }
+    .menu-btn { display: block; }
+    .nav.open { position: fixed; top: 72px; left: 0; right: 0; background: #fff; border-top: 1px solid var(--color-border); padding: 24px; flex-direction: column; align-items: stretch; }
+    .nav.open .nav-list { display: flex; flex-direction: column; gap: 16px; }
+    .nav.open .submenu { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; border: none; padding: 8px 0 0 20px; background: transparent; min-width: 0; }
+    .nav.open .submenu::before { display: none; }
+    .nav.open .submenu a { padding: 8px 0; font-size: 13.5px; }
+    .nav.open .has-submenu { display: block; }
+    .nav.open .nav-tel { display: inline-flex; justify-content: center; margin-top: 16px; }
+    .section-head { margin-bottom: 48px; }
+    .position-head { padding: 20px 20px; }
+    .position-table th, .position-table td { padding: 14px 16px; font-size: 13px; }
+    .position-table th { width: 100px; }
+    .flow-list::before { left: 24px; }
+    .flow-step { width: 48px; height: 48px; }
+    .flow-step .step-label { display: none; }
+    .flow-step .step-num { font-size: 18px; }
+    .flow-item { gap: 20px; }
+    .page-hero-tagline { font-size: 44px; letter-spacing: 0.08em; }
+    body { padding-bottom: 64px; }
+    .mobile-book-bar {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 99;
+      box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.12);
+    }
+    .mobile-book-bar a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 18px 8px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      color: #fff;
+      text-decoration: none;
+    }
+    .mobile-book-bar a:hover { opacity: 1; }
+    .mobile-book-bar .mb-tel { background: var(--color-primary); }
+    .mobile-book-bar .mb-web { background: var(--color-primary-light); }
+  }
+
+  /* Wanted (求める人財) */
+  .wanted { background: var(--color-bg); }
+  .wanted-intro { text-align: center; font-size: 15px; color: var(--color-text-light); line-height: 2; max-width: 720px; margin: 0 auto 48px; }
+  .wanted-list { max-width: 800px; margin: 0 auto; }
+  .wanted-item { background: #fff; border: 1px solid var(--color-border); border-radius: 8px; margin-bottom: 12px; transition: var(--transition); overflow: hidden; }
+  .wanted-item:hover { box-shadow: 0 4px 16px rgba(31,95,139,0.06); }
+  .wanted-item summary { padding: 20px 28px; cursor: pointer; font-size: 15px; font-weight: 500; color: var(--color-primary); display: flex; align-items: center; justify-content: space-between; list-style: none; letter-spacing: 0.05em; }
+  .wanted-item summary::-webkit-details-marker { display: none; }
+  .wanted-item summary::after { content: "+"; font-size: 22px; font-weight: 300; color: var(--color-primary); transition: transform 0.3s ease; flex-shrink: 0; margin-left: 16px; }
+  .wanted-item[open] summary::after { content: "−"; }
+  .wanted-item p { padding: 0 28px 24px; font-size: 14px; color: var(--color-text-light); line-height: 1.95; }
+
+  /* Benefit (採用特典) */
+  .benefit { background: var(--color-bg); padding: 80px 0; }
+  .benefit-card { max-width: 760px; margin: 0 auto; background: linear-gradient(135deg, #fff 0%, var(--color-accent) 100%); border: 2px solid var(--color-primary-light); border-radius: 12px; padding: 48px 40px; text-align: center; }
+  .benefit-label { font-family: "Cormorant Garamond", serif; font-size: 13px; letter-spacing: 0.3em; color: var(--color-primary); text-transform: uppercase; margin-bottom: 12px; }
+  .benefit-card h3 { font-size: clamp(20px, 2.5vw, 26px); font-weight: 500; letter-spacing: 0.1em; margin-bottom: 28px; color: var(--color-primary); }
+  .benefit-card ul { list-style: none; max-width: 560px; margin: 0 auto; text-align: left; }
+  .benefit-card ul li { padding: 14px 0 14px 36px; position: relative; font-size: 15px; color: var(--color-text); line-height: 1.8; border-bottom: 1px dashed var(--color-border); }
+  .benefit-card ul li:last-child { border-bottom: none; }
+  .benefit-card ul li::before { content: "★"; position: absolute; left: 8px; top: 16px; color: var(--color-primary); font-size: 14px; }
+
+  /* Apply Form (Googleフォーム) */
+  .apply-form { background: var(--color-bg-soft); }
+  .apply-form-intro { text-align: center; font-size: 15px; color: var(--color-text-light); line-height: 2; margin-bottom: 40px; }
+  .apply-form-wrap { max-width: 760px; margin: 0 auto; background: #fff; border: 1px solid var(--color-border); border-radius: 8px; overflow: hidden; padding: 8px; }
+  .apply-form-wrap iframe { display: block; width: 100%; min-height: 1100px; border: none; background: #fff; }
+  .apply-form-placeholder { padding: 48px 32px; text-align: center; color: var(--color-text-light); background: var(--color-bg-soft); border: 1px dashed var(--color-border); border-radius: 4px; }
+  .apply-form-placeholder strong { display: block; color: var(--color-primary); font-size: 16px; margin-bottom: 8px; letter-spacing: 0.05em; }
+  .apply-form-placeholder code { display: inline-block; background: #fff; padding: 4px 10px; border-radius: 3px; border: 1px solid var(--color-border); font-size: 12px; color: var(--color-text); margin-top: 6px; }
+
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      岩佐耳鼻咽喉科
+      <span>IWASA ENT CLINIC</span>
+    </a>
+    <nav class="nav" id="nav">
+      <ul class="nav-list">
+        <li><a href="clinic.html">クリニック紹介</a></li>
+        <li class="has-submenu">
+          <a href="index.html#services" class="submenu-toggle">診療案内</a>
+          <ul class="submenu">
+            <li><a href="fees.html">費用について</a></li>
+            <li><a href="notices.html">書面掲示について</a></li>
+          </ul>
+        </li>
+        <li><a href="staff.html">スタッフ紹介</a></li>
+        <li><a href="recruit.html" class="active">求人情報</a></li>
+        <li><a href="faq.html">よくある質問</a></li>
+        <li><a href="index.html#info">アクセス</a></li>
+      </ul>
+      <a href="tel:0335678733" class="nav-tel">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        03-3567-8733
+      </a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- Page Hero -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <p class="page-hero-label">Recruit</p>
+    <h1 class="page-hero-title">求人情報</h1>
+    <p class="page-hero-tagline">日々、充実。</p>
+    <p class="page-hero-lead">
+      一人ひとりの患者様と向き合いながら、<br />
+      自分らしいキャリアを、自分らしいペースで。<br />
+      あなたの"働きたい"を、私たちが支えます。
+    </p>
+  </div>
+</section>
+
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+  <div class="container">
+    <a href="index.html">ホーム</a>
+    <span>/</span>
+    求人情報
+  </div>
+</div>
+
+<!-- Message -->
+<section class="message">
+  <div class="container">
+    <div class="section-head fade-in">
+      <p class="section-label">Message</p>
+      <h2 class="section-title">院長からのメッセージ</h2>
+      <div class="section-title-bar"></div>
+    </div>
+    <div class="message-inner fade-in">
+      <p class="message-quote">
+        患者様の <em>"ありがとう"</em> を<br />
+        一緒に積み重ねていきませんか。
+      </p>
+      <div class="message-desc">
+        <p>
+          当院は、京橋・宝町エリアにお住まいの方、またお勤めの方の「耳・鼻・のど」のかかりつけ医として、日々診療にあたっています。
+        </p>
+        <p>
+          スタッフ全員が同じ方向を向き、患者様一人ひとりに丁寧に接することを大切にしています。新しく仲間に加わっていただく方には、これまでのご経験を活かしつつ、当院で自分らしいキャリアを築いていただきたいと考えています。
+        </p>
+        <p>
+          「人と話すのが好き」「人のためになる仕事がしたい」「医療に関わってみたい」。そんな気持ちを持った方とお会いできるのを楽しみにしています。見学のみのご応募も大歓迎です。まずはお気軽にご連絡ください。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features">
+  <div class="container">
+    <div class="section-head fade-in">
+      <p class="section-label">Why Us</p>
+      <h2 class="section-title">当院で働く魅力</h2>
+      <div class="section-title-bar"></div>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card fade-in">
+        <div class="feature-num">01</div>
+        <h3>働きやすい環境</h3>
+        <p>シフト制で無理のない勤務体系。お子様の行事や家庭の都合にも柔軟に対応します。有給取得率も高く、プライベートを大切にできる職場です。</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-num">02</div>
+        <h3>教育・研修制度</h3>
+        <p>ブランクのある方や未経験の方でも安心の教育体制。OJT・先輩スタッフによる丁寧な指導で、少しずつ業務に慣れていただけます。</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-num">03</div>
+        <h3>チームワーク重視</h3>
+        <p>スタッフ同士のコミュニケーションを大切にする、風通しの良い職場です。定期的なミーティングで意見交換を行い、より良い医療を目指します。</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-num">04</div>
+        <h3>充実の福利厚生</h3>
+        <p>各種社会保険完備、交通費全額支給、昇給・賞与あり。永く安心して働ける環境を整えています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Wanted -->
+<section class="wanted">
+  <div class="container">
+    <div class="section-head fade-in">
+      <p class="section-label">Who We Want</p>
+      <h2 class="section-title">当院で期待する人財</h2>
+      <div class="section-title-bar"></div>
+    </div>
+    <p class="wanted-intro fade-in">
+      当院では「人材」ではなく「人財」を募集しています。<br />
+      ここにある全てを初めから求めているわけではありません。<br />
+      共に学び、共に成長していける仲間との出会いを楽しみにしています。
+    </p>
+    <div class="wanted-list fade-in">
+      <details class="wanted-item">
+        <summary>成長意欲が高く、学びに貪欲な方</summary>
+        <p>耳鼻咽喉科の知識や医療事務の経験は問いません。仕事を通して自分を高めたい、新しい知識を吸収したいという気持ちのある方を歓迎します。当院では研修参加や資格取得の支援を行っています。</p>
+      </details>
+      <details class="wanted-item">
+        <summary>素直で、人を批判しない方</summary>
+        <p>気づいたことを率直に伝え合い、互いを尊重する文化を大切にしています。批判ではなく改善提案として共有できる方、相手の良いところを見つけられる方をお待ちしています。</p>
+      </details>
+      <details class="wanted-item">
+        <summary>常に改善し、新しいことを追求していく方</summary>
+        <p>「昨日より今日を少しでも良くする」を合言葉に、業務フローや患者対応の改善を続けています。慣習にとらわれず、より良い方法を一緒に考えてくださる方を求めています。</p>
+      </details>
+      <details class="wanted-item">
+        <summary>患者様に寄り添い、誰に対しても優しく接せる方</summary>
+        <p>耳鼻咽喉科にはお子様からご高齢の方まで様々な患者様がご来院されます。お一人おひとりに丁寧に接し、安心して受診いただける雰囲気を一緒に作っていただける方を歓迎します。</p>
+      </details>
+      <details class="wanted-item">
+        <summary>いつも笑顔を忘れない方</summary>
+        <p>院内の雰囲気は、スタッフの表情から伝わります。患者様にも仲間にも、笑顔で挨拶できる方と一緒に働きたいと考えています。</p>
+      </details>
+      <details class="wanted-item">
+        <summary>相手の立場で考えられる方</summary>
+        <p>自分のことだけでなく、患者様や仲間の立場に立って考え、行動できる方。チーム医療では、思いやりが何よりの土台になります。</p>
+      </details>
+      <details class="wanted-item">
+        <summary>チームワークを大切にできる方</summary>
+        <p>一人で完結する仕事はありません。役割を超えて協力し合い、誰かが困っているときに自然と手を差し伸べられる方をお待ちしています。</p>
+      </details>
+      <details class="wanted-item">
+        <summary>基本的なPCスキルがある方</summary>
+        <p>電子カルテ・予約システム・Word/Excel/メールなど、基本的なPC操作にご自身で対応いただける方を歓迎します。操作に不安がある方も、入職後に丁寧に指導いたします。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- Support -->
+<section class="support">
+  <div class="container">
+    <div class="section-head fade-in">
+      <p class="section-label">Support</p>
+      <h2 class="section-title">安心して働ける充実のサポート</h2>
+      <div class="section-title-bar"></div>
+    </div>
+    <div class="support-grid">
+      <div class="support-card fade-in">
+        <div class="support-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>社会保険完備</h3>
+        <p>健康保険・厚生年金・雇用保険・労災保険を完備。安心して長く働ける土台を整えています。</p>
+      </div>
+      <div class="support-card fade-in">
+        <div class="support-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 1v22"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        </div>
+        <h3>賞与あり</h3>
+        <p>年2回の賞与支給(正社員)。昇給も年1回実施。頑張りをきちんと評価する制度を設けています。</p>
+      </div>
+      <div class="support-card fade-in">
+        <div class="support-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+        </div>
+        <h3>研修・学会参加費補助</h3>
+        <p>外部研修・学会参加費の補助制度あり。スキルアップを積極的に後押しします。</p>
+      </div>
+      <div class="support-card fade-in">
+        <div class="support-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+        </div>
+        <h3>ライフイベントに柔軟</h3>
+        <p>産休・育休の取得実績あり。お子様の行事やご家庭の都合にも、シフトで柔軟に対応します。</p>
+      </div>
+      <div class="support-card fade-in">
+        <div class="support-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>交通費全額支給</h3>
+        <p>通勤交通費は全額支給。駅近(宝町駅徒歩30秒)で通勤のストレスがありません。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Positions -->
+<section class="positions" id="positions">
+  <div class="container">
+    <div class="section-head fade-in">
+      <p class="section-label">Positions</p>
+      <h2 class="section-title">募集要項</h2>
+      <div class="section-title-bar"></div>
+    </div>
+
+    <!-- Summary -->
+    <div class="positions-summary fade-in">
+      <div class="positions-summary-card">
+        <div class="positions-summary-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 2v6"/><path d="M9 5h6"/>
+            <path d="M12 22a8 8 0 008-8c0-2-1-5-3-7H7c-2 2-3 5-3 7a8 8 0 008 8z"/>
+          </svg>
+        </div>
+        <h3>看護師</h3>
+        <p>外来診療の補助・処置介助を中心とした業務<br />常勤を募集しております</p>
+        <a href="#position-nurse">詳細を見る →</a>
+      </div>
+      <div class="positions-summary-card">
+        <div class="positions-summary-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M3 3h18v18H3z"/>
+            <path d="M8 12h8"/><path d="M12 8v8"/>
+          </svg>
+        </div>
+        <h3>臨床検査技師 / 診療放射線技師</h3>
+        <p>採血・検査やCT検査などを担当<br />常勤・パートを募集しております</p>
+        <a href="#position-tech">詳細を見る →</a>
+      </div>
+      <div class="positions-summary-card">
+        <div class="positions-summary-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="4" width="18" height="16" rx="2"/>
+            <path d="M3 10h18"/><path d="M8 14h4"/><path d="M8 17h8"/>
+          </svg>
+        </div>
+        <h3>看護助手 / 受付 / 医療事務</h3>
+        <p>検査補助・受付会計・カルテ入力など<br />常勤・パートを募集しております</p>
+        <a href="#position-office">詳細を見る →</a>
+      </div>
+    </div>
+
+    <!-- Common Terms -->
+    <div class="positions-common fade-in">
+      <div class="positions-common-head">全職種 共通条件</div>
+      <table class="position-table">
+        <tr>
+          <th>勤務時間</th>
+          <td>
+            <ul>
+              <li>月〜金 9:30〜13:30 / 14:30〜19:30 のうちでシフト制</li>
+              <li>週35時間勤務、週休2日(週休3日も応相談)</li>
+              <li>休憩あり(実働 8時間)</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>休日・休暇</th>
+          <td>週休2日 / 年末年始休暇 / 夏季休暇 / 有給休暇</td>
+        </tr>
+        <tr>
+          <th>昇給・賞与</th>
+          <td>昇給:あり / 賞与:年2回</td>
+        </tr>
+        <tr>
+          <th>待遇・福利厚生</th>
+          <td>
+            <ul>
+              <li>社会保障完備(雇用保険・労災保険・健康保険・厚生年金)</li>
+              <li>交通費支給</li>
+              <li>制服貸与</li>
+              <li>休憩室あり</li>
+              <li>試用期間 6ヶ月(期間中の給与は下記 各職種欄を参照)</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 看護師 -->
+    <div class="position-card fade-in" id="position-nurse">
+      <div class="position-head">
+        <h3>看護師</h3>
+        <div class="position-badges">
+          <span class="badge-type">常勤</span>
+          <span class="position-badge">募集中</span>
+        </div>
+      </div>
+      <table class="position-table">
+        <tr>
+          <th>仕事内容</th>
+          <td>
+            <ul>
+              <li>外来診療の補助</li>
+              <li>処置・検査の介助(聴力検査・鼻咽腔ファイバーなど)</li>
+              <li>採血・点滴・ネブライザー対応</li>
+              <li>予防接種・アレルギー検査の補助</li>
+              <li>器具の洗浄・滅菌、院内感染対策</li>
+              <li>患者様への説明・案内</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>応募資格</th>
+          <td>
+            <ul>
+              <li>正看護師免許をお持ちの方</li>
+              <li>ブランクのある方・子育て中の方も歓迎</li>
+              <li>耳鼻咽喉科未経験の方も、丁寧に指導いたします</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>雇用形態</th>
+          <td>常勤</td>
+        </tr>
+        <tr>
+          <th>給与</th>
+          <td>
+            <ul>
+              <li>試用期間(6ヶ月)中:月給 290,000円</li>
+              <li>本採用後:詳細はお問い合わせください</li>
+              <li>*固定残業代10時間分を含む</li>
+              <li>昇給年1回 / 賞与年2回</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 臨床検査技師 / 診療放射線技師 -->
+    <div class="position-card fade-in" id="position-tech">
+      <div class="position-head">
+        <h3>臨床検査技師 / 診療放射線技師</h3>
+        <div class="position-badges">
+          <span class="badge-type">常勤</span>
+          <span class="badge-type">パート</span>
+          <span class="position-badge">募集中</span>
+        </div>
+      </div>
+      <table class="position-table">
+        <tr>
+          <th>仕事内容</th>
+          <td>
+            <ul>
+              <li><strong>臨床検査技師:</strong> 採血などの検査</li>
+              <li><strong>診療放射線技師:</strong> CT検査・一般検査・診療介助業務</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>応募資格</th>
+          <td>
+            <ul>
+              <li>臨床検査技師 または 診療放射線技師 の国家資格をお持ちの方</li>
+              <li>ブランクのある方も歓迎</li>
+              <li>経験者優遇、未経験者も応相談</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>雇用形態</th>
+          <td>常勤 / パート(非常勤)</td>
+        </tr>
+        <tr>
+          <th>給与</th>
+          <td>
+            <ul>
+              <li>常勤:月給 270,000円〜(経験・能力による)</li>
+              <li>パート:時給 1,700円〜</li>
+              <li>試用期間(6ヶ月)中:月給 260,000円</li>
+              <li>*固定残業代10時間分を含む</li>
+              <li>昇給年1回 / 賞与年2回(常勤)</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- 看護助手 / 受付 / 医療事務 -->
+    <div class="position-card fade-in" id="position-office">
+      <div class="position-head">
+        <h3>看護助手 / 受付 / 医療事務</h3>
+        <div class="position-badges">
+          <span class="badge-type">常勤</span>
+          <span class="badge-type">パート</span>
+          <span class="position-badge">募集中</span>
+        </div>
+      </div>
+      <table class="position-table">
+        <tr>
+          <th>仕事内容</th>
+          <td>
+            <ul>
+              <li>聴力検査などの検査全般</li>
+              <li>看護補助業務</li>
+              <li>受付・会計業務</li>
+              <li>カルテ入力の補助</li>
+              <li>電話対応・予約管理、院内の環境整備 など</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>応募資格</th>
+          <td>
+            <ul>
+              <li>医療事務の資格・経験がある方歓迎</li>
+              <li>未経験の方もやる気重視で採用(ブランクのある方も歓迎)</li>
+              <li>基本的なPC操作(Word/Excel/メール)ができる方</li>
+              <li>接遇を大切にできる方</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <th>雇用形態</th>
+          <td>常勤 / パート(非常勤)</td>
+        </tr>
+        <tr>
+          <th>給与</th>
+          <td>
+            <ul>
+              <li>常勤:月給 215,000円〜342,000円(経験・能力による)</li>
+              <li>パート:時給 1,300円〜</li>
+              <li>試用期間(6ヶ月)中:月給 230,000円</li>
+              <li>*固定残業代10時間分を含む</li>
+              <li>昇給:あり(10年目まで定期昇給) / 賞与:年2回(常勤)</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- Flow -->
+<section class="flow">
+  <div class="container">
+    <div class="section-head fade-in">
+      <p class="section-label">Flow</p>
+      <h2 class="section-title">応募の流れ</h2>
+      <div class="section-title-bar"></div>
+    </div>
+    <div class="flow-list">
+      <div class="flow-item fade-in">
+        <div class="flow-step"><span class="step-label">Step</span><span class="step-num">01</span></div>
+        <div class="flow-content">
+          <h3>お問い合わせ</h3>
+          <p>お電話またはメールにて「求人の件で」とお伝えください。担当者より折り返しご連絡させていただきます。</p>
+        </div>
+      </div>
+      <div class="flow-item fade-in">
+        <div class="flow-step"><span class="step-label">Step</span><span class="step-num">02</span></div>
+        <div class="flow-content">
+          <h3>書類選考</h3>
+          <p>履歴書・職務経歴書をご郵送またはメールでお送りください。書類確認後、面接日時を調整いたします。</p>
+        </div>
+      </div>
+      <div class="flow-item fade-in">
+        <div class="flow-step"><span class="step-label">Step</span><span class="step-num">03</span></div>
+        <div class="flow-content">
+          <h3>面接・院内見学</h3>
+          <p>院長との面接を行います。実際の職場もご覧いただけますので、疑問点はその場で何でもお聞きください。</p>
+        </div>
+      </div>
+      <div class="flow-item fade-in">
+        <div class="flow-step"><span class="step-label">Step</span><span class="step-num">04</span></div>
+        <div class="flow-content">
+          <h3>採用・入職</h3>
+          <p>合否は1週間以内にご連絡いたします。入職日はご都合に合わせて調整可能です。ブランクのある方も、丁寧に指導いたしますのでご安心ください。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Benefit -->
+<section class="benefit">
+  <div class="container">
+    <div class="benefit-card fade-in">
+      <p class="benefit-label">Special Offer</p>
+      <h3>採用ページからのお申込み特典</h3>
+      <ul>
+        <li>他の応募者様より優先的に面接日程を調整いたします</li>
+        <li>入職後の研修・スキルアップ支援を優遇いたします</li>
+        <li>(プレースホルダ) 入職◯ヶ月後に、研修参加権利をプレゼント</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Apply Form (Google Form) -->
+<section class="apply-form" id="apply-form">
+  <div class="container">
+    <div class="section-head fade-in">
+      <p class="section-label">Apply</p>
+      <h2 class="section-title">応募フォーム</h2>
+      <div class="section-title-bar"></div>
+    </div>
+    <p class="apply-form-intro fade-in">
+      下記フォームよりご応募・ご質問をお寄せください。<br />
+      担当者より2〜3営業日以内にご連絡いたします。
+    </p>
+    <div class="apply-form-wrap fade-in">
+      <!--
+        ▼ Googleフォーム埋め込み手順
+        1. Googleフォームを開く
+        2. 右上「送信」→「< >」アイコン（埋め込みHTML）
+        3. 表示される <iframe src="..."> の src URL をコピー
+        4. 下記 GOOGLE_FORM_EMBED_URL を そのURLに置き換える
+        例: https://docs.google.com/forms/d/e/XXXXXXXXXXXX/viewform?embedded=true
+      -->
+      <div class="apply-form-placeholder">
+        <strong>ここにGoogleフォームを埋め込みます</strong>
+        下記の <code>iframe</code> タグの <code>src</code> に、Googleフォームの埋め込みURLを設定してください。
+      </div>
+      <!-- 設定後はこの iframe を有効化してください
+      <iframe
+        src="GOOGLE_FORM_EMBED_URL"
+        width="100%"
+        height="1100"
+        frameborder="0"
+        marginheight="0"
+        marginwidth="0"
+        title="応募フォーム"
+        loading="lazy">
+        読み込んでいます…
+      </iframe>
+      -->
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact">
+  <div class="container">
+    <h2>ご応募・お問い合わせ</h2>
+    <p>見学のみのご応募も歓迎しております。<br />まずはお気軽にご連絡ください。</p>
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="label">Tel</div>
+        <a href="tel:0335678733" class="value">03-3567-8733</a>
+        <p class="note">受付時間 / 平日 10:00 - 18:00</p>
+      </div>
+      <div class="contact-card">
+        <div class="label">Email</div>
+        <a href="mailto:recruit@example.com" class="value" style="font-size: 18px;">recruit@example.com</a>
+        <p class="note">24時間受付中</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">岩佐耳鼻咽喉科<span>IWASA ENT CLINIC</span></div>
+        <p class="footer-address">〒104-0031 東京都中央区京橋2丁目12-4 光和ビル 2階<br />TEL: 03-3567-8733</p>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="clinic.html">クリニック紹介</a></li>
+        <li><a href="index.html#services">診療案内</a></li>
+        <li><a href="fees.html">費用について</a></li>
+        <li><a href="notices.html">書面掲示について</a></li>
+        <li><a href="staff.html">スタッフ紹介</a></li>
+        <li><a href="recruit.html">求人情報</a></li>
+        <li><a href="faq.html">よくある質問</a></li>
+        <li><a href="index.html#info">アクセス</a></li>
+      </ul>
+    </div>
+    <p class="copyright">© 2026 Iwasa ENT Clinic. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const nav = document.getElementById('nav');
+  menuBtn.addEventListener('click', () => {
+    menuBtn.classList.toggle('active');
+    nav.classList.toggle('open');
+  });
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      menuBtn.classList.remove('active');
+      nav.classList.remove('open');
+    });
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+<!-- Mobile Booking Bar (mobile only) -->
+<div class="mobile-book-bar">
+  <a href="tel:0335678733" class="mb-tel">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+    電話予約
+  </a>
+  <a href="#" class="mb-web">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+    WEB予約
+  </a>
+</div>
+
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/245976356.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+</body>
+</html>

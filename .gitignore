@@ -1,0 +1,22 @@
+# バックアップファイル（Claude編集時の自動バックアップ）
+*.bak
+*.nav-bak
+*.tel-bak
+*.preenhance.bak
+*.tmp_write
+
+# OS ファイル
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# エディタ
+.vscode/
+.idea/
+*.swp
+*~
+
+# Node / ビルド成果物（将来のため）
+node_modules/
+dist/
+build/
