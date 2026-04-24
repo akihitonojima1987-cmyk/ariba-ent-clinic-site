@@ -8,16 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet" />
-<script>
-  // オープニング：同一セッション内は初回のみ表示
-  try {
-    if (sessionStorage.getItem('openingShown')) {
-      document.documentElement.classList.add('opening-disabled');
-    } else {
-      sessionStorage.setItem('openingShown', '1');
-    }
-  } catch (e) { /* storage無効時は毎回表示 */ }
-</script>
+<!-- オープニング：毎回表示 -->
 <style>
   /* ====== オープニングスプラッシュ ====== */
   .opening-splash {
