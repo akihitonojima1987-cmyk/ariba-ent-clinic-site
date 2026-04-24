@@ -8,7 +8,76 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet" />
+<script>
+  // オープニング：同一セッション内は初回のみ表示
+  try {
+    if (sessionStorage.getItem('openingShown')) {
+      document.documentElement.classList.add('opening-disabled');
+    } else {
+      sessionStorage.setItem('openingShown', '1');
+    }
+  } catch (e) { /* storage無効時は毎回表示 */ }
+</script>
 <style>
+  /* ====== オープニングスプラッシュ ====== */
+  .opening-splash {
+    position: fixed;
+    inset: 0;
+    background: #ffffff;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: openingFadeOut 0.8s ease 2.4s forwards;
+  }
+  .opening-text {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 400;
+    font-size: 64px;
+    color: var(--color-primary);
+    letter-spacing: 0.2em;
+    display: flex;
+    position: relative;
+  }
+  .opening-char {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: openingCharAppear 0.7s ease forwards;
+    display: inline-block;
+  }
+  .opening-space { display: inline-block; width: 0.4em; }
+  .opening-underline {
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    width: 0;
+    height: 1px;
+    background: var(--color-primary-light);
+    transform: translateX(-50%);
+    animation: openingUnderlineGrow 1s ease 1.2s forwards;
+  }
+  .opening-text .opening-char:nth-of-type(1) { animation-delay: 0.3s; }
+  .opening-text .opening-char:nth-of-type(2) { animation-delay: 0.4s; }
+  .opening-text .opening-char:nth-of-type(3) { animation-delay: 0.5s; }
+  .opening-text .opening-char:nth-of-type(4) { animation-delay: 0.6s; }
+  .opening-text .opening-char:nth-of-type(5) { animation-delay: 0.7s; }
+  .opening-text .opening-char:nth-of-type(6) { animation-delay: 0.85s; }
+  .opening-text .opening-char:nth-of-type(7) { animation-delay: 0.95s; }
+  .opening-text .opening-char:nth-of-type(8) { animation-delay: 1.05s; }
+  @keyframes openingCharAppear { to { opacity: 1; transform: translateY(0); } }
+  @keyframes openingUnderlineGrow { to { width: 100%; } }
+  @keyframes openingFadeOut { to { opacity: 0; visibility: hidden; } }
+  .opening-disabled .opening-splash { display: none !important; }
+  .opening-hidden { display: none !important; }
+  @media (max-width: 600px) {
+    .opening-text { font-size: 40px; letter-spacing: 0.18em; }
+    .opening-underline { bottom: -10px; }
+  }
+  @media (max-width: 380px) {
+    .opening-text { font-size: 32px; letter-spacing: 0.15em; }
+  }
+
+
   :root {
     --color-primary: #1f5f8b;
     --color-primary-light: #4a8bb8;
@@ -270,6 +339,14 @@
 </style>
 </head>
 <body>
+<!-- オープニングスプラッシュ -->
+<div class="opening-splash" id="opening-splash">
+  <div class="opening-text">
+    <span class="opening-char">I</span><span class="opening-char">W</span><span class="opening-char">A</span><span class="opening-char">S</span><span class="opening-char">A</span><span class="opening-space"></span><span class="opening-char">E</span><span class="opening-char">N</span><span class="opening-char">T</span>
+    <span class="opening-underline"></span>
+  </div>
+</div>
+
 
 <!-- Header -->
 <header class="header">
@@ -587,5 +664,16 @@
 <script type="text/javascript" id="hs-script-loader" async defer src="//js-na2.hs-scripts.com/245976356.js"></script>
 <!-- End of HubSpot Embed Code -->
 
+<script>
+  (function() {
+    var s = document.getElementById('opening-splash');
+    if (!s) return;
+    s.addEventListener('animationend', function(e) {
+      if (e.animationName === 'openingFadeOut') {
+        s.classList.add('opening-hidden');
+      }
+    });
+  })();
+</script>
 </body>
 </html>
