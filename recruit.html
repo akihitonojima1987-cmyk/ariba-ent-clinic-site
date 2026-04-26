@@ -365,6 +365,35 @@
   .apply-form-placeholder strong { display: block; color: var(--color-primary); font-size: 16px; margin-bottom: 8px; letter-spacing: 0.05em; }
   .apply-form-placeholder code { display: inline-block; background: #fff; padding: 4px 10px; border-radius: 3px; border: 1px solid var(--color-border); font-size: 12px; color: var(--color-text); margin-top: 6px; }
 
+  /* Apply CTA Button */
+  .apply-cta-wrap { text-align: center; margin: 0 auto 48px; }
+  .apply-cta-btn { display: inline-flex; align-items: center; gap: 14px; padding: 20px 64px; background: var(--color-primary); color: #fff; border-radius: 999px; font-size: 18px; font-weight: 500; letter-spacing: 0.1em; box-shadow: 0 8px 20px rgba(31, 95, 139, 0.25); transition: var(--transition); }
+  .apply-cta-btn:hover { background: var(--color-primary-light); transform: translateY(-2px); opacity: 1; box-shadow: 0 12px 28px rgba(31, 95, 139, 0.35); }
+  .apply-cta-btn .cta-arrow { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; border: 1.5px solid #fff; font-size: 14px; line-height: 1; padding-left: 2px; }
+  .apply-cta-divider { max-width: 760px; margin: 0 auto 32px; text-align: center; color: var(--color-text-light); font-size: 13px; letter-spacing: 0.1em; position: relative; }
+  .apply-cta-divider::before, .apply-cta-divider::after { content: ""; display: inline-block; width: 80px; height: 1px; background: var(--color-border); vertical-align: middle; margin: 0 16px; }
+  @media (max-width: 600px) {
+    .apply-cta-btn { padding: 16px 36px; font-size: 16px; }
+  }
+
+  /* Daily Flow */
+  .daily-flow { padding: 96px 0; background: #fff; }
+  .daily-flow-list { max-width: 800px; margin: 56px auto 0; padding: 0 24px; list-style: none; position: relative; }
+  .daily-flow-list::before { content: ""; position: absolute; left: 47px; top: 24px; bottom: 24px; width: 2px; background: linear-gradient(to bottom, var(--color-primary-light), var(--color-border)); }
+  .daily-flow-item { display: flex; gap: 28px; padding: 18px 0; position: relative; align-items: flex-start; }
+  .daily-flow-num { flex-shrink: 0; width: 56px; height: 56px; border-radius: 50%; background: var(--color-primary); color: #fff; display: flex; align-items: center; justify-content: center; font-family: "Cormorant Garamond", serif; font-size: 22px; font-weight: 500; letter-spacing: 0.05em; box-shadow: 0 4px 12px rgba(31, 95, 139, 0.2); position: relative; z-index: 1; }
+  .daily-flow-body { flex: 1; padding-top: 6px; }
+  .daily-flow-time { font-size: 18px; font-weight: 500; color: var(--color-primary); margin-bottom: 8px; letter-spacing: 0.04em; }
+  .daily-flow-desc { font-size: 14px; color: var(--color-text-light); line-height: 1.9; }
+  @media (max-width: 600px) {
+    .daily-flow { padding: 64px 0; }
+    .daily-flow-list { margin-top: 40px; }
+    .daily-flow-list::before { left: 35px; }
+    .daily-flow-item { gap: 18px; padding: 12px 0; }
+    .daily-flow-num { width: 40px; height: 40px; font-size: 17px; }
+    .daily-flow-time { font-size: 16px; }
+  }
+
 </style>
 <script type="application/ld+json">
 {
@@ -820,6 +849,55 @@
   </div>
 </section>
 
+<!-- Daily Flow -->
+<section class="daily-flow">
+  <div class="container">
+    <div class="section-head fade-in">
+      <p class="section-label">Daily Flow</p>
+      <h2 class="section-title">当院の1日の流れ</h2>
+      <div class="section-title-bar"></div>
+    </div>
+    <ol class="daily-flow-list fade-in">
+      <li class="daily-flow-item">
+        <span class="daily-flow-num">1</span>
+        <div class="daily-flow-body">
+          <div class="daily-flow-time">9:30　出勤と朝の準備</div>
+          <p class="daily-flow-desc">出勤後、清掃、患者さんの予約確認、朝礼などを行います。</p>
+        </div>
+      </li>
+      <li class="daily-flow-item">
+        <span class="daily-flow-num">2</span>
+        <div class="daily-flow-body">
+          <div class="daily-flow-time">10:00〜12:30　午前の診療</div>
+          <p class="daily-flow-desc">受付、会計、シュライバー(医師の横でカルテを書く)、診療補助、バックヤード業務など。</p>
+        </div>
+      </li>
+      <li class="daily-flow-item">
+        <span class="daily-flow-num">3</span>
+        <div class="daily-flow-body">
+          <div class="daily-flow-time">13:30〜14:45　休憩</div>
+          <p class="daily-flow-desc">午前の業務終了後、お昼休憩をとります。</p>
+        </div>
+      </li>
+      <li class="daily-flow-item">
+        <span class="daily-flow-num">4</span>
+        <div class="daily-flow-body">
+          <div class="daily-flow-time">15:00〜17:30　午後の診療</div>
+          <p class="daily-flow-desc">午前同様、受付・診療補助・バックヤード業務などに従事します。</p>
+        </div>
+      </li>
+      <li class="daily-flow-item">
+        <span class="daily-flow-num">5</span>
+        <div class="daily-flow-body">
+          <div class="daily-flow-time">17:30〜　締め作業・退勤</div>
+          <p class="daily-flow-desc">診察終了後、片付けや翌日の準備を行います(18:45頃に退勤となることが多いです)。</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+
 <!-- Flow -->
 <section class="flow">
   <div class="container">
@@ -891,6 +969,13 @@
       下記フォームよりご応募・ご質問をお寄せください。<br />
       担当者より2〜3営業日以内にご連絡いたします。
     </p>
+    <div class="apply-cta-wrap fade-in">
+      <a class="apply-cta-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfdhXF25ROPSN2HBrK2ZaeGXTXdVBL0FDswUD9-gzVjWXk_ew/viewform" target="_blank" rel="noopener">
+        申し込みフォームへ
+        <span class="cta-arrow">›</span>
+      </a>
+    </div>
+    <p class="apply-cta-divider fade-in">または下のフォームから直接ご入力ください</p>
     <div class="apply-form-wrap fade-in">
       <iframe
         src="https://docs.google.com/forms/d/e/1FAIpQLSfdhXF25ROPSN2HBrK2ZaeGXTXdVBL0FDswUD9-gzVjWXk_ew/viewform?embedded=true"
