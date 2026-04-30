@@ -203,7 +203,24 @@
     .fee-category-head { padding: 14px 20px; font-size: 14px; }
     .fee-table td { padding: 12px 18px; font-size: 13px; }
     .fee-table td:last-child { font-size: 14px; min-width: 100px; }
-    .symptom-table th, .symptom-table td { padding: 12px 14px; font-size: 12px; }
+    /* 症状別概算費用テーブル: モバイルではカード型に変換 */
+    .symptom-table-wrap { overflow-x: visible; background: transparent; border: none; border-radius: 0; }
+    .symptom-table { min-width: 0; display: block; }
+    .symptom-table thead { display: none; }
+    .symptom-table tbody { display: block; }
+    .symptom-table tr { display: block; background: #fff; border: 1px solid var(--color-border); border-radius: 8px; padding: 14px 16px; margin-bottom: 12px; }
+    .symptom-table tr:nth-child(even) { background: #fff; }
+    .symptom-table td { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 8px 0; border-bottom: 1px dashed var(--color-border); font-size: 13px; text-align: left; }
+    .symptom-table td.center { text-align: right; }
+    .symptom-table td:last-child { border-bottom: none; }
+    .symptom-table td.symptom-name { display: block; font-size: 15px; font-weight: 500; padding: 0 0 10px; margin-bottom: 4px; border-bottom: 1px solid var(--color-border); }
+    .symptom-table td:nth-of-type(2)::before { content: "算定項目"; }
+    .symptom-table td:nth-of-type(3)::before { content: "点数（目安）"; }
+    .symptom-table td:nth-of-type(4)::before { content: "自己負担額（3割）"; }
+    .symptom-table td:nth-of-type(2)::before,
+    .symptom-table td:nth-of-type(3)::before,
+    .symptom-table td:nth-of-type(4)::before { flex-shrink: 0; color: var(--color-text-light); font-weight: 500; font-size: 12px; min-width: 7em; }
+    .symptom-table .price { font-size: 16px; }
     .page-hero-tagline { font-size: 38px; letter-spacing: 0.06em; }
     body { padding-bottom: 64px; }
     .mobile-book-bar {
