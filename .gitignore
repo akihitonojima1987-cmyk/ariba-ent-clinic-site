@@ -20,3 +20,6 @@ desktop.ini
 node_modules/
 dist/
 build/
+
+# 引き継ぎドキュメント (個人情報・セッション履歴を含むためローカル保管)
+handover-ariba-ent.md
