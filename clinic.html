@@ -18,16 +18,16 @@
 <title>クリニック紹介 | 岩佐耳鼻咽喉科</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --color-primary: #1f5f8b;
-    --color-primary-light: #4a8bb8;
-    --color-accent: #e9f2f8;
+    --color-primary: #4a8e3a;
+    --color-primary-light: #6fb858;
+    --color-accent: #e8f3e0;
     --color-text: #2b2b2b;
     --color-text-light: #6b6b6b;
     --color-bg: #ffffff;
-    --color-bg-soft: #f7f9fb;
+    --color-bg-soft: #f5f8f1;
     --color-border: #e5e9ed;
     --max-width: 1200px;
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -54,7 +54,7 @@
   .nav-list .has-submenu { position: relative; }
   .nav-list .submenu-toggle::before { content: "▾"; font-size: 10px; margin-left: 6px; opacity: 0.55; display: inline-block; vertical-align: middle; transition: transform 0.2s; float: right; margin-top: 1px; }
   .has-submenu:hover .submenu-toggle::before { transform: rotate(-180deg); opacity: 1; }
-  .submenu { position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%); background: #fff; list-style: none; padding: 10px 0; min-width: 200px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); border: 1px solid var(--color-border); border-radius: 4px; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease, top 0.2s ease; z-index: 101; }
+  .submenu { position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%); background: #fff; list-style: none; padding: 10px 0; min-width: 200px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); border: 1px solid var(--color-border); border-radius: 0; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease, top 0.2s ease; z-index: 101; }
   .submenu::before { content: ""; position: absolute; top: -7px; left: 50%; transform: translateX(-50%); border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 7px solid #fff; }
   .has-submenu:hover .submenu, .has-submenu:focus-within .submenu { opacity: 1; visibility: visible; top: 100%; }
   .submenu li { display: block; }
@@ -62,7 +62,7 @@
   .submenu a::after { display: none !important; }
   .submenu a:hover { background: #f4f7fa; color: var(--color-primary); }
   .submenu a.active { color: var(--color-primary); font-weight: 500; }
-  .nav-tel { display: flex; align-items: center; gap: 6px; padding: 10px 20px; background: var(--color-primary); color: #fff; border-radius: 30px; font-size: 13px; font-weight: 500; letter-spacing: 0.05em; }
+  .nav-tel { display: flex; align-items: center; gap: 6px; padding: 10px 20px; background: var(--color-primary); color: #fff; border-radius: 0; font-size: 13px; font-weight: 500; letter-spacing: 0.05em; }
   .nav-tel:hover { background: var(--color-primary-light); opacity: 1; }
   .menu-btn { display: none; width: 32px; height: 32px; background: none; border: none; cursor: pointer; position: relative; }
   .menu-btn span { display: block; width: 24px; height: 1px; background: var(--color-text); position: absolute; left: 4px; transition: var(--transition); }
@@ -74,10 +74,10 @@
   .menu-btn.active span:nth-child(3) { top: 16px; transform: rotate(-45deg); }
 
   /* Page Hero */
-  .page-hero { height: 40vh; min-height: 320px; max-height: 440px; padding-top: 72px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #e9f2f8 0%, #f7f9fb 100%); position: relative; overflow: hidden; }
-  .page-hero::before { content: ""; position: absolute; top: -20%; right: -10%; width: 50%; height: 80%; background: radial-gradient(circle, rgba(74, 139, 184, 0.12) 0%, transparent 60%); border-radius: 50%; }
+  .page-hero { height: 40vh; min-height: 320px; max-height: 440px; padding-top: 72px; display: flex; align-items: center; justify-content: center; background: #e8f3e0; position: relative; overflow: hidden; }
+  .page-hero::before { content: ""; position: absolute; top: -20%; right: -10%; width: 50%; height: 80%; background: radial-gradient(circle, rgba(74, 139, 184, 0.12) 0%, transparent 60%); border-radius: 0; }
   .page-hero-inner { text-align: center; position: relative; z-index: 1; }
-  .page-hero-label { font-family: "Cormorant Garamond", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 12px; text-transform: uppercase; }
+  .page-hero-label { font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 12px; text-transform: uppercase; }
   .page-hero-title { font-size: clamp(28px, 4vw, 42px); font-weight: 500; letter-spacing: 0.1em; color: var(--color-text); }
 
   /* Breadcrumb */
@@ -88,7 +88,7 @@
   /* Section common */
   section { padding: 100px 0; }
   .section-head { text-align: center; margin-bottom: 72px; }
-  .section-label { font-family: "Cormorant Garamond", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 12px; text-transform: uppercase; }
+  .section-label { font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 12px; text-transform: uppercase; }
   .section-title { font-size: clamp(26px, 3.5vw, 36px); font-weight: 500; letter-spacing: 0.1em; line-height: 1.5; }
   .section-title-bar { width: 40px; height: 1px; background: var(--color-primary); margin: 24px auto 0; }
 
@@ -103,7 +103,7 @@
     color: var(--color-primary);
     margin-bottom: 48px;
   }
-  .philosophy-headline em { font-style: normal; display: block; font-family: "Cormorant Garamond", serif; font-size: 0.6em; letter-spacing: 0.3em; color: var(--color-primary-light); margin-top: 12px; text-transform: uppercase; }
+  .philosophy-headline em { font-style: normal; display: block; font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif; font-size: 0.6em; letter-spacing: 0.3em; color: var(--color-primary-light); margin-top: 12px; text-transform: uppercase; }
   .philosophy-text { font-size: 15px; color: var(--color-text-light); line-height: 2.2; text-align: left; }
   .philosophy-text p { margin-bottom: 20px; }
   .philosophy-text p:last-child { margin-bottom: 0; }
@@ -112,21 +112,21 @@
   /* Pillars */
   .pillars { background: var(--color-bg-soft); }
   .pillars-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-  .pillar-card { background: #fff; padding: 48px 32px; text-align: center; border-radius: 8px; transition: var(--transition); border: 1px solid transparent; }
-  .pillar-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(31, 95, 139, 0.08); border-color: var(--color-border); }
-  .pillar-icon { width: 64px; height: 64px; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-primary); border-radius: 50%; color: var(--color-primary); }
-  .pillar-num { font-family: "Cormorant Garamond", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); text-transform: uppercase; margin-bottom: 8px; }
+  .pillar-card { background: #fff; padding: 48px 32px; text-align: center; border-radius: 0; transition: var(--transition); border: 1px solid transparent; }
+  .pillar-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(74, 142, 58, 0.08); border-color: var(--color-border); }
+  .pillar-icon { width: 64px; height: 64px; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; border: 1px solid var(--color-primary); border-radius: 0; color: var(--color-primary); }
+  .pillar-num { font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); text-transform: uppercase; margin-bottom: 8px; }
   .pillar-card h3 { font-size: 20px; font-weight: 500; margin-bottom: 16px; letter-spacing: 0.05em; }
   .pillar-card p { font-size: 14px; color: var(--color-text-light); line-height: 2; }
 
   /* Gallery */
   .gallery { background: var(--color-bg); }
   .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
-  .gallery-item { background: #fff; border-radius: 8px; overflow: hidden; border: 1px solid var(--color-border); transition: var(--transition); }
-  .gallery-item:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(31, 95, 139, 0.08); }
+  .gallery-item { background: #fff; border-radius: 0; overflow: hidden; border: 1px solid var(--color-border); transition: var(--transition); }
+  .gallery-item:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(74, 142, 58, 0.08); }
   .gallery-image {
     aspect-ratio: 4 / 3;
-    background: linear-gradient(135deg, #e9f2f8 0%, #c5dceb 100%);
+    background: #e8f3e0;
     position: relative;
     overflow: hidden;
   }
@@ -135,7 +135,7 @@
     position: absolute;
     inset: 16px;
     border: 1px solid rgba(255, 255, 255, 0.5);
-    border-radius: 4px;
+    border-radius: 0;
   }
   .gallery-image .gallery-icon { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: rgba(31, 95, 139, 0.35); }
   .gallery-body { padding: 20px 24px; }
@@ -145,8 +145,8 @@
   /* Equipment */
   .equipment { background: var(--color-bg-soft); }
   .equipment-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 960px; margin: 0 auto; }
-  .equipment-card { background: #fff; padding: 28px 32px; border-radius: 8px; border: 1px solid var(--color-border); display: flex; gap: 20px; align-items: flex-start; }
-  .equipment-card .equipment-icon { flex-shrink: 0; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; color: var(--color-primary); background: var(--color-accent); border-radius: 50%; }
+  .equipment-card { background: #fff; padding: 28px 32px; border-radius: 0; border: 1px solid var(--color-border); display: flex; gap: 20px; align-items: flex-start; }
+  .equipment-card .equipment-icon { flex-shrink: 0; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; color: var(--color-primary); background: var(--color-accent); border-radius: 0; }
   .equipment-card h4 { font-size: 16px; font-weight: 500; margin-bottom: 6px; letter-spacing: 0.05em; }
   .equipment-card p { font-size: 13px; color: var(--color-text-light); line-height: 1.8; }
 
@@ -154,19 +154,19 @@
   .affiliates { background: var(--color-bg); }
   .affiliates-intro { max-width: 840px; margin: 0 auto 56px; text-align: center; font-size: 15px; color: var(--color-text-light); line-height: 2; }
   .affiliates-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 960px; margin: 0 auto; }
-  .affiliate-card { background: #fff; padding: 36px 32px; border-radius: 8px; border: 1px solid var(--color-border); transition: var(--transition); }
-  .affiliate-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(31, 95, 139, 0.08); }
-  .affiliate-icon { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; color: var(--color-primary); background: var(--color-accent); border-radius: 50%; margin-bottom: 20px; }
+  .affiliate-card { background: #fff; padding: 36px 32px; border-radius: 0; border: 1px solid var(--color-border); transition: var(--transition); }
+  .affiliate-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(74, 142, 58, 0.08); }
+  .affiliate-icon { width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; color: var(--color-primary); background: var(--color-accent); border-radius: 0; margin-bottom: 20px; }
   .affiliate-card h4 { font-size: 18px; font-weight: 500; margin-bottom: 4px; letter-spacing: 0.05em; color: var(--color-text); line-height: 1.5; }
-  .affiliate-sub { font-size: 12px; color: var(--color-primary); letter-spacing: 0.08em; margin-bottom: 16px; font-family: "Cormorant Garamond", serif; }
+  .affiliate-sub { font-size: 12px; color: var(--color-primary); letter-spacing: 0.08em; margin-bottom: 16px; font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif; }
   .affiliate-card p { font-size: 13px; color: var(--color-text-light); line-height: 2; }
   .affiliates-note { max-width: 840px; margin: 48px auto 0; font-size: 12px; color: var(--color-text-light); text-align: center; line-height: 1.9; }
 
   /* Access Brief */
-  .access-brief { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%); color: #fff; text-align: center; padding: 96px 0; }
+  .access-brief { background: var(--color-primary); color: #fff; text-align: center; padding: 96px 0; }
   .access-brief h2 { font-size: clamp(24px, 3vw, 32px); font-weight: 500; letter-spacing: 0.1em; margin-bottom: 16px; }
   .access-brief p { font-size: 15px; opacity: 0.9; margin-bottom: 40px; line-height: 2; }
-  .access-brief .btn-ghost { display: inline-flex; align-items: center; gap: 8px; padding: 16px 36px; border-radius: 30px; font-size: 14px; font-weight: 500; letter-spacing: 0.1em; border: 1px solid #fff; color: #fff; transition: var(--transition); }
+  .access-brief .btn-ghost { display: inline-flex; align-items: center; gap: 8px; padding: 16px 36px; border-radius: 0; font-size: 14px; font-weight: 500; letter-spacing: 0.1em; border: 1px solid #fff; color: #fff; transition: var(--transition); }
   .access-brief .btn-ghost:hover { background: #fff; color: var(--color-primary); opacity: 1; }
 
   /* Footer */
@@ -178,7 +178,7 @@
   .footer-nav { display: flex; gap: 32px; list-style: none; flex-wrap: wrap; }
   .footer-nav a { font-size: 13px; opacity: 0.7; letter-spacing: 0.05em; }
   .footer-nav a:hover { opacity: 1; }
-  .copyright { text-align: center; padding-top: 32px; font-size: 12px; opacity: 0.5; letter-spacing: 0.1em; font-family: "Cormorant Garamond", serif; }
+  .copyright { text-align: center; padding-top: 32px; font-size: 12px; opacity: 0.5; letter-spacing: 0.1em; font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif; }
 
   /* Animations */
   .mobile-book-bar { display: none; }

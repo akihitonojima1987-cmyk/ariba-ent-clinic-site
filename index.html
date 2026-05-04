@@ -18,7 +18,7 @@
 <title>岩佐耳鼻咽喉科 | 耳・鼻・のどの専門クリニック</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet" />
 <!-- オープニング：同一セッション内は初回のみ表示 -->
 <script>
   try {
@@ -42,7 +42,7 @@
     animation: openingFadeOut 0.8s ease 2.4s forwards;
   }
   .opening-text {
-    font-family: "Cormorant Garamond", serif;
+    font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif;
     font-weight: 400;
     font-size: 64px;
     color: var(--color-primary);
@@ -90,13 +90,13 @@
 
 
   :root {
-    --color-primary: #1f5f8b;
-    --color-primary-light: #4a8bb8;
-    --color-accent: #e9f2f8;
+    --color-primary: #4a8e3a;
+    --color-primary-light: #6fb858;
+    --color-accent: #e8f3e0;
     --color-text: #2b2b2b;
     --color-text-light: #6b6b6b;
     --color-bg: #ffffff;
-    --color-bg-soft: #f7f9fb;
+    --color-bg-soft: #f5f8f1;
     --color-border: #e5e9ed;
     --max-width: 1200px;
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -120,7 +120,7 @@
   .nav-list .has-submenu { position: relative; }
   .nav-list .submenu-toggle::before { content: "▾"; font-size: 10px; margin-left: 6px; opacity: 0.55; display: inline-block; vertical-align: middle; transition: transform 0.2s; float: right; margin-top: 1px; }
   .has-submenu:hover .submenu-toggle::before { transform: rotate(-180deg); opacity: 1; }
-  .submenu { position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%); background: #fff; list-style: none; padding: 10px 0; min-width: 200px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); border: 1px solid var(--color-border); border-radius: 4px; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease, top 0.2s ease; z-index: 101; }
+  .submenu { position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%); background: #fff; list-style: none; padding: 10px 0; min-width: 200px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); border: 1px solid var(--color-border); border-radius: 0; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease, top 0.2s ease; z-index: 101; }
   .submenu::before { content: ""; position: absolute; top: -7px; left: 50%; transform: translateX(-50%); border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 7px solid #fff; }
   .has-submenu:hover .submenu, .has-submenu:focus-within .submenu { opacity: 1; visibility: visible; top: 100%; }
   .submenu li { display: block; }
@@ -128,7 +128,7 @@
   .submenu a::after { display: none !important; }
   .submenu a:hover { background: #f4f7fa; color: var(--color-primary); }
   .submenu a.active { color: var(--color-primary); font-weight: 500; }
-  .nav-tel { display: flex; align-items: center; gap: 6px; padding: 10px 20px; background: var(--color-primary); color: #fff; border-radius: 30px; font-size: 13px; font-weight: 500; letter-spacing: 0.05em; }
+  .nav-tel { display: flex; align-items: center; gap: 6px; padding: 10px 20px; background: var(--color-primary); color: #fff; border-radius: 0; font-size: 13px; font-weight: 500; letter-spacing: 0.05em; }
   .nav-tel:hover { background: var(--color-primary-light); opacity: 1; }
   .menu-btn { display: none; width: 32px; height: 32px; background: none; border: none; cursor: pointer; position: relative; }
   .menu-btn span { display: block; width: 24px; height: 1px; background: var(--color-text); position: absolute; left: 4px; transition: var(--transition); }
@@ -139,23 +139,23 @@
   .menu-btn.active span:nth-child(2) { opacity: 0; }
   .menu-btn.active span:nth-child(3) { top: 16px; transform: rotate(-45deg); }
   .hero { position: relative; height: 100vh; min-height: 600px; max-height: 820px; display: flex; align-items: center; overflow: hidden; padding-top: 72px; }
-  .hero-bg { position: absolute; inset: 0; background: linear-gradient(135deg, #e9f2f8 0%, #f7f9fb 50%, #ffffff 100%); z-index: 0; }
-  .hero-bg::before { content: ""; position: absolute; top: -10%; right: -10%; width: 60%; height: 70%; background: radial-gradient(circle, rgba(74, 139, 184, 0.15) 0%, transparent 60%); border-radius: 50%; }
-  .hero-bg::after { content: ""; position: absolute; bottom: -20%; left: -10%; width: 50%; height: 60%; background: radial-gradient(circle, rgba(31, 95, 139, 0.08) 0%, transparent 60%); border-radius: 50%; }
+  .hero-bg { position: absolute; inset: 0; background: #e8f3e0; z-index: 0; }
+  .hero-bg::before { content: ""; position: absolute; top: -10%; right: -10%; width: 60%; height: 70%; background: radial-gradient(circle, rgba(74, 139, 184, 0.15) 0%, transparent 60%); border-radius: 0; }
+  .hero-bg::after { content: ""; position: absolute; bottom: -20%; left: -10%; width: 50%; height: 60%; background: radial-gradient(circle, rgba(74, 142, 58, 0.08) 0%, transparent 60%); border-radius: 0; }
   .hero-inner { position: relative; z-index: 1; width: 100%; }
-  .hero-sub { font-family: "Cormorant Garamond", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 24px; text-transform: uppercase; }
+  .hero-sub { font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 24px; text-transform: uppercase; }
   .hero-title { font-size: clamp(32px, 5vw, 56px); font-weight: 500; line-height: 1.4; letter-spacing: 0.05em; color: var(--color-text); margin-bottom: 32px; }
   .hero-title em { font-style: normal; color: var(--color-primary); }
   .hero-desc { font-size: 16px; color: var(--color-text-light); max-width: 520px; margin-bottom: 48px; line-height: 2; }
   .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 36px; border-radius: 30px; font-size: 14px; font-weight: 500; letter-spacing: 0.1em; transition: var(--transition); border: 1px solid transparent; cursor: pointer; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 36px; border-radius: 0; font-size: 14px; font-weight: 500; letter-spacing: 0.1em; transition: var(--transition); border: 1px solid transparent; cursor: pointer; }
   .btn-primary { background: var(--color-primary); color: #fff; }
   .btn-primary:hover { background: var(--color-primary-light); transform: translateY(-2px); opacity: 1; box-shadow: 0 10px 20px rgba(31, 95, 139, 0.2); }
   .btn-secondary { background: #fff; color: var(--color-primary); border-color: var(--color-primary); }
   .btn-secondary:hover { background: var(--color-accent); opacity: 1; }
   section { padding: 120px 0; }
   .section-head { text-align: center; margin-bottom: 72px; }
-  .section-label { font-family: "Cormorant Garamond", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 12px; text-transform: uppercase; }
+  .section-label { font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 12px; text-transform: uppercase; }
   .section-title { font-size: clamp(26px, 3.5vw, 36px); font-weight: 500; letter-spacing: 0.1em; line-height: 1.5; }
   .section-title-bar { width: 40px; height: 1px; background: var(--color-primary); margin: 24px auto 0; }
   .about { background: var(--color-bg); }
@@ -163,42 +163,42 @@
   .about-text h3 { font-size: 24px; font-weight: 500; margin-bottom: 24px; letter-spacing: 0.05em; line-height: 1.6; }
   .about-text h3 em { font-style: normal; color: var(--color-primary); }
   .about-text p { color: var(--color-text-light); margin-bottom: 20px; font-size: 15px; line-height: 2; }
-  .about-image { aspect-ratio: 4 / 5; background: linear-gradient(135deg, #e9f2f8 0%, #c5dceb 100%); border-radius: 8px; position: relative; overflow: hidden; }
-  .about-image::after { content: ""; position: absolute; inset: 20px; border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 4px; }
+  .about-image { aspect-ratio: 4 / 5; background: #e8f3e0; border-radius: 0; position: relative; overflow: hidden; }
+  .about-image::after { content: ""; position: absolute; inset: 20px; border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 0; }
   .about-image-icon { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: rgba(31, 95, 139, 0.3); }
   .services { background: var(--color-bg-soft); }
   .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-  .service-card { background: #fff; padding: 48px 32px; border-radius: 8px; text-align: center; transition: var(--transition); border: 1px solid transparent; }
-  .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(31, 95, 139, 0.08); border-color: var(--color-border); }
-  .service-icon { width: 72px; height: 72px; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; background: var(--color-accent); border-radius: 50%; color: var(--color-primary); }
+  .service-card { background: #fff; padding: 48px 32px; border-radius: 0; text-align: center; transition: var(--transition); border: 1px solid transparent; }
+  .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(74, 142, 58, 0.08); border-color: var(--color-border); }
+  .service-icon { width: 72px; height: 72px; margin: 0 auto 24px; display: flex; align-items: center; justify-content: center; background: var(--color-accent); border-radius: 0; color: var(--color-primary); }
   .service-card h3 { font-size: 18px; font-weight: 500; margin-bottom: 16px; letter-spacing: 0.05em; }
   .service-card p { font-size: 14px; color: var(--color-text-light); line-height: 1.9; }
   .services-detail { max-width: 960px; margin: 80px auto 0; }
   .services-sub-title { font-size: 22px; font-weight: 500; color: var(--color-primary); text-align: center; margin-bottom: 32px; letter-spacing: 0.05em; padding-bottom: 16px; position: relative; }
   .services-sub-title::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 32px; height: 1px; background: var(--color-primary-light); }
   .services-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-  .services-detail-block { background: #fff; padding: 32px; border-radius: 8px; }
+  .services-detail-block { background: #fff; padding: 32px; border-radius: 0; }
   .services-detail-block h4 { font-size: 16px; font-weight: 500; margin-bottom: 16px; color: var(--color-primary); padding-bottom: 12px; border-bottom: 1px solid var(--color-border); letter-spacing: 0.05em; }
   .services-detail-block ul { list-style: none; }
   .services-detail-block ul li { padding: 8px 0 8px 18px; position: relative; font-size: 14px; line-height: 1.7; color: var(--color-text); }
   .services-detail-block ul li::before { content: "・"; position: absolute; left: 0; color: var(--color-primary); }
   .services-hours { max-width: 720px; margin: 64px auto 0; }
   .services-contact { max-width: 600px; margin: 64px auto 0; }
-  .services-contact-list { list-style: none; background: #fff; padding: 8px 32px; border-radius: 8px; }
+  .services-contact-list { list-style: none; background: #fff; padding: 8px 32px; border-radius: 0; }
   .services-contact-list li { display: flex; align-items: center; padding: 16px 0; border-bottom: 1px dashed var(--color-border); font-size: 15px; }
   .services-contact-list li:last-child { border-bottom: none; }
   .services-contact-label { width: 80px; flex-shrink: 0; font-weight: 500; color: var(--color-primary); font-size: 13px; letter-spacing: 0.05em; }
-  .services-contact-value { font-family: "Cormorant Garamond", serif; font-size: 18px; letter-spacing: 0.03em; color: var(--color-text); }
+  .services-contact-value { font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif; font-size: 18px; letter-spacing: 0.03em; color: var(--color-text); }
   .services-contact-note { font-size: 12px; color: var(--color-text-light); margin-top: 12px; text-align: center; }
   .features { background: var(--color-bg); }
   .features-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px; max-width: 960px; margin: 0 auto; }
   .feature-item { display: flex; gap: 24px; align-items: flex-start; }
-  .feature-num { flex-shrink: 0; font-family: "Cormorant Garamond", serif; font-size: 48px; font-weight: 400; color: var(--color-primary); line-height: 1; }
+  .feature-num { flex-shrink: 0; font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif; font-size: 48px; font-weight: 400; color: var(--color-primary); line-height: 1; }
   .feature-content h3 { font-size: 18px; font-weight: 500; margin-bottom: 12px; letter-spacing: 0.05em; }
   .feature-content p { font-size: 14px; color: var(--color-text-light); line-height: 1.9; }
   .info { background: var(--color-bg-soft); }
   .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; }
-  .hours-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; }
+  .hours-table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 0; overflow: hidden; }
   .hours-table th, .hours-table td { padding: 16px 12px; text-align: center; font-size: 14px; border-bottom: 1px solid var(--color-border); }
   .hours-table th { background: var(--color-primary); color: #fff; font-weight: 500; letter-spacing: 0.05em; }
   .hours-table td:first-child { background: var(--color-accent); font-weight: 500; color: var(--color-primary); }
@@ -209,11 +209,11 @@
   .info-list li:last-child { border-bottom: none; }
   .info-list .label { width: 120px; flex-shrink: 0; font-weight: 500; color: var(--color-primary); }
   .info-list .value { color: var(--color-text); line-height: 1.8; }
-  .map { margin-top: 40px; aspect-ratio: 16 / 7; background: #e5e9ed; border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--color-text-light); font-size: 14px; letter-spacing: 0.1em; }
-  .cta { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%); color: #fff; text-align: center; padding: 96px 0; }
+  .map { margin-top: 40px; aspect-ratio: 16 / 7; background: #e5e9ed; border-radius: 0; display: flex; align-items: center; justify-content: center; color: var(--color-text-light); font-size: 14px; letter-spacing: 0.1em; }
+  .cta { background: var(--color-primary); color: #fff; text-align: center; padding: 96px 0; }
   .cta h2 { font-size: clamp(24px, 3vw, 32px); font-weight: 500; letter-spacing: 0.1em; margin-bottom: 16px; }
   .cta p { font-size: 15px; opacity: 0.9; margin-bottom: 40px; line-height: 2; }
-  .cta-tel { display: inline-flex; align-items: center; gap: 10px; font-family: "Cormorant Garamond", serif; font-size: clamp(20px, 5.5vw, 40px); font-weight: 500; color: #fff; letter-spacing: 0.05em; margin-bottom: 16px; white-space: nowrap; }
+  .cta-tel { display: inline-flex; align-items: center; gap: 10px; font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif; font-size: clamp(20px, 5.5vw, 40px); font-weight: 500; color: #fff; letter-spacing: 0.05em; margin-bottom: 16px; white-space: nowrap; }
   @media (max-width: 480px) { .cta-tel svg { width: 22px; height: 22px; } }
   .cta-tel:hover { opacity: 1; }
   .cta-hours { font-size: 13px; opacity: 0.85; letter-spacing: 0.1em; }
@@ -225,15 +225,15 @@
   .footer-nav { display: flex; gap: 32px; list-style: none; flex-wrap: wrap; }
   .footer-nav a { font-size: 13px; opacity: 0.7; letter-spacing: 0.05em; }
   .footer-nav a:hover { opacity: 1; }
-  .copyright { text-align: center; padding-top: 32px; font-size: 12px; opacity: 0.5; letter-spacing: 0.1em; font-family: "Cormorant Garamond", serif; }
+  .copyright { text-align: center; padding-top: 32px; font-size: 12px; opacity: 0.5; letter-spacing: 0.1em; font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif; }
   .news { background: var(--color-bg-soft); }
-  .news-inner { max-width: 840px; margin: 0 auto; background: #fff; border: 1px solid var(--color-border); border-radius: 8px; padding: 24px 48px; box-shadow: 0 4px 16px rgba(31, 95, 139, 0.04); }
+  .news-inner { max-width: 840px; margin: 0 auto; background: #fff; border: 1px solid var(--color-border); border-radius: 0; padding: 24px 48px; box-shadow: 0 4px 16px rgba(31, 95, 139, 0.04); }
   .news-list { list-style: none; }
   .news-item { padding: 28px 0; border-bottom: 1px solid var(--color-border); }
   .news-item:last-child { border-bottom: none; }
   .news-item-meta { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; flex-wrap: wrap; }
-  .news-date { font-family: "Cormorant Garamond", serif; font-size: 15px; font-weight: 500; color: var(--color-primary); letter-spacing: 0.1em; }
-  .news-badge { display: inline-block; padding: 3px 14px; background: var(--color-accent); color: var(--color-primary); font-size: 11px; letter-spacing: 0.1em; border-radius: 20px; font-weight: 500; }
+  .news-date { font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif; font-size: 15px; font-weight: 500; color: var(--color-primary); letter-spacing: 0.1em; }
+  .news-badge { display: inline-block; padding: 3px 14px; background: var(--color-accent); color: var(--color-primary); font-size: 11px; letter-spacing: 0.1em; border-radius: 0; font-weight: 500; }
   .news-badge-new { background: var(--color-primary); color: #fff; }
   .news-title { font-size: 17px; font-weight: 500; margin-bottom: 10px; letter-spacing: 0.05em; line-height: 1.6; color: var(--color-text); }
   .news-body { font-size: 14px; color: var(--color-text-light); line-height: 2; }
@@ -657,7 +657,7 @@
     <div class="map fade-in">
       <iframe
         src="https://www.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%83%BD%E4%B8%AD%E5%A4%AE%E5%8C%BA%E4%BA%AC%E6%A9%8B2%E4%B8%81%E7%9B%AE12-4%20%E5%85%89%E5%92%8C%E3%83%93%E3%83%AB&output=embed"
-        width="100%" height="100%" style="border:0; border-radius: 8px;"
+        width="100%" height="100%" style="border:0; border-radius: 0;"
         allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
         title="岩佐耳鼻咽喉科の地図"></iframe>
     </div>

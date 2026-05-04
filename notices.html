@@ -18,16 +18,16 @@
 <title>保険医療機関における書面掲示について | 岩佐耳鼻咽喉科</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --color-primary: #1f5f8b;
-    --color-primary-light: #4a8bb8;
-    --color-accent: #e9f2f8;
+    --color-primary: #4a8e3a;
+    --color-primary-light: #6fb858;
+    --color-accent: #e8f3e0;
     --color-text: #2b2b2b;
     --color-text-light: #6b6b6b;
     --color-bg: #ffffff;
-    --color-bg-soft: #f7f9fb;
+    --color-bg-soft: #f5f8f1;
     --color-border: #e5e9ed;
     --max-width: 1200px;
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -54,7 +54,7 @@
   .nav-list .has-submenu { position: relative; }
   .nav-list .submenu-toggle::before { content: "▾"; font-size: 10px; margin-left: 6px; opacity: 0.55; display: inline-block; vertical-align: middle; transition: transform 0.2s; float: right; margin-top: 1px; }
   .has-submenu:hover .submenu-toggle::before { transform: rotate(-180deg); opacity: 1; }
-  .submenu { position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%); background: #fff; list-style: none; padding: 10px 0; min-width: 200px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); border: 1px solid var(--color-border); border-radius: 4px; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease, top 0.2s ease; z-index: 101; }
+  .submenu { position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%); background: #fff; list-style: none; padding: 10px 0; min-width: 200px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); border: 1px solid var(--color-border); border-radius: 0; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease, top 0.2s ease; z-index: 101; }
   .submenu::before { content: ""; position: absolute; top: -7px; left: 50%; transform: translateX(-50%); border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 7px solid #fff; }
   .has-submenu:hover .submenu, .has-submenu:focus-within .submenu { opacity: 1; visibility: visible; top: 100%; }
   .submenu li { display: block; }
@@ -62,7 +62,7 @@
   .submenu a::after { display: none !important; }
   .submenu a:hover { background: #f4f7fa; color: var(--color-primary); }
   .submenu a.active { color: var(--color-primary); font-weight: 500; }
-  .nav-tel { display: flex; align-items: center; gap: 6px; padding: 10px 20px; background: var(--color-primary); color: #fff; border-radius: 30px; font-size: 13px; font-weight: 500; letter-spacing: 0.05em; }
+  .nav-tel { display: flex; align-items: center; gap: 6px; padding: 10px 20px; background: var(--color-primary); color: #fff; border-radius: 0; font-size: 13px; font-weight: 500; letter-spacing: 0.05em; }
   .nav-tel:hover { background: var(--color-primary-light); opacity: 1; }
   .menu-btn { display: none; width: 32px; height: 32px; background: none; border: none; cursor: pointer; position: relative; }
   .menu-btn span { display: block; width: 24px; height: 1px; background: var(--color-text); position: absolute; left: 4px; transition: var(--transition); }
@@ -74,11 +74,11 @@
   .menu-btn.active span:nth-child(3) { top: 16px; transform: rotate(-45deg); }
 
   /* Page Hero */
-  .page-hero { min-height: 480px; padding: 120px 0 80px; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #e9f2f8 0%, #f7f9fb 100%); position: relative; overflow: hidden; }
-  .page-hero::before { content: ""; position: absolute; top: -20%; right: -10%; width: 50%; height: 80%; background: radial-gradient(circle, rgba(74, 139, 184, 0.12) 0%, transparent 60%); border-radius: 50%; }
-  .page-hero::after { content: ""; position: absolute; bottom: -30%; left: -10%; width: 50%; height: 80%; background: radial-gradient(circle, rgba(31, 95, 139, 0.08) 0%, transparent 60%); border-radius: 50%; }
+  .page-hero { min-height: 480px; padding: 120px 0 80px; display: flex; align-items: center; justify-content: center; background: #e8f3e0; position: relative; overflow: hidden; }
+  .page-hero::before { content: ""; position: absolute; top: -20%; right: -10%; width: 50%; height: 80%; background: radial-gradient(circle, rgba(74, 139, 184, 0.12) 0%, transparent 60%); border-radius: 0; }
+  .page-hero::after { content: ""; position: absolute; bottom: -30%; left: -10%; width: 50%; height: 80%; background: radial-gradient(circle, rgba(74, 142, 58, 0.08) 0%, transparent 60%); border-radius: 0; }
   .page-hero-inner { text-align: center; position: relative; z-index: 1; max-width: 880px; padding: 0 24px; }
-  .page-hero-label { font-family: "Cormorant Garamond", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 16px; text-transform: uppercase; }
+  .page-hero-label { font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 16px; text-transform: uppercase; }
   .page-hero-title { font-size: clamp(24px, 3.6vw, 36px); font-weight: 500; letter-spacing: 0.08em; color: var(--color-text); line-height: 1.5; }
   .page-hero-lead { font-size: 15px; color: var(--color-text-light); margin: 28px auto 0; line-height: 2; max-width: 680px; }
 
@@ -90,7 +90,7 @@
   /* Section common */
   section { padding: 100px 0; }
   .section-head { text-align: center; margin-bottom: 56px; }
-  .section-label { font-family: "Cormorant Garamond", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 12px; text-transform: uppercase; }
+  .section-label { font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 12px; text-transform: uppercase; }
   .section-title { font-size: clamp(24px, 3vw, 32px); font-weight: 500; letter-spacing: 0.08em; line-height: 1.5; }
   .section-title-bar { width: 40px; height: 1px; background: var(--color-primary); margin: 24px auto 0; }
 
@@ -98,8 +98,8 @@
   .notices { background: var(--color-bg); }
   .notices-intro { max-width: 780px; margin: 0 auto 56px; text-align: center; color: var(--color-text-light); font-size: 15px; line-height: 2; }
 
-  .notice-toc { max-width: 980px; margin: 0 auto 64px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; background: var(--color-bg-soft); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; }
-  .notice-toc-head { grid-column: 1 / -1; text-align: center; font-size: 13px; letter-spacing: 0.15em; color: var(--color-primary); margin-bottom: 8px; font-family: "Cormorant Garamond", serif; text-transform: uppercase; }
+  .notice-toc { max-width: 980px; margin: 0 auto 64px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; background: var(--color-bg-soft); border: 1px solid var(--color-border); border-radius: 0; padding: 24px; }
+  .notice-toc-head { grid-column: 1 / -1; text-align: center; font-size: 13px; letter-spacing: 0.15em; color: var(--color-primary); margin-bottom: 8px; font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif; text-transform: uppercase; }
   .notice-toc a {
     display: flex;
     align-items: center;
@@ -107,7 +107,7 @@
     padding: 12px 16px;
     background: #fff;
     border: 1px solid var(--color-border);
-    border-radius: 6px;
+    border-radius: 0;
     font-size: 13px;
     color: var(--color-text);
     transition: var(--transition);
@@ -119,8 +119,8 @@
     display: flex; align-items: center; justify-content: center;
     background: var(--color-accent);
     color: var(--color-primary);
-    border-radius: 50%;
-    font-family: "Cormorant Garamond", serif;
+    border-radius: 0;
+    font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif;
     font-size: 13px;
     font-weight: 500;
   }
@@ -130,7 +130,7 @@
     margin: 0 auto 32px;
     background: #fff;
     border: 1px solid var(--color-border);
-    border-radius: 8px;
+    border-radius: 0;
     overflow: hidden;
     transition: var(--transition);
     scroll-margin-top: 100px;
@@ -145,7 +145,7 @@
     gap: 16px;
   }
   .notice-card-head .num {
-    font-family: "Cormorant Garamond", serif;
+    font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif;
     font-size: 22px;
     font-weight: 500;
     letter-spacing: 0.1em;
@@ -180,7 +180,7 @@
     margin: 0 4px;
     background: var(--color-accent);
     color: var(--color-primary);
-    border-radius: 4px;
+    border-radius: 0;
     font-weight: 500;
     font-size: 14px;
     letter-spacing: 0.05em;
@@ -198,7 +198,7 @@
     margin-top: 12px;
     padding: 12px 16px;
     background: var(--color-bg-soft);
-    border-radius: 4px;
+    border-radius: 0;
     font-size: 13px;
     color: var(--color-text-light);
     line-height: 1.9;
@@ -206,13 +206,13 @@
   .notice-sub strong { color: var(--color-primary); }
 
   /* Contact */
-  .contact { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%); color: #fff; text-align: center; padding: 96px 0; }
+  .contact { background: var(--color-primary); color: #fff; text-align: center; padding: 96px 0; }
   .contact h2 { font-size: clamp(24px, 3vw, 32px); font-weight: 500; letter-spacing: 0.1em; margin-bottom: 16px; }
   .contact p { font-size: 15px; opacity: 0.9; margin-bottom: 40px; line-height: 2; }
   .contact-cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 720px; margin: 0 auto; }
-  .contact-card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 32px; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.2); }
-  .contact-card .label { font-family: "Cormorant Garamond", serif; font-size: 12px; letter-spacing: 0.2em; opacity: 0.8; margin-bottom: 12px; text-transform: uppercase; }
-  .contact-card .value { font-family: "Cormorant Garamond", serif; font-size: 28px; font-weight: 500; color: #fff; letter-spacing: 0.05em; display: block; margin-bottom: 8px; }
+  .contact-card { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); padding: 32px; border-radius: 0; border: 1px solid rgba(255, 255, 255, 0.2); }
+  .contact-card .label { font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif; font-size: 12px; letter-spacing: 0.2em; opacity: 0.8; margin-bottom: 12px; text-transform: uppercase; }
+  .contact-card .value { font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif; font-size: 28px; font-weight: 500; color: #fff; letter-spacing: 0.05em; display: block; margin-bottom: 8px; }
   .contact-card .note { font-size: 12px; opacity: 0.8; letter-spacing: 0.05em; }
 
   /* Footer */
@@ -224,7 +224,7 @@
   .footer-nav { display: flex; gap: 32px; list-style: none; flex-wrap: wrap; }
   .footer-nav a { font-size: 13px; opacity: 0.7; letter-spacing: 0.05em; }
   .footer-nav a:hover { opacity: 1; }
-  .copyright { text-align: center; padding-top: 32px; font-size: 12px; opacity: 0.5; letter-spacing: 0.1em; font-family: "Cormorant Garamond", serif; }
+  .copyright { text-align: center; padding-top: 32px; font-size: 12px; opacity: 0.5; letter-spacing: 0.1em; font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif; }
 
   /* Animations */
   .mobile-book-bar { display: none; }
