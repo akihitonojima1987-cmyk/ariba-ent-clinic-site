@@ -267,76 +267,103 @@
   .page-hero { background: #ecf4dd !important; }
 
 
-  /* === 岩佐サイト風(構成・字体・雰囲気) 全ページ共通 === */
 
-  /* 全体背景: 薄緑〜クリームの全画面グラデ */
-  html, body { background: #f4f8ec !important; }
-  body { background: linear-gradient(180deg, #f0f5e0 0%, #f4f8ec 30%, #f8f9ec 100%) !important; min-height: 100vh; }
+  /* === 岩佐サイト 実物忠実再現(全ページ共通) === */
 
-  /* ベース: フォントウェイトを軽くする(レトロ感) */
-  body { font-weight: 400; line-height: 1.95; color: #333; }
-  h1, h2, h3, h4 { font-weight: 500; }
+  /* 全体: 薄黄緑〜クリームのグラデ */
+  html, body { background: #f0f5e0 !important; }
+  body { background: linear-gradient(180deg, #e8f0d3 0%, #f0f5e0 25%, #f5f8eb 100%) !important; min-height: 100vh; font-weight: 400; line-height: 1.95; color: #333; }
+  h1, h2, h3, h4 { font-weight: 600; color: #222; }
 
-  /* ヘッダー: 緑帯背景 + 下線 */
-  .header { background: linear-gradient(180deg, #e8f3d6 0%, #f4f8ec 100%) !important; backdrop-filter: none !important; border-bottom: 2px solid var(--color-primary) !important; }
-  .header-inner { height: auto !important; padding: 12px 24px !important; }
-  .logo { font-size: 20px !important; font-weight: 600 !important; color: #2d5a1c !important; line-height: 1.2; }
-  .logo span { font-size: 10px !important; letter-spacing: 0.15em !important; color: #6ba94c !important; margin-top: 4px; }
+  /* ヘッダー: 緑グラデの帯 + ロゴ大きく + 電話番号強調 */
+  .header { background: linear-gradient(180deg, #c8e0a0 0%, #d8e8b8 50%, #e8f0d0 100%) !important; backdrop-filter: none !important; border-bottom: 1px solid #a8c878 !important; position: relative !important; }
+  .header-inner { height: auto !important; padding: 16px 24px 0 !important; flex-direction: column !important; align-items: stretch !important; max-width: 1200px; }
+  .logo { font-size: 26px !important; font-weight: 700 !important; color: #2d5a1c !important; line-height: 1.3; align-self: flex-start; padding: 4px 0 12px; letter-spacing: 0.05em; }
+  .logo span { font-size: 11px !important; letter-spacing: 0.18em !important; color: #5fa840 !important; margin-top: 6px; font-weight: 500 !important; }
+  /* 電話番号 */
+  .nav-tel { position: absolute !important; top: 18px !important; right: 24px !important; background: transparent !important; color: #2d5a1c !important; padding: 0 !important; font-size: 22px !important; font-weight: 700 !important; letter-spacing: 0.02em !important; gap: 8px !important; border-radius: 0 !important; }
+  .nav-tel:hover { background: transparent !important; color: #5fa840 !important; }
+  .nav-tel svg { width: 22px !important; height: 22px !important; color: #5fa840 !important; }
 
-  /* ナビ: 緑タブ風 */
-  .nav-list { gap: 0 !important; }
-  .nav-list > li { border-right: 1px solid #d4e3b8; }
-  .nav-list > li:first-child { border-left: 1px solid #d4e3b8; }
-  .nav-list > li > a { padding: 8px 16px !important; font-size: 13px !important; font-weight: 400 !important; color: #3d6e29 !important; background: #f8fbef; display: block; }
-  .nav-list > li > a:hover, .nav-list > li > a.active { background: var(--color-primary) !important; color: #fff !important; }
+  /* ナビ: 緑タブ風(角丸復活) */
+  .nav { width: 100%; }
+  .nav-list { gap: 6px !important; justify-content: flex-end !important; padding: 8px 0 0 !important; border: none !important; }
+  .nav-list > li { border: none !important; }
+  .nav-list > li > a { padding: 10px 22px !important; font-size: 13.5px !important; font-weight: 500 !important; color: #5fa840 !important; background: #ffffffaa !important; border-radius: 8px 8px 0 0 !important; border: 1px solid #a8c878 !important; border-bottom: none !important; display: block !important; transition: none !important; }
+  .nav-list > li > a:hover, .nav-list > li > a.active { background: #5fa840 !important; color: #fff !important; border-color: #5fa840 !important; }
   .nav-list a::after { display: none !important; }
-  .nav-tel { background: #ff8c1a !important; color: #fff !important; border-radius: 0 !important; padding: 8px 16px !important; font-weight: 500 !important; }
-  .nav-tel:hover { background: #e67a00 !important; }
+  /* サブメニュー */
+  .submenu { background: #fff !important; border: 1px solid #a8c878 !important; border-radius: 0 0 4px 4px !important; }
 
-  /* セクション見出し: 「●」緑丸 + 大きめタイトル(岩佐風) */
-  .section-title { border-left: none !important; padding-left: 0 !important; position: relative; }
-  .section-title::before { content: "●"; color: var(--color-primary); font-size: 0.85em; margin-right: 10px; vertical-align: 0.05em; }
+  /* セクション見出し: 緑縦バー(▎) + 黒太字 */
+  .section-title { border-left: 5px solid #5fa840 !important; padding-left: 14px !important; color: #222 !important; font-weight: 600 !important; font-size: clamp(18px, 2.2vw, 22px) !important; line-height: 1.5 !important; letter-spacing: 0.05em !important; }
+  .section-title::before { display: none !important; }
+  .section-head { text-align: left !important; margin-bottom: 24px !important; padding-bottom: 12px; border-bottom: 1px dotted #a8c878; }
 
-  /* 本文項目スタイル: 「●  項目名     内容」のレトロ表組み */
-  .container ul:not([class]) li::before { content: "●" !important; color: var(--color-primary); font-size: 0.7em !important; top: 0.3em !important; }
+  /* メインコンテンツ全体: 白背景の枠 */
+  main, .main-content, section.about, section.services, section.features, section.info, section.news, section.staff { background: transparent !important; }
 
-  /* カード等の角ばり強化 + 細い緑罫線 */
-  .news-item, .service-card, .feature-card, .info-card { border: 1px solid #d4e3b8 !important; background: #ffffffcc !important; }
+  /* 「○」緑丸バレット(項目ラベル形式) */
+  .container ul:not([class]) { list-style: none !important; padding: 0 !important; }
+  .container ul:not([class]) li { position: relative !important; padding-left: 22px !important; line-height: 2.1 !important; }
+  .container ul:not([class]) li::before { content: "○" !important; position: absolute !important; left: 0 !important; top: 0 !important; color: #5fa840 !important; font-size: 14px !important; font-weight: 700 !important; }
 
-  /* テーブル: 細い緑罫線 + 緑薄背景ヘッダー */
-  table { border-collapse: collapse; width: 100%; }
-  table th, table td { border: 1px solid #c8dca0 !important; padding: 10px 14px !important; font-size: 13.5px !important; line-height: 1.7 !important; }
-  table th { background: #ecf4dd !important; color: #3d6e29 !important; font-weight: 500 !important; text-align: center; }
+  /* カード(ニュース・サービス等)を細い緑枠の半透明白背景に */
+  .news-item, .service-card, .feature-card, .info-card, .doctor-profile { background: #ffffff !important; border: 1px solid #c8dca0 !important; padding: 16px 20px !important; }
 
-  /* CTA 大ボタン: 角タブ風 */
-  .cta { background: #5fa840 !important; }
-  .btn { border-radius: 0 !important; font-weight: 500 !important; }
-  .btn-white { background: #fff !important; color: var(--color-primary) !important; border: 1px solid var(--color-primary) !important; }
-  .btn-outline-white { border: 1px solid #fff !important; }
+  /* テーブル: ヘッダー濃緑、罫線細、休診行ライト緑 */
+  table { border-collapse: collapse; width: 100%; background: #fff; }
+  table th, table td { border: 1px solid #a8c878 !important; padding: 8px 12px !important; font-size: 13.5px !important; line-height: 1.7 !important; vertical-align: middle !important; }
+  table th { background: #5fa840 !important; color: #fff !important; font-weight: 500 !important; text-align: center !important; }
+  /* 休診日のライト緑行(td に「休診日」を含む行を狙う擬似実装はCSSではできないので、tr.holiday や最後のtrで近似) */
+  table tr:last-child td { background: #ecf4dd !important; }
 
-  /* フッター: 中央寄せ + シンプル線 */
-  .footer { background: #2d5a1c !important; color: #fff !important; padding: 40px 0 20px !important; }
-  .footer-inner { justify-content: center !important; text-align: center !important; flex-direction: column !important; align-items: center !important; gap: 16px !important; }
-  .footer-nav { justify-content: center !important; gap: 16px !important; }
-  .copyright { font-family: "Noto Sans JP", sans-serif !important; opacity: 0.7 !important; }
+  /* CTA */
+  .cta { background: #5fa840 !important; padding: 48px 0 !important; }
+  .cta h2 { color: #fff !important; font-weight: 600 !important; }
+  .cta p { color: #fff !important; opacity: 0.95 !important; }
+  .btn { border-radius: 4px !important; font-weight: 500 !important; padding: 12px 28px !important; }
+  .btn-white { background: #fff !important; color: #2d5a1c !important; border: 1px solid #fff !important; }
+  .btn-outline-white { background: transparent !important; color: #fff !important; border: 1px solid #fff !important; }
 
-  /* ヒーロー: より控えめに */
-  .hero, .page-hero { padding: 48px 0 !important; min-height: auto !important; height: auto !important; background: linear-gradient(180deg, #ecf4dd 0%, #f4f8ec 100%) !important; border-bottom: 1px dotted var(--color-primary) !important; }
+  /* フッター: 暗緑シンプル + 中央寄せ */
+  .footer { background: linear-gradient(180deg, #d0e0a0 0%, #b8c880 100%) !important; color: #2d5a1c !important; padding: 48px 0 24px !important; border-top: 1px solid #a8c878 !important; }
+  .footer-logo, .footer-address, .footer-nav a { color: #2d5a1c !important; }
+  .footer-inner { justify-content: center !important; text-align: center !important; flex-direction: column !important; align-items: center !important; gap: 16px !important; padding-bottom: 24px !important; border-bottom: 1px solid #a8c878 !important; }
+  .footer-nav { justify-content: center !important; gap: 24px !important; }
+  .footer-nav a { font-size: 13px !important; opacity: 0.8 !important; }
+  .footer-nav a:hover { opacity: 1; text-decoration: underline; }
+  .copyright { color: #2d5a1c !important; opacity: 0.7 !important; padding-top: 16px !important; font-family: "Noto Sans JP", sans-serif !important; letter-spacing: 0.05em !important; }
+
+  /* ヒーロー: 控えめに */
+  .hero, .page-hero { padding: 32px 0 !important; min-height: auto !important; height: auto !important; background: transparent !important; border-bottom: 1px dotted #a8c878 !important; }
   .hero-bg { display: none !important; }
-  .hero-title, .page-hero-title { font-size: clamp(20px, 3vw, 28px) !important; color: #2d5a1c !important; font-weight: 500 !important; }
+  .hero-title, .page-hero-title { font-size: clamp(20px, 2.6vw, 26px) !important; color: #2d5a1c !important; font-weight: 600 !important; }
   .hero-desc { font-size: 14px !important; color: #555 !important; }
 
-  /* リンク全般を緑系に */
-  a { color: #3d6e29; }
-  a:hover { color: var(--color-primary-light); }
+  /* 全リンク色を緑系に */
+  a { color: #2d5a1c; }
+  a:hover { color: #5fa840; }
+
+  /* 重要なお知らせ用ボックス(red box)スタイル定義(必要箇所で使用) */
+  .important-notice { background: #c92a2a; color: #fff; padding: 16px 20px; text-align: center; font-weight: 700; border: 1px solid #c92a2a; margin: 16px 0; line-height: 1.6; }
+  .important-notice u { text-decoration: underline; }
+
+  /* breadcrumb 控えめに */
+  .breadcrumb { background: transparent !important; border: none !important; padding: 12px 0 !important; font-size: 12px !important; }
+
+  /* メニューボタンも緑系に */
+  .menu-btn span { background: #2d5a1c !important; }
 
   /* モバイル */
   @media (max-width: 768px) {
-    .nav-list > li, .nav-list > li:first-child { border: none; }
-    .header-inner { padding: 10px 16px !important; }
-    .logo { font-size: 17px !important; }
-    .section-title { font-size: 17px !important; }
-    .hero-title, .page-hero-title { font-size: 19px !important; }
+    .header-inner { padding: 12px 16px 0 !important; }
+    .logo { font-size: 20px !important; }
+    .nav-tel { position: static !important; font-size: 17px !important; padding: 6px 0 !important; }
+    .nav-list > li > a { padding: 8px 16px !important; font-size: 13px !important; }
+    .section-title { font-size: 16px !important; padding-left: 10px !important; border-left-width: 4px !important; }
+    .hero-title, .page-hero-title { font-size: 18px !important; }
+    .footer { padding: 32px 0 16px !important; }
   }
 
 </style>
