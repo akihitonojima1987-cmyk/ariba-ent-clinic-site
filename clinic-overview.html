@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="岩佐耳鼻咽喉科のクリニック紹介ページ。当院の理念、院内の様子、設備についてご案内します。" />
-<link rel="canonical" href="https://ariba-ent.com/clinic.html" />
+<meta name="description" content="岩佐耳鼻咽喉科のクリニック概要。診療科目・院長・所在地・連絡先・診療時間・院長挨拶をご案内します。" />
+<link rel="canonical" href="https://ariba-ent.com/clinic-overview.html" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="ja_JP" />
 <meta property="og:site_name" content="岩佐耳鼻咽喉科" />
-<meta property="og:url" content="https://ariba-ent.com/clinic.html" />
-<meta property="og:title" content="クリニック紹介 | 岩佐耳鼻咽喉科" />
+<meta property="og:url" content="https://ariba-ent.com/clinic-overview.html" />
+<meta property="og:title" content="クリニック概要 | 岩佐耳鼻咽喉科" />
 <meta property="og:description" content="岩佐耳鼻咽喉科のクリニック紹介ページ。当院の理念、院内の様子、設備についてご案内します。" />
 <meta property="og:image" content="https://ariba-ent.com/og-image.jpg" />
 <meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="クリニック紹介 | 岩佐耳鼻咽喉科" />
+<meta name="twitter:title" content="クリニック概要 | 岩佐耳鼻咽喉科" />
 <meta name="twitter:description" content="岩佐耳鼻咽喉科のクリニック紹介ページ。当院の理念、院内の様子、設備についてご案内します。" />
-<title>クリニック紹介 | 岩佐耳鼻咽喉科</title>
+<title>クリニック概要 | 岩佐耳鼻咽喉科</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet" />
@@ -230,6 +230,28 @@
     .mobile-book-bar .mb-tel { background: var(--color-primary); }
     .mobile-book-bar .mb-web { background: var(--color-primary-light); }
   }
+
+  /* === クリニック概要ページ用 === */
+  .overview-table { width: 100%; border-collapse: collapse; margin: 0 auto; max-width: 720px; }
+  .overview-table th, .overview-table td { padding: 14px 16px; border-bottom: 1px solid var(--color-border); text-align: left; vertical-align: top; line-height: 1.7; font-size: 14.5px; }
+  .overview-table th { width: 130px; color: var(--color-primary); font-weight: 500; letter-spacing: 0.15em; background: transparent; }
+  .overview-table td { color: var(--color-text); }
+  .overview-table td a { color: var(--color-primary); }
+  .hours-table { width: 100%; border-collapse: collapse; max-width: 760px; margin: 0 auto; }
+  .hours-table th, .hours-table td { border: 1px solid var(--color-border); padding: 12px; text-align: center; font-size: 14px; }
+  .hours-table thead th { background: var(--color-primary); color: #fff; font-weight: 500; letter-spacing: 0.05em; }
+  .hours-table tbody td { background: #fff; color: var(--color-text); }
+  .hours-note { text-align: center; margin-top: 16px; font-size: 13px; color: var(--color-text-light); }
+  .greeting-block { max-width: 720px; margin: 0 auto; line-height: 2.0; font-size: 14.5px; color: var(--color-text); }
+  .greeting-block .greeting-name { font-size: 17px; font-weight: 500; color: var(--color-text); margin-bottom: 24px; letter-spacing: 0.1em; }
+  .greeting-block p { margin: 0 0 16px 0; }
+  .greeting-block p:last-child { margin-bottom: 0; }
+  @media (max-width: 768px) {
+    .overview-table th { width: 90px; font-size: 13px; }
+    .overview-table th, .overview-table td { padding: 10px 8px; font-size: 13.5px; }
+    .hours-table th, .hours-table td { padding: 8px 4px; font-size: 12.5px; }
+  }
+
 </style>
 <script type="application/ld+json">
 {
@@ -289,7 +311,7 @@
     </a>
     <nav class="nav" id="nav">
       <ul class="nav-list">
-        <li><a href="clinic.html" class="active">クリニック紹介</a></li>
+        <li><a href="clinic.html">クリニック紹介</a></li>
         <li class="has-submenu">
           <a href="index.html#services" class="submenu-toggle">診療案内</a>
           <ul class="submenu">
@@ -299,7 +321,7 @@
             <li><a href="notices.html">書面掲示について</a></li>
           </ul>
         </li>
-        <li><a href="clinic-overview.html">クリニック概要</a></li>
+        <li><a href="clinic-overview.html" class="active">クリニック概要</a></li>
         <li><a href="recruit.html">求人情報</a></li>
         <li><a href="faq.html">よくある質問</a></li>
         <li><a href="index.html#info">アクセス</a></li>
@@ -316,8 +338,8 @@
 <!-- Page Hero -->
 <section class="page-hero">
   <div class="page-hero-inner">
-    <p class="page-hero-label">Clinic</p>
-    <h1 class="page-hero-title">クリニック紹介</h1>
+    <p class="page-hero-label">Overview</p>
+    <h1 class="page-hero-title">クリニック概要</h1>
   </div>
 </section>
 
@@ -326,215 +348,100 @@
   <div class="container">
     <a href="index.html">ホーム</a>
     <span>/</span>
-    クリニック紹介
+    クリニック概要
   </div>
 </div>
 
-<!-- Philosophy -->
-<section class="philosophy">
+<!-- 当院のご案内 -->
+<section style="padding: 64px 0; background: var(--color-bg);">
   <div class="container">
     <div class="section-head fade-in">
-      <p class="section-label">Philosophy</p>
-      <h2 class="section-title">当院の理念</h2>
+      <p class="section-label">Information</p>
+      <h2 class="section-title">当院のご案内</h2>
       <div class="section-title-bar"></div>
     </div>
-    <div class="philosophy-inner fade-in">
-      <p class="philosophy-headline">
-        地域の皆さまの<br />"かかりつけ医"として。
-        <em>Trusted Care, Close to You</em>
-      </p>
-      <div class="philosophy-text">
-        <p>
-          岩佐耳鼻咽喉科は、京橋・宝町エリアにお住まいの方、お勤めの方の「耳・鼻・のど」のかかりつけ医として、丁寧でわかりやすい診療を心がけています。
-        </p>
-        <p>
-          耳鼻咽喉科の症状は、日常生活に密接に関わるものが多く、放っておくと仕事や暮らしの質を下げてしまうことも少なくありません。当院では、患者様お一人おひとりのお話にじっくり耳を傾け、症状の背景や生活スタイルを踏まえた上で、最適な治療方針をご提案いたします。
-        </p>
-        <p>
-          「今日、この症状について相談したい」とお気軽に足を運んでいただける存在でありたい。そう考え、アクセスの良い立地と、シンプルで落ち着いた院内環境をご用意しました。お仕事帰りや昼休みのちょっとした時間でも、気軽にご利用いただけます。
-        </p>
-      </div>
-    </div>
+
+    <table class="overview-table">
+      <tr>
+        <th>診療科目</th>
+        <td>耳鼻咽喉科</td>
+      </tr>
+      <tr>
+        <th>院　　長</th>
+        <td>野島　愛来</td>
+      </tr>
+      <tr>
+        <th>所在地</th>
+        <td>〒104-0031 東京都中央区京橋2丁目12-4 光和ビル 2階</td>
+      </tr>
+      <tr>
+        <th>連絡先</th>
+        <td>TEL：03-3567-8733</td>
+      </tr>
+      <tr>
+        <th>WEB予約</th>
+        <td><a href="https://wakumy.lyd.inc/clinic/hg10976?openExternalBrowser=1" target="_blank" rel="noopener">https://wakumy.lyd.inc/clinic/hg10976</a></td>
+      </tr>
+      <tr>
+        <th>沿　　革</th>
+        <td>1978年　開業<br />2026年6月　現院長 野島愛来 継承</td>
+      </tr>
+    </table>
   </div>
 </section>
 
-<!-- Pillars -->
-<section class="pillars">
+<!-- 診療時間 -->
+<section style="padding: 64px 0; background: var(--color-bg-soft);">
   <div class="container">
     <div class="section-head fade-in">
-      <p class="section-label">Our Values</p>
-      <h2 class="section-title">私たちが大切にしていること</h2>
+      <p class="section-label">Hours</p>
+      <h2 class="section-title">診療時間</h2>
       <div class="section-title-bar"></div>
     </div>
-    <div class="pillars-grid">
-      <div class="pillar-card fade-in">
-        <div class="pillar-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
-        </div>
-        <p class="pillar-num">01</p>
-        <h3>丁寧なコミュニケーション</h3>
-        <p>症状・治療について、専門用語に頼らずわかりやすくご説明します。ご不安な点や疑問は、どうぞ遠慮なくお伝えください。</p>
-      </div>
-      <div class="pillar-card fade-in">
-        <div class="pillar-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-        </div>
-        <p class="pillar-num">02</p>
-        <h3>科学的根拠に基づく医療</h3>
-        <p>最新のガイドラインとエビデンスに基づき、過不足のない検査・治療をご提供します。必要に応じて専門病院へのご紹介も行います。</p>
-      </div>
-      <div class="pillar-card fade-in">
-        <div class="pillar-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        </div>
-        <p class="pillar-num">03</p>
-        <h3>働く世代のかかりつけ</h3>
-        <p>お仕事の合間にも通いやすい立地・診療時間。短時間でも的確な診断と、継続しやすい治療計画をご提案します。</p>
-      </div>
-    </div>
+
+    <table class="hours-table">
+      <thead>
+        <tr>
+          <th>受付時間</th>
+          <th>月</th>
+          <th>火</th>
+          <th>水</th>
+          <th>木</th>
+          <th>金</th>
+          <th>土</th>
+          <th>日・祝</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>10:00〜12:30</td>
+          <td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>－</td><td>－</td>
+        </tr>
+        <tr>
+          <td>15:00〜17:30</td>
+          <td>●</td><td>●</td><td>－</td><td>●</td><td>●</td><td>－</td><td>－</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="hours-note">※●：通常診療　※全日予約優先制　※休診日：水曜午後・土曜・日曜・祝日</p>
   </div>
 </section>
 
-<!-- Gallery -->
-<section class="gallery">
+<!-- 院長挨拶 -->
+<section style="padding: 64px 0; background: var(--color-bg);">
   <div class="container">
     <div class="section-head fade-in">
-      <p class="section-label">Interior</p>
-      <h2 class="section-title">院内の様子</h2>
+      <p class="section-label">Greeting</p>
+      <h2 class="section-title">院長挨拶</h2>
       <div class="section-title-bar"></div>
     </div>
-    <div class="gallery-grid">
-      <div class="gallery-item fade-in">
-        <div class="gallery-image">
-          <div class="gallery-icon">
-            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg>
-          </div>
-        </div>
-        <div class="gallery-body">
-          <h4>受付</h4>
-          <p>明るく落ち着いた雰囲気の受付。スタッフが笑顔でお迎えします。</p>
-        </div>
-      </div>
-      <div class="gallery-item fade-in">
-        <div class="gallery-image">
-          <div class="gallery-icon">
-            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
-          </div>
-        </div>
-        <div class="gallery-body">
-          <h4>待合室</h4>
-          <p>ゆったりとしたソファ席をご用意しております。</p>
-        </div>
-      </div>
-      <div class="gallery-item fade-in">
-        <div class="gallery-image">
-          <div class="gallery-icon">
-            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2v20"/><path d="M2 12h20"/><circle cx="12" cy="12" r="8"/></svg>
-          </div>
-        </div>
-        <div class="gallery-body">
-          <h4>処置室</h4>
-          <p>ネブライザー・鼻洗浄など、清潔で効率的な処置空間です。</p>
-        </div>
-      </div>
-      <div class="gallery-item fade-in">
-        <div class="gallery-image">
-          <div class="gallery-icon">
-            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 10h8"/><path d="M8 14h5"/></svg>
-          </div>
-        </div>
-        <div class="gallery-body">
-          <h4>検査スペース</h4>
-          <p>聴力検査、内視鏡検査など、各種専門検査に対応しています。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- Equipment -->
-<section class="equipment">
-  <div class="container">
-    <div class="section-head fade-in">
-      <p class="section-label">Equipment</p>
-      <h2 class="section-title">主な設備</h2>
-      <div class="section-title-bar"></div>
+    <div class="greeting-block">
+      <p class="greeting-name">野島　愛来</p>
+      <p>この度、ご縁あって岩佐耳鼻咽喉科を継承させて頂きました。京橋・宝町界隈のかかりつけ耳鼻咽喉科として、皆様のお役に立てるよう精進して参ります。</p>
+      <p>聖マリアンナ医科大学を卒業後、順天堂大学医学部 耳鼻咽喉科学教室に入局致しました。関連病院での研修を経て耳鼻咽喉科専門医資格を取得し、都内クリニックでの勤務を経て、2026年6月より当院 院長として診療に携わっております。</p>
+      <p>耳・鼻・のどの不調は日々の生活の質に直結する症状です。お子さまから高齢の方まで、耳鼻科領域で何かお困りのことがございましたら、どうぞお気軽にご相談下さい。</p>
     </div>
-    <div class="equipment-grid">
-      <div class="equipment-card fade-in">
-        <div class="equipment-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/></svg>
-        </div>
-        <div>
-          <h4>電子内視鏡システム</h4>
-          <p>鼻・のど・喉頭の精密な観察が可能。画像を患者様と共有しながらご説明します。</p>
-        </div>
-      </div>
-      <div class="equipment-card fade-in">
-        <div class="equipment-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12a9 9 0 019-9"/><path d="M3 12a9 9 0 009 9"/><circle cx="12" cy="12" r="2"/></svg>
-        </div>
-        <div>
-          <h4>聴力検査機器</h4>
-          <p>標準純音聴力検査・ティンパノメトリーなど、精密な聴力評価に対応します。</p>
-        </div>
-      </div>
-      <div class="equipment-card fade-in">
-        <div class="equipment-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2a8 8 0 018 8v4a8 8 0 11-16 0v-4a8 8 0 018-8z"/><path d="M12 12v-2"/></svg>
-        </div>
-        <div>
-          <h4>ネブライザー</h4>
-          <p>鼻・のどに直接薬を届ける吸入療法。アレルギー性鼻炎や咽喉頭炎に効果的です。</p>
-        </div>
-      </div>
-      <div class="equipment-card fade-in">
-        <div class="equipment-icon">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 12l2 2 4-4"/></svg>
-        </div>
-        <div>
-          <h4>電子カルテ</h4>
-          <p>スムーズな受付・診療情報管理を実現。待ち時間の短縮にも配慮しています。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Affiliated Hospitals -->
-<section class="affiliates">
-  <div class="container">
-    <div class="section-head fade-in">
-      <p class="section-label">Affiliated Hospitals</p>
-      <h2 class="section-title">提携医療機関</h2>
-      <div class="section-title-bar"></div>
-    </div>
-    <p class="affiliates-intro fade-in">
-      診療所で対応可能な検査・治療は院内で行い、入院手術や高度な精密検査が必要な場合には、下記の提携医療機関と連携して最適な医療をご提供いたします。
-    </p>
-    <div class="affiliates-grid">
-      <div class="affiliate-card fade-in">
-        <div class="affiliate-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18"/><path d="M5 21V7l7-4 7 4v14"/><path d="M9 9v2M15 9v2M9 14v7M15 14v7M10 21v-4h4v4"/></svg>
-        </div>
-        <h4>順天堂大学医学部附属順天堂医院</h4>
-        <p class="affiliate-sub">Juntendo University Hospital</p>
-        <p>東京都文京区本郷に所在する大学病院。耳鼻咽喉科・頭頸部外科をはじめ、他科との連携が必要となる総合的な精査・治療が求められる際に速やかにご紹介いたします。</p>
-      </div>
-    </div>
-    <p class="affiliates-note fade-in">※症状や検査結果によっては、上記以外の大学病院・総合病院・専門病院をご紹介することもございます。いずれの場合も紹介状をご用意のうえ、責任をもって連携先の主治医へお繋ぎいたします。</p>
-  </div>
-</section>
-
-<!-- Access Brief -->
-<section class="access-brief">
-  <div class="container">
-    <h2>アクセス</h2>
-    <p>都営浅草線「宝町駅」A7・A6番出口 徒歩30秒<br />東京メトロ銀座線「京橋駅」4番出口 徒歩2分 / 有楽町線「銀座一丁目駅」7番出口 徒歩6分 / 日比谷線「八丁堀駅」A3番出口 徒歩6分 / JR東京駅八重洲南口 徒歩10分<br />〒104-0031 東京都中央区京橋2丁目12-4 光和ビル 2階</p>
-    <a href="index.html#info" class="btn-ghost">
-      詳しいアクセス情報
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
-    </a>
   </div>
 </section>
 
