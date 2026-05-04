@@ -128,35 +128,35 @@
   .director-info-item .value ul li { position: relative; padding-left: 14px; }
   .director-info-item .value ul li::before { content: "―"; position: absolute; left: 0; color: var(--color-primary-light); }
 
-  /* Staff (Doctors) */
-  .staff { background: var(--color-bg-soft); }
+  /* Staff section (院長挨拶) */
+  .staff { background: var(--color-bg); padding: 64px 0 32px; }
 
   /* Doctor Profile (Centered style, no photo) */
-  .doctor-profile { background: #fff; border-radius: 0; padding: 64px 56px; margin-bottom: 48px; border: 1px solid var(--color-border); transition: var(--transition); }
+  .doctor-profile { background: transparent; border-radius: 0; padding: 0; margin-bottom: 0; border: none; transition: var(--transition); }
   .doctor-profile:last-child { margin-bottom: 0; }
   .doctor-profile:hover { box-shadow: none; }
 
   /* Doctor Hero (Centered name block) */
-  .doctor-hero { text-align: center; margin-bottom: 48px; padding-bottom: 40px; border-bottom: 1px solid var(--color-border); }
-  .doctor-hero-label { font-family: "Cormorant Garamond", serif; font-size: 13px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 16px; text-transform: uppercase; }
-    .doctor-hero-name { font-size: clamp(28px, 4vw, 36px); font-weight: 500; letter-spacing: 0.1em; color: var(--color-text); margin-bottom: 10px; }
-  .doctor-hero-furigana { font-size: 13px; letter-spacing: 0.25em; color: var(--color-text-light); margin-bottom: 14px; }
+  .doctor-hero { text-align: center; margin-bottom: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--color-border); }
+  .doctor-hero-label { font-family: "Noto Sans JP", sans-serif; font-size: 11px; letter-spacing: 0.25em; color: var(--color-primary); margin-bottom: 8px; }
+    .doctor-hero-name { font-size: 22px; font-weight: 500; letter-spacing: 0.08em; color: var(--color-text); margin-bottom: 6px; }
+  .doctor-hero-furigana { font-size: 12px; letter-spacing: 0.2em; color: var(--color-text-light); margin-bottom: 10px; }
   .doctor-hero-en { font-family: "Cormorant Garamond", serif; font-size: 13px; letter-spacing: 0.25em; color: var(--color-primary-light); margin-bottom: 20px; text-transform: uppercase; }
-  .doctor-hero-role { display: inline-block; padding: 5px 16px; background: var(--color-primary); color: #fff; font-size: 13px; font-weight: 400; letter-spacing: 0.15em; }
+  .doctor-hero-role { display: inline-block; padding: 3px 12px; background: var(--color-primary); color: #fff; font-size: 11px; font-weight: 400; letter-spacing: 0.12em; }
 
   /* Doctor Section Heading */
-  .doctor-section { margin-bottom: 32px; }
+  .doctor-section { margin-bottom: 20px; }
   .doctor-section:last-child { margin-bottom: 0; }
   .doctor-section-title { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 500; letter-spacing: 0.15em; color: var(--color-primary); margin-bottom: 16px; }
   .doctor-section-title::before { content: ""; width: 4px; height: 16px; background: var(--color-primary); border-radius: 0; }
 
   /* Doctor Bio / Message Card */
   .doctor-bio-card,
-  .doctor-message-card { background: var(--color-bg-soft); border-radius: 0; padding: 28px 32px; font-size: 14.5px; line-height: 2; color: var(--color-text); }
+  .doctor-message-card { background: transparent; border-radius: 0; padding: 0; font-size: 14px; line-height: 1.95; color: var(--color-text); }
   .doctor-bio-card ul { list-style: none; padding: 0; margin: 0; }
   .doctor-bio-card ul li { position: relative; padding-left: 20px; line-height: 2; }
   .doctor-bio-card ul li::before { content: ""; position: absolute; left: 0; top: 1em; transform: translateY(-50%); width: 8px; height: 8px; border-radius: 0; background: var(--color-primary-light); }
-  .doctor-message-card { color: var(--color-text-light); font-size: 15px; }
+  .doctor-message-card { color: var(--color-text); font-size: 14px; }
 
   /* Doctor Quals Grid (資格 + 所属学会 side-by-side) */
   .doctor-quals-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
@@ -182,13 +182,13 @@
 
 
   /* Classic block title (加賀風 青ブロック) */
-  .block-title { display: inline-flex; align-items: baseline; gap: 18px; background: var(--color-primary); color: #fff; padding: 16px 36px; margin-bottom: 40px; }
-  .block-title-jp { font-size: 22px; font-weight: 500; letter-spacing: 0.2em; line-height: 1; }
-  .block-title-bar { display: inline-block; width: 1px; height: 16px; background: rgba(255,255,255,0.5); }
-  .block-title-en { font-size: 11px; letter-spacing: 0.3em; opacity: 0.85; font-family: "Cormorant Garamond", serif; text-transform: uppercase; line-height: 1; }
+  .block-title { display: inline-flex; align-items: baseline; gap: 14px; background: var(--color-primary); color: #fff; padding: 10px 22px; margin-bottom: 24px; }
+  .block-title-jp { font-size: 16px; font-weight: 500; letter-spacing: 0.18em; line-height: 1; }
+  .block-title-bar { display: inline-block; width: 1px; height: 12px; background: rgba(255,255,255,0.5); }
+  .block-title-en { font-size: 10px; letter-spacing: 0.3em; opacity: 0.85; font-family: "Cormorant Garamond", serif; text-transform: uppercase; line-height: 1; }
   @media (max-width: 768px) {
-    .block-title { padding: 14px 24px; gap: 14px; }
-    .block-title-jp { font-size: 18px; }
+    .block-title { padding: 9px 18px; gap: 12px; }
+    .block-title-jp { font-size: 14.5px; }
   }
 
 
@@ -235,9 +235,9 @@
 
 
   /* Director info line (compact 資格 row) */
-  .doctor-info-line { display: flex; align-items: baseline; gap: 16px; padding: 18px 24px; background: var(--color-bg-soft); border-left: 3px solid var(--color-primary); border-radius: 0; }
-  .doctor-info-line .doctor-info-label { flex-shrink: 0; font-size: 13px; font-weight: 500; letter-spacing: 0.15em; color: var(--color-primary); }
-  .doctor-info-line .doctor-info-value { font-size: 14.5px; color: var(--color-text); }
+  .doctor-info-line { display: flex; align-items: baseline; gap: 14px; padding: 10px 14px; background: var(--color-bg-soft); border-left: 2px solid var(--color-primary); border-radius: 0; }
+  .doctor-info-line .doctor-info-label { flex-shrink: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.2em; color: var(--color-primary); }
+  .doctor-info-line .doctor-info-value { font-size: 13px; color: var(--color-text); }
 
   /* Compact staff card (野島曉人) */
   .doctor-profile-compact { padding: 48px 56px; }
@@ -247,11 +247,10 @@
   /* Responsive */
   @media (max-width: 960px) {
     .director-grid { grid-template-columns: 1fr; gap: 48px; }
-    .doctor-profile { padding: 48px 32px; }
     .doctor-quals-grid { grid-template-columns: 1fr; gap: 16px; }
   }
   @media (max-width: 768px) {
-    section { padding: 72px 0; }
+    section { padding: 56px 0; }
     .nav-list, .nav-tel { display: none; }
     .menu-btn { display: block; }
     .nav.open { position: fixed; top: 72px; left: 0; right: 0; background: #fff; border-top: 1px solid var(--color-border); padding: 24px; flex-direction: column; align-items: stretch; }
@@ -262,11 +261,10 @@
     .nav.open .has-submenu { display: block; }
     .nav.open .nav-tel { display: inline-flex; justify-content: center; margin-top: 16px; }
     .section-head { margin-bottom: 48px; }
-    .doctor-profile { padding: 40px 24px; }
-    .doctor-hero { margin-bottom: 36px; padding-bottom: 28px; }
-    .doctor-bio-card, .doctor-message-card, .doctor-qual-card { padding: 20px 22px; }
-    .doctor-profile-compact { padding: 32px 24px; }
-    .doctor-info-line { flex-direction: column; gap: 6px; padding: 16px 18px; }
+    .doctor-profile { padding: 0; }
+    .doctor-hero-name { font-size: 19px; }
+    .doctor-hero { margin-bottom: 18px; padding-bottom: 14px; }
+    .doctor-info-line { flex-direction: column; gap: 4px; padding: 8px 12px; }
     body { padding-bottom: 64px; }
     .mobile-book-bar {
       display: grid;
