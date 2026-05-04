@@ -235,9 +235,9 @@
 
 
   /* Director info line (compact 資格 row) */
-  .doctor-info-line { display: flex; align-items: baseline; gap: 14px; padding: 10px 14px; background: var(--color-bg-soft); border-left: 2px solid var(--color-primary); border-radius: 0; }
-  .doctor-info-line .doctor-info-label { flex-shrink: 0; font-size: 11px; font-weight: 500; letter-spacing: 0.2em; color: var(--color-primary); }
-  .doctor-info-line .doctor-info-value { font-size: 13px; color: var(--color-text); }
+  .doctor-info-line { display: flex; align-items: baseline; gap: 8px; padding: 0; background: transparent; border-left: none; border-radius: 0; }
+  .doctor-info-line .doctor-info-label { flex-shrink: 0; font-size: 13px; font-weight: 400; letter-spacing: 0.05em; color: var(--color-text-light); }
+  .doctor-info-line .doctor-info-value { font-size: 13px; color: var(--color-text-light); letter-spacing: 0.05em; }
 
   /* Compact staff card (野島曉人) */
   .doctor-profile-compact { padding: 48px 56px; }
@@ -265,7 +265,7 @@
     .doctor-hero-name { font-size: 19px; }
     .doctor-hero { margin-bottom: 16px; }
     .doctor-hero-name { font-size: 15.5px; }
-    .doctor-info-line { flex-direction: column; gap: 4px; padding: 8px 12px; }
+    .doctor-info-line { gap: 6px; padding: 0; }
     body { padding-bottom: 64px; }
     .mobile-book-bar {
       display: grid;
@@ -410,7 +410,7 @@
 
       <div class="doctor-section">
         <div class="doctor-info-line">
-          <span class="doctor-info-label">資格</span>
+          <span class="doctor-info-label">資格：</span>
           <span class="doctor-info-value">耳鼻咽喉科専門医</span>
         </div>
       </div>
