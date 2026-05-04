@@ -19,7 +19,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet" />
-<link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Press+Start+2P&display=swap" rel="stylesheet" />
 <!-- オープニング：同一セッション内は初回のみ表示 -->
 <script>
   try {
@@ -531,595 +530,416 @@
   }
 
 
-  /* === ファミコン(NES)風 全ページ強制オーバーライド (2026-05-04) === */
 
-  /* CRT風背景: 暗い青 + ドット柄 */
+  /* === 加賀風 青基調クラシック 1978継承(全リセット) === */
+
+  /* リセット: 全フォント・色・装飾を再定義 */
   html, body {
-    background: #0a0a3a !important;
-    background-image:
-      repeating-linear-gradient(0deg, transparent 0, transparent 3px, rgba(0,0,0,0.15) 3px, rgba(0,0,0,0.15) 4px),
-      radial-gradient(ellipse at center, #1a1a5a 0%, #0a0a3a 100%) !important;
-    color: #fff !important;
-    font-family: 'DotGothic16', 'Press Start 2P', 'Courier New', monospace !important;
-    font-weight: normal !important;
-    line-height: 1.7 !important;
-    image-rendering: pixelated;
-    -webkit-font-smoothing: none !important;
-    font-smooth: never !important;
-  }
-
-  /* 全テキスト */
-  *, *::before, *::after {
-    font-family: 'DotGothic16', 'Press Start 2P', 'Courier New', monospace !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    text-shadow: 2px 2px 0 #000 !important;
-    transition: none !important;
-    animation: none !important;
-  }
-
-  /* 見出しは Press Start 2P (英字向け) + 緑 */
-  h1, h2, h3, h4, .section-title, .hero-title, .page-hero-title {
-    font-family: 'DotGothic16', 'Press Start 2P', monospace !important;
-    color: #fcfc54 !important;
-    text-shadow: 3px 3px 0 #000, 4px 4px 0 #444 !important;
-    letter-spacing: 0.1em !important;
-    line-height: 1.4 !important;
-    border: none !important;
-    padding-left: 0 !important;
-  }
-
-  /* セクション見出しは ▶ プレフィックス + 黄色 */
-  .section-title::before {
-    content: "▶ " !important;
-    color: #ff5454 !important;
-    display: inline !important;
-  }
-
-  /* リンクは水色 + 下線、点滅は ::before */
-  a {
-    color: #54fcfc !important;
-    text-decoration: underline !important;
-    text-decoration-color: #54fcfc !important;
-    text-shadow: 2px 2px 0 #000 !important;
-  }
-  a:hover {
-    color: #fcfc54 !important;
-    background: #ff5454 !important;
-    text-decoration: none !important;
-  }
-
-  /* ヘッダー: 暗い緑 + ピクセル枠 */
-  .header {
-    background: #00a040 !important;
-    background-image: repeating-linear-gradient(45deg, #00a040 0 8px, #008838 8px 16px) !important;
-    border: none !important;
-    border-bottom: 4px solid #fcfc54 !important;
-    box-shadow: 0 4px 0 #000 !important;
-    backdrop-filter: none !important;
-  }
-  .header-inner { padding: 12px 16px !important; align-items: center !important; }
-  .logo {
-    color: #fff !important;
-    font-family: 'DotGothic16', monospace !important;
-    font-size: 18px !important;
-    font-weight: normal !important;
-    text-shadow: 2px 2px 0 #000, 3px 3px 0 #00582a !important;
-    padding: 0 !important;
-  }
-  .logo-text { color: #fff !important; font-size: 18px !important; text-shadow: 2px 2px 0 #000 !important; }
-  .logo-en-sub { color: #fcfc54 !important; font-size: 9px !important; }
-  .logo-svg rect { stroke: #fcfc54 !important; }
-
-  /* ナビ: NES風メニュー(赤/青ボックス) */
-  .nav-list { gap: 4px !important; padding: 0 !important; }
-  .nav-list > li > a {
-    background: #0040ff !important;
-    color: #fff !important;
-    border: 3px solid #fff !important;
-    border-bottom-width: 5px !important;
-    border-right-width: 5px !important;
-    padding: 8px 14px !important;
-    font-size: 10px !important;
-    font-family: 'DotGothic16', monospace !important;
-    font-weight: normal !important;
-    text-shadow: 2px 2px 0 #000 !important;
-  }
-  .nav-list > li > a:hover, .nav-list > li > a.active {
-    background: #ff5454 !important;
-    color: #fcfc54 !important;
-  }
-
-  /* 電話番号: ピクセル赤 */
-  .header-tel {
-    background: #fcfc54 !important;
-    color: #000 !important;
-    border: 3px solid #000 !important;
-    border-bottom-width: 5px !important;
-    border-right-width: 5px !important;
-    padding: 6px 12px !important;
-    font-size: 14px !important;
-    text-shadow: none !important;
-    font-family: 'Press Start 2P', monospace !important;
-    letter-spacing: 0 !important;
-  }
-  .header-tel svg { color: #ff5454 !important; }
-
-  /* WEB予約 ボタン: NES風 */
-  .nav-tel {
-    background: #ff5454 !important;
-    color: #fff !important;
-    border: 3px solid #fff !important;
-    border-bottom-width: 5px !important;
-    border-right-width: 5px !important;
-    padding: 6px 12px !important;
-    font-size: 11px !important;
-    font-family: 'DotGothic16', monospace !important;
-    text-shadow: 2px 2px 0 #000 !important;
-  }
-
-  /* ヒーロー: 黒背景 + ピクセル枠 */
-  .hero, .page-hero {
-    background: #000 !important;
-    background-image: repeating-linear-gradient(0deg, transparent 0 7px, rgba(255,255,255,0.05) 7px 8px) !important;
-    border: 4px solid #fcfc54 !important;
-    margin: 16px !important;
-    padding: 24px !important;
-    border-radius: 0 !important;
-  }
-  .hero-bg { display: none !important; }
-  .hero-title, .page-hero-title { color: #fcfc54 !important; font-size: clamp(16px, 3vw, 22px) !important; }
-  .hero-desc { color: #fff !important; font-size: 13px !important; line-height: 1.8 !important; }
-  .hero-title em { color: #ff5454 !important; font-style: normal !important; }
-
-  /* メインコンテンツのセクション: 黒背景 + 黄色枠 */
-  section {
-    background: #000 !important;
-    color: #fff !important;
-    padding: 24px 16px !important;
-    margin: 8px 16px !important;
-    border: 4px solid #fff !important;
-    border-bottom-width: 6px !important;
-    border-right-width: 6px !important;
-    box-shadow: none !important;
-  }
-  .container { color: #fff !important; max-width: 100% !important; padding: 0 !important; }
-
-  /* カード: 紺背景 + ピクセル枠 */
-  .news-item, .service-card, .feature-card, .info-card, .doctor-profile {
-    background: #0040ff !important;
-    color: #fff !important;
-    border: 3px solid #fcfc54 !important;
-    border-bottom-width: 5px !important;
-    border-right-width: 5px !important;
-    padding: 14px !important;
-  }
-
-  /* テーブル: NES UI風 */
-  table {
-    background: #000 !important;
-    color: #fff !important;
-    border: 3px solid #fcfc54 !important;
-  }
-  table th, table td {
-    border: 2px solid #fcfc54 !important;
-    padding: 8px 10px !important;
-    font-size: 12px !important;
-    color: #fff !important;
-    background: #000 !important;
-  }
-  table th {
-    background: #ff5454 !important;
-    color: #fff !important;
-    text-shadow: 2px 2px 0 #000 !important;
-  }
-  table tr:last-child td { background: #00a040 !important; }
-
-  /* バレット: ★ */
-  .container ul:not([class]) li::before {
-    content: "★" !important;
-    color: #fcfc54 !important;
-    font-size: 12px !important;
-  }
-
-  /* ボタン: NES風(立体感) */
-  .btn {
-    background: #ff5454 !important;
-    color: #fff !important;
-    border: 4px solid #fff !important;
-    border-bottom-width: 6px !important;
-    border-right-width: 6px !important;
-    padding: 10px 20px !important;
-    font-family: 'DotGothic16', monospace !important;
-    font-size: 12px !important;
-    text-shadow: 2px 2px 0 #000 !important;
-    cursor: pointer !important;
-  }
-  .btn:hover { background: #fcfc54 !important; color: #000 !important; text-shadow: none !important; transform: translate(2px, 2px) !important; border-bottom-width: 4px !important; border-right-width: 4px !important; }
-  .btn-white { background: #fff !important; color: #000 !important; text-shadow: none !important; }
-  .btn-outline-white { background: transparent !important; color: #fff !important; border-color: #fff !important; }
-
-  /* CTA */
-  .cta { background: #c00000 !important; border: 4px solid #fcfc54 !important; }
-  .cta h2 { color: #fcfc54 !important; }
-  .cta p { color: #fff !important; }
-
-  /* フッター: 黒 + 黄色枠 */
-  .footer {
-    background: #000 !important;
-    color: #fcfc54 !important;
-    border-top: 6px solid #fcfc54 !important;
-    margin: 16px !important;
-    padding: 24px 16px !important;
-  }
-  .footer-logo, .footer-address, .footer-nav a, .copyright { color: #fcfc54 !important; }
-  .copyright::before { content: "® " !important; }
-
-  /* breadcrumb: 黒背景 */
-  .breadcrumb { background: #000 !important; border: 3px solid #fff !important; padding: 10px 16px !important; margin: 8px 16px !important; }
-  .breadcrumb a { color: #54fcfc !important; }
-
-  /* スキャンライン疑似要素(画面全体) */
-  body::before {
-    content: "" !important;
-    position: fixed !important;
-    top: 0; left: 0; right: 0; bottom: 0 !important;
-    background: repeating-linear-gradient(0deg, transparent 0 2px, rgba(0,0,0,0.18) 2px 3px) !important;
-    pointer-events: none !important;
-    z-index: 9999 !important;
-  }
-
-  /* 重要なお知らせ: 点滅風(border 4色) */
-  .important-notice {
-    background: #c00000 !important;
-    color: #fcfc54 !important;
-    border: 4px dashed #fcfc54 !important;
-    text-shadow: 2px 2px 0 #000 !important;
-    padding: 16px !important;
-  }
-
-  /* スタッフ紹介などのコンパクト要素 */
-  .staff-compact-row, .staff-compact-meta, .staff-compact-name, .staff-compact-role, .staff-compact-furi {
-    color: #fff !important;
-    font-family: 'DotGothic16', monospace !important;
-  }
-  .staff-compact-role { background: #00a040 !important; color: #fcfc54 !important; border: 2px solid #fcfc54 !important; padding: 2px 8px !important; }
-  .staff-compact-title { color: #fcfc54 !important; border-bottom: 2px dashed #fcfc54 !important; }
-
-  /* 院長挨拶ブロック */
-  .doctor-message-card { background: #000033 !important; color: #fff !important; padding: 16px !important; border: 3px solid #54fcfc !important; line-height: 1.9 !important; font-size: 13px !important; }
-  .doctor-info-line { background: transparent !important; border: none !important; }
-  .doctor-info-line .doctor-info-label, .doctor-info-line .doctor-info-value { color: #fcfc54 !important; font-size: 12px !important; }
-  .doctor-hero-name { color: #fff !important; font-size: 18px !important; }
-  .doctor-hero-label { color: #ff5454 !important; }
-
-  /* モバイル */
-  @media (max-width: 768px) {
-    .nav-list > li > a { font-size: 9px !important; padding: 6px 10px !important; }
-    .header-tel { font-size: 11px !important; }
-    .nav-tel { font-size: 9px !important; }
-    .logo-svg { width: 36px !important; height: 36px !important; }
-    .logo-text { font-size: 14px !important; }
-    section { margin: 6px 8px !important; padding: 16px 12px !important; }
-    .hero, .page-hero { margin: 8px !important; padding: 18px !important; }
-  }
-
-
-  /* === 1978年創業 継承リトロクリニック(ファミコンベース実用化) === */
-
-  /* 基本: クリーム古紙背景 + 黒文字 */
-  html, body {
-    background: #f5ecd6 !important;
-    background-image: repeating-linear-gradient(0deg, transparent 0 3px, rgba(45,90,28,0.025) 3px 4px) !important;
+    background: #ffffff !important;
+    background-image: none !important;
     color: #2d2d2d !important;
-    font-family: 'Noto Sans JP', 'DotGothic16', sans-serif !important;
+    font-family: 'Noto Sans JP', sans-serif !important;
     font-weight: 400 !important;
     line-height: 1.95 !important;
     image-rendering: auto !important;
     -webkit-font-smoothing: antialiased !important;
-    font-smooth: always !important;
   }
   *, *::before, *::after {
     text-shadow: none !important;
     animation: none !important;
+    image-rendering: auto !important;
   }
-  /* スキャンライン削除 */
   body::before { display: none !important; content: none !important; }
 
-  /* 見出しは DotGothic16 でレトロ感(色は深緑) */
-  h1, h2, h3, h4, .section-title, .hero-title, .page-hero-title {
-    font-family: 'DotGothic16', 'Noto Sans JP', sans-serif !important;
-    color: #2d5a1c !important;
-    text-shadow: none !important;
-    font-weight: 400 !important;
+  /* カラー再定義(加賀風 navy) */
+  :root {
+    --kaga-navy: #1c4f7e;
+    --kaga-navy-deep: #133a5c;
+    --kaga-navy-light: #4a8bb8;
+    --kaga-bg-soft: #f4f7fa;
+    --kaga-accent-gold: #b8965a;
+    --kaga-text: #2d2d2d;
+    --kaga-text-light: #666;
+    --kaga-border: #d0dde6;
+  }
+
+  /* 見出し: Noto Serif JP(クラシック明朝) */
+  h1, h2, h3, h4 {
+    font-family: 'Noto Serif JP', "Yu Mincho", "YuMincho", serif !important;
+    color: var(--kaga-navy-deep) !important;
+    font-weight: 600 !important;
     letter-spacing: 0.05em !important;
     line-height: 1.5 !important;
   }
-  .section-title {
-    border-left: 6px solid #5fa840 !important;
-    padding-left: 14px !important;
-    background: transparent !important;
-    font-size: clamp(18px, 2.4vw, 22px) !important;
+  .hero-title, .page-hero-title {
+    font-family: 'Noto Serif JP', serif !important;
+    color: var(--kaga-navy-deep) !important;
+    font-weight: 600 !important;
+    font-size: clamp(22px, 3vw, 32px) !important;
+    letter-spacing: 0.08em !important;
   }
-  .section-title::before { content: "" !important; display: none !important; }
 
-  /* ヘッダー: 深緑 + ストライプの落ち着いたヴィンテージ */
-  .header {
-    background: #2d5a1c !important;
-    background-image: repeating-linear-gradient(0deg, #2d5a1c 0 4px, #234718 4px 5px) !important;
-    border-bottom: 4px solid #f5ecd6 !important;
-    box-shadow: 0 2px 0 rgba(0,0,0,0.2) !important;
-    backdrop-filter: none !important;
+  /* セクション見出し: 加賀風青ボックス(縦書き併記) */
+  .section-title {
+    background: var(--kaga-navy) !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 14px 24px 12px !important;
+    display: inline-block !important;
+    font-size: 17px !important;
+    font-family: 'Noto Serif JP', serif !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.15em !important;
+    line-height: 1.3 !important;
+    margin: 0 0 24px !important;
+    position: relative !important;
   }
-  .header-inner { padding: 12px 24px !important; }
-  .logo { padding: 4px 0 !important; }
-  .logo-svg rect { fill: #f5ecd6 !important; stroke: #88c267 !important; }
+  .section-title::before { display: none !important; content: none !important; }
+
+  .section-head {
+    text-align: left !important;
+    margin-bottom: 32px !important;
+    padding-bottom: 14px !important;
+    border-bottom: 1px dashed var(--kaga-border) !important;
+  }
+
+  /* ヘッダー: 加賀風青グラデバナー(細め) + 下に水色の波装飾 */
+  .header {
+    background: linear-gradient(180deg, #2a6fa5 0%, #1c4f7e 60%, #133a5c 100%) !important;
+    background-image: linear-gradient(180deg, #2a6fa5 0%, #1c4f7e 60%, #133a5c 100%) !important;
+    border-bottom: 4px double var(--kaga-accent-gold) !important;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.08) !important;
+    backdrop-filter: none !important;
+    position: relative !important;
+  }
+  .header-inner { padding: 14px 24px !important; align-items: center !important; }
+  .logo { padding: 4px 0 !important; gap: 14px !important; }
+  .logo-svg { width: 56px; height: 56px; flex-shrink: 0; }
+  .logo-svg rect { fill: #fff !important; stroke: var(--kaga-accent-gold) !important; stroke-width: 1.2 !important; }
+  /* SVGロゴ内の緑要素を青に変える(rect以外の緑) */
+  .logo-svg path[fill="#5fa840"] { fill: #1c4f7e !important; }
+  .logo-svg path[fill="#88c267"] { fill: #4a8bb8 !important; }
+  .logo-svg text[fill="#5fa840"] { fill: #1c4f7e !important; }
+
   .logo-text {
-    color: #f5ecd6 !important;
-    font-family: 'DotGothic16', 'Noto Sans JP' !important;
-    font-size: 22px !important;
-    font-weight: 400 !important;
-    text-shadow: 1px 1px 0 #1a3010 !important;
+    color: #fff !important;
+    font-family: 'Noto Serif JP', "Yu Mincho", serif !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em !important;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.3) !important;
   }
   .logo-en-sub {
-    color: #c5dfa6 !important;
-    font-size: 9px !important;
-    letter-spacing: 0.2em !important;
+    color: #b8d8f0 !important;
+    font-size: 10px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.25em !important;
     margin-top: 4px !important;
+    font-family: 'Noto Serif JP', serif !important;
   }
-  /* "Est. 1978" バッジをロゴ下に追加 */
+  /* "Since 1978" バッジ: 金色エレガント */
   .logo-en-sub::after {
-    content: "  /  Est. 1978" !important;
-    color: #fcfc54 !important;
-    font-family: 'Press Start 2P', monospace !important;
-    font-size: 8px !important;
-    letter-spacing: 0.2em !important;
-    margin-left: 4px !important;
+    content: "  ／  Since 1978" !important;
+    color: var(--kaga-accent-gold) !important;
+    font-family: 'Noto Serif JP', serif !important;
+    font-size: 10px !important;
+    letter-spacing: 0.15em !important;
+    margin-left: 6px !important;
+    font-style: italic;
   }
 
-  /* ナビ: クリーム+緑のクラシック */
-  .nav-list { gap: 6px !important; padding: 0 !important; }
+  /* ナビ: 加賀風 青タブ(英字併記) */
+  .nav-list { gap: 0 !important; padding: 0 !important; }
+  .nav-list > li {
+    border-right: 1px solid rgba(255,255,255,0.2) !important;
+  }
+  .nav-list > li:last-child { border-right: none !important; }
   .nav-list > li > a {
-    background: #f5ecd6 !important;
-    color: #2d5a1c !important;
-    border: 2px solid #2d5a1c !important;
-    border-bottom-width: 4px !important;
-    border-right-width: 4px !important;
-    padding: 8px 16px !important;
-    font-size: 13px !important;
-    font-family: 'DotGothic16', 'Noto Sans JP' !important;
+    background: transparent !important;
+    color: #fff !important;
+    border: none !important;
+    padding: 10px 18px !important;
+    font-size: 13.5px !important;
+    font-family: 'Noto Sans JP', sans-serif !important;
     font-weight: 500 !important;
     text-shadow: none !important;
+    letter-spacing: 0.08em !important;
   }
-  .nav-list > li > a:hover { background: #5fa840 !important; color: #fff !important; }
-  .nav-list > li > a.active { background: #5fa840 !important; color: #f5ecd6 !important; }
+  .nav-list > li > a:hover, .nav-list > li > a.active {
+    background: rgba(255,255,255,0.15) !important;
+    color: #fff !important;
+  }
+  /* 下線アクティブインジケーター */
+  .nav-list > li > a.active {
+    box-shadow: inset 0 -3px 0 var(--kaga-accent-gold) !important;
+  }
 
-  /* 電話番号: クリーム+濃緑 */
+  /* 電話番号: 白背景・ネイビー文字(目立たせる) */
   .header-tel {
-    background: #f5ecd6 !important;
-    color: #2d5a1c !important;
-    border: 2px solid #2d5a1c !important;
-    border-bottom-width: 4px !important;
-    border-right-width: 4px !important;
-    padding: 6px 14px !important;
-    font-size: 18px !important;
-    font-family: 'DotGothic16', 'Noto Sans JP', monospace !important;
+    background: #fff !important;
+    color: var(--kaga-navy-deep) !important;
+    border: none !important;
+    padding: 8px 14px !important;
+    font-size: 19px !important;
+    font-family: 'Noto Serif JP', serif !important;
     font-weight: 700 !important;
     text-shadow: none !important;
     letter-spacing: 0.02em !important;
+    border-radius: 0 !important;
+    border-left: 3px solid var(--kaga-accent-gold) !important;
   }
-  .header-tel svg { color: #5fa840 !important; }
+  .header-tel:hover { color: var(--kaga-navy) !important; background: #f4f7fa !important; }
+  .header-tel svg { color: var(--kaga-navy) !important; }
 
-  /* WEB予約: 控えめオレンジ */
+  /* WEB予約 */
   .nav-tel {
-    background: #d97a1f !important;
+    background: var(--kaga-accent-gold) !important;
     color: #fff !important;
-    border: 2px solid #2d2d2d !important;
-    border-bottom-width: 4px !important;
-    border-right-width: 4px !important;
-    padding: 6px 14px !important;
+    border: none !important;
+    padding: 8px 16px !important;
     font-size: 13px !important;
-    font-family: 'DotGothic16', 'Noto Sans JP' !important;
+    font-family: 'Noto Sans JP', sans-serif !important;
     font-weight: 500 !important;
-    text-shadow: 1px 1px 0 rgba(0,0,0,0.3) !important;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.15) !important;
+    letter-spacing: 0.05em !important;
+    border-radius: 0 !important;
   }
-  .nav-tel:hover { background: #b86519 !important; }
+  .nav-tel:hover { background: #9d7c4a !important; }
 
-  /* メインコンテンツ: 白カード+深緑枠 */
+  /* メインコンテンツ: シンプル白(余計な枠なし) */
   section {
     background: #ffffff !important;
-    color: #2d2d2d !important;
-    border: 2px solid #2d5a1c !important;
-    border-bottom-width: 4px !important;
-    border-right-width: 4px !important;
-    padding: 28px 24px !important;
-    margin: 16px 24px !important;
+    color: var(--kaga-text) !important;
+    border: none !important;
+    padding: 64px 0 !important;
+    margin: 0 !important;
+    border-bottom: 1px solid var(--kaga-border) !important;
   }
-  .container { color: #2d2d2d !important; }
+  section:last-of-type { border-bottom: none !important; }
 
-  /* カード: クリーム背景 */
+  .container {
+    color: var(--kaga-text) !important;
+    max-width: 1100px !important;
+    margin: 0 auto !important;
+    padding: 0 24px !important;
+  }
+
+  /* カード: クリーン・薄罫線 */
   .news-item, .service-card, .feature-card, .info-card, .doctor-profile {
-    background: #f9f3df !important;
-    border: 2px solid #2d5a1c !important;
-    border-bottom-width: 3px !important;
-    border-right-width: 3px !important;
-    color: #2d2d2d !important;
-    padding: 16px 20px !important;
+    background: #ffffff !important;
+    border: 1px solid var(--kaga-border) !important;
+    color: var(--kaga-text) !important;
+    padding: 20px 24px !important;
   }
 
-  /* テーブル: クラシック緑罫線 */
+  /* テーブル: 加賀風 ネイビーヘッダー+細い罫線 */
   table {
-    background: #fff !important;
-    border: 2px solid #2d5a1c !important;
-    color: #2d2d2d !important;
+    background: #ffffff !important;
+    border: 1px solid var(--kaga-border) !important;
+    color: var(--kaga-text) !important;
+    border-collapse: collapse !important;
+    width: 100% !important;
   }
   table th, table td {
-    border: 1px solid #2d5a1c !important;
-    padding: 10px 14px !important;
+    border: 1px solid var(--kaga-border) !important;
+    padding: 12px 16px !important;
     font-size: 14px !important;
-    color: #2d2d2d !important;
-    background: #fff !important;
+    color: var(--kaga-text) !important;
+    background: #ffffff !important;
     font-family: 'Noto Sans JP', sans-serif !important;
     font-weight: 400 !important;
     text-shadow: none !important;
   }
   table th {
-    background: #2d5a1c !important;
-    color: #f5ecd6 !important;
-    font-weight: 700 !important;
-    font-family: 'DotGothic16', 'Noto Sans JP' !important;
+    background: var(--kaga-navy) !important;
+    color: #fff !important;
+    font-weight: 500 !important;
+    font-family: 'Noto Sans JP', sans-serif !important;
+    text-align: center !important;
+    letter-spacing: 0.05em !important;
   }
-  table tr:last-child td { background: #ecf4dd !important; }
+  table tr:last-child td { background: var(--kaga-bg-soft) !important; }
 
-  /* バレット: ▶ 控えめ緑 */
+  /* バレット: ダイヤ ◆ 青(加賀風) */
   .container ul:not([class]) li::before {
-    content: "▶" !important;
-    color: #5fa840 !important;
-    font-size: 11px !important;
+    content: "◆" !important;
+    color: var(--kaga-navy) !important;
+    font-size: 10px !important;
     text-shadow: none !important;
+    top: 0.45em !important;
   }
 
-  /* リンク: 深緑+下線 */
+  /* リンク: ネイビー+下線 */
   a {
-    color: #2d5a1c !important;
+    color: var(--kaga-navy) !important;
     text-decoration: underline !important;
-    text-decoration-color: #5fa840 !important;
+    text-decoration-color: var(--kaga-navy-light) !important;
     text-shadow: none !important;
     background: transparent !important;
   }
-  a:hover { color: #5fa840 !important; background: transparent !important; }
+  a:hover { color: var(--kaga-navy-light) !important; background: transparent !important; }
 
-  /* ボタン */
+  /* ボタン: クラシック青 */
   .btn {
-    background: #2d5a1c !important;
-    color: #f5ecd6 !important;
-    border: 2px solid #1a3010 !important;
-    border-bottom-width: 4px !important;
-    border-right-width: 4px !important;
-    padding: 10px 24px !important;
+    background: var(--kaga-navy) !important;
+    color: #fff !important;
+    border: 1px solid var(--kaga-navy-deep) !important;
+    padding: 12px 28px !important;
     font-size: 14px !important;
-    font-family: 'DotGothic16', 'Noto Sans JP' !important;
+    font-family: 'Noto Sans JP', sans-serif !important;
     font-weight: 500 !important;
-    text-shadow: 1px 1px 0 rgba(0,0,0,0.3) !important;
+    text-shadow: none !important;
+    letter-spacing: 0.08em !important;
+    border-radius: 0 !important;
+    transition: background 0.2s !important;
   }
-  .btn:hover { background: #5fa840 !important; transform: translate(2px, 2px) !important; border-bottom-width: 2px !important; border-right-width: 2px !important; }
-  .btn-white { background: #f5ecd6 !important; color: #2d5a1c !important; text-shadow: none !important; }
-  .btn-outline-white { background: transparent !important; color: #f5ecd6 !important; border-color: #f5ecd6 !important; text-shadow: none !important; }
+  .btn:hover { background: var(--kaga-navy-deep) !important; transform: none !important; }
+  .btn-white { background: #fff !important; color: var(--kaga-navy) !important; border-color: #fff !important; }
+  .btn-outline-white { background: transparent !important; color: #fff !important; border: 1px solid #fff !important; }
 
   /* CTA */
-  .cta { background: #2d5a1c !important; background-image: repeating-linear-gradient(0deg, #2d5a1c 0 4px, #234718 4px 5px) !important; border: none !important; }
-  .cta h2 { color: #fcfc54 !important; }
-  .cta p { color: #f5ecd6 !important; }
+  .cta {
+    background: linear-gradient(135deg, var(--kaga-navy) 0%, var(--kaga-navy-deep) 100%) !important;
+    background-image: linear-gradient(135deg, var(--kaga-navy) 0%, var(--kaga-navy-deep) 100%) !important;
+    border: none !important;
+    padding: 64px 0 !important;
+  }
+  .cta h2, .cta p { color: #fff !important; }
 
-  /* ヒーロー */
+  /* ヒーロー: シンプル白 + 下に金色の細線 */
   .hero, .page-hero {
-    background: #fff !important;
+    background: var(--kaga-bg-soft) !important;
     background-image: none !important;
-    border: 2px solid #2d5a1c !important;
-    border-bottom-width: 4px !important;
-    border-right-width: 4px !important;
-    margin: 16px 24px !important;
-    padding: 32px 28px !important;
+    border: none !important;
+    border-bottom: 2px solid var(--kaga-accent-gold) !important;
+    margin: 0 !important;
+    padding: 56px 0 !important;
+    min-height: auto !important;
+    height: auto !important;
   }
   .hero-bg { display: none !important; }
-  .hero-title, .page-hero-title {
-    color: #2d5a1c !important;
-    font-size: clamp(22px, 3vw, 28px) !important;
-    margin-bottom: 12px !important;
-  }
-  .hero-title em { color: #c8161c !important; font-style: normal !important; font-weight: 700 !important; }
-  .hero-desc { color: #2d2d2d !important; font-size: 14px !important; line-height: 1.9 !important; }
+  .hero-title em { color: var(--kaga-accent-gold) !important; font-style: italic !important; font-weight: 600 !important; }
+  .hero-desc { color: var(--kaga-text) !important; font-size: 14.5px !important; line-height: 2 !important; }
 
-  /* フッター */
+  /* フッター: 濃ネイビー + 金色アクセント */
   .footer {
-    background: #2d5a1c !important;
-    background-image: repeating-linear-gradient(0deg, #2d5a1c 0 4px, #234718 4px 5px) !important;
-    color: #f5ecd6 !important;
-    border-top: 4px solid #fcfc54 !important;
-    margin: 16px !important;
-    padding: 32px 24px 24px !important;
+    background: var(--kaga-navy-deep) !important;
+    background-image: none !important;
+    color: #fff !important;
+    border-top: 4px double var(--kaga-accent-gold) !important;
+    margin: 0 !important;
+    padding: 48px 0 24px !important;
   }
   .footer-logo, .footer-address, .footer-nav a, .copyright {
-    color: #f5ecd6 !important;
+    color: #fff !important;
     font-family: 'Noto Sans JP', sans-serif !important;
     text-shadow: none !important;
+    opacity: 0.92 !important;
   }
-  .copyright { font-size: 11px !important; opacity: 0.85 !important; letter-spacing: 0.1em !important; }
+  .copyright {
+    font-size: 11px !important;
+    letter-spacing: 0.15em !important;
+    opacity: 0.7 !important;
+    font-family: 'Noto Serif JP', serif !important;
+  }
   .copyright::before { content: "" !important; display: none !important; }
 
-  /* breadcrumb */
+  /* breadcrumb: 控えめグレー */
   .breadcrumb {
-    background: #f5ecd6 !important;
-    border: 2px solid #2d5a1c !important;
-    padding: 8px 16px !important;
-    margin: 8px 24px !important;
+    background: var(--kaga-bg-soft) !important;
+    border: none !important;
+    border-bottom: 1px solid var(--kaga-border) !important;
+    padding: 12px 0 !important;
+    margin: 0 !important;
     font-size: 12px !important;
-    color: #2d2d2d !important;
+    color: var(--kaga-text-light) !important;
   }
-  .breadcrumb a { color: #2d5a1c !important; }
+  .breadcrumb a { color: var(--kaga-navy) !important; }
 
-  /* 重要なお知らせ */
+  /* 重要なお知らせ: 赤+控えめ */
   .important-notice {
     background: #c8161c !important;
-    color: #f5ecd6 !important;
-    border: 4px dashed #f5ecd6 !important;
+    color: #fff !important;
+    border: 2px solid #a01015 !important;
     text-shadow: none !important;
     padding: 16px 20px !important;
+    border-radius: 0 !important;
   }
 
   /* スタッフコンパクト */
   .staff-compact-row, .staff-compact-meta, .staff-compact-name, .staff-compact-role, .staff-compact-furi {
-    color: #2d2d2d !important;
+    color: var(--kaga-text) !important;
     font-family: 'Noto Sans JP', sans-serif !important;
     text-shadow: none !important;
   }
   .staff-compact-role {
-    background: #5fa840 !important;
+    background: var(--kaga-navy) !important;
     color: #fff !important;
-    border: 2px solid #2d5a1c !important;
-    padding: 2px 8px !important;
+    border: none !important;
+    padding: 3px 10px !important;
     font-size: 11px !important;
+    border-radius: 0 !important;
   }
-  .staff-compact-title { color: #2d5a1c !important; border-bottom: 1px dashed #5fa840 !important; font-family: 'DotGothic16', 'Noto Sans JP' !important; }
+  .staff-compact-title {
+    color: var(--kaga-navy-deep) !important;
+    border-bottom: 1px solid var(--kaga-border) !important;
+    font-family: 'Noto Serif JP', serif !important;
+    font-weight: 600 !important;
+  }
 
   /* 院長挨拶 */
   .doctor-message-card {
-    background: #f9f3df !important;
-    color: #2d2d2d !important;
-    padding: 20px 24px !important;
-    border: 2px solid #5fa840 !important;
-    border-bottom-width: 3px !important;
-    border-right-width: 3px !important;
+    background: var(--kaga-bg-soft) !important;
+    color: var(--kaga-text) !important;
+    padding: 24px 28px !important;
+    border: none !important;
+    border-left: 3px solid var(--kaga-navy) !important;
     line-height: 2.0 !important;
     font-size: 14.5px !important;
     font-family: 'Noto Sans JP', sans-serif !important;
   }
-  .doctor-info-line { background: transparent !important; border: none !important; }
+  .doctor-info-line { background: transparent !important; border: none !important; padding: 0 !important; }
   .doctor-info-line .doctor-info-label, .doctor-info-line .doctor-info-value {
-    color: #2d5a1c !important;
+    color: var(--kaga-text-light) !important;
     font-family: 'Noto Sans JP', sans-serif !important;
     font-size: 13px !important;
   }
-  .doctor-hero-name { color: #2d5a1c !important; font-family: 'DotGothic16', 'Noto Sans JP' !important; font-weight: 400 !important; font-size: 20px !important; }
-  .doctor-hero-label { color: #5fa840 !important; font-family: 'DotGothic16', 'Noto Sans JP' !important; font-size: 13px !important; }
-  .doctor-hero-furigana { color: #6b6b6b !important; font-family: 'Noto Sans JP', sans-serif !important; }
+  .doctor-hero {
+    border-bottom: 1px solid var(--kaga-border) !important;
+    padding-bottom: 16px !important;
+    margin-bottom: 18px !important;
+  }
+  .doctor-hero-name {
+    color: var(--kaga-navy-deep) !important;
+    font-family: 'Noto Serif JP', serif !important;
+    font-weight: 600 !important;
+    font-size: 20px !important;
+  }
+  .doctor-hero-label {
+    color: var(--kaga-navy) !important;
+    font-family: 'Noto Sans JP', sans-serif !important;
+    font-size: 12px !important;
+    letter-spacing: 0.4em !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+  .doctor-hero-furigana { color: var(--kaga-text-light) !important; font-family: 'Noto Sans JP', sans-serif !important; }
 
   /* メニューボタン */
-  .menu-btn span { background: #f5ecd6 !important; }
+  .menu-btn span { background: #fff !important; }
 
   /* モバイル */
   @media (max-width: 768px) {
-    .header-inner { padding: 10px 14px !important; }
+    .header-inner { padding: 10px 14px !important; flex-direction: column !important; align-items: stretch !important; gap: 8px !important; }
     .logo-text { font-size: 17px !important; }
-    .logo-en-sub { font-size: 8px !important; }
-    .logo-en-sub::after { font-size: 7px !important; display: block; margin-left: 0 !important; margin-top: 2px !important; }
-    .nav-list > li > a { font-size: 12px !important; padding: 6px 12px !important; }
-    .header-tel { font-size: 14px !important; padding: 5px 10px !important; }
-    .nav-tel { font-size: 11px !important; padding: 5px 10px !important; }
-    section { margin: 8px 12px !important; padding: 18px 14px !important; }
-    .hero, .page-hero { margin: 8px 12px !important; padding: 22px 16px !important; }
-    .breadcrumb { margin: 6px 12px !important; padding: 6px 12px !important; }
-    .footer { margin: 8px !important; padding: 24px 16px !important; }
+    .logo-en-sub { font-size: 9px !important; }
+    .logo-en-sub::after { font-size: 9px !important; display: block; margin-left: 0 !important; margin-top: 2px !important; }
+    .nav-list > li > a { font-size: 12px !important; padding: 8px 12px !important; }
+    .header-tel { font-size: 15px !important; padding: 6px 10px !important; }
+    .nav-tel { font-size: 12px !important; padding: 6px 12px !important; }
+    section { padding: 40px 0 !important; }
+    .hero, .page-hero { padding: 36px 0 !important; }
+    .section-title { font-size: 14.5px !important; padding: 10px 18px !important; }
   }
 
 </style>
