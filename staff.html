@@ -449,6 +449,56 @@
     .nav-tel { font-size: 12px !important; padding: 6px 12px !important; }
   }
 
+
+  /* === 岩佐風 精度上げ(オーバーライド) === */
+  /* バレット ● → ○ */
+  .container ul:not([class]) li::before { content: "○" !important; font-size: 13px !important; font-weight: 600 !important; }
+
+  /* ナビタブ: ジェル感(グラデ + 光沢) + 上角丸 */
+  .nav-list > li > a { border-radius: 24px 24px 0 0 !important; padding: 12px 26px !important; background: linear-gradient(180deg, #ffffff 0%, #e8f0d0 100%) !important; border: 1px solid #a8c878 !important; border-bottom: none !important; box-shadow: inset 0 1px 0 rgba(255,255,255,0.5) !important; font-size: 14px !important; }
+  .nav-list > li > a:hover { background: linear-gradient(180deg, #88c267 0%, #5fa840 100%) !important; color: #fff !important; }
+  .nav-list > li > a.active { background: linear-gradient(180deg, #5fa840 0%, #4a8e3a 100%) !important; color: #fff !important; }
+
+  /* WEB予約ボタンも角丸復活 */
+  .nav-tel { border-radius: 6px !important; }
+
+  /* CTA ボタン */
+  .btn { border-radius: 6px !important; }
+
+  /* 緑大帯H3スタイル(自分で追加可能なクラス) */
+  .green-bar-heading { background: linear-gradient(180deg, #6fb858 0%, #5fa840 100%); color: #fff; padding: 10px 18px; border-left: 6px solid #2d5a1c; font-weight: 600; font-size: 16px; letter-spacing: 0.05em; margin: 24px 0 16px; line-height: 1.5; }
+
+  /* テーブル行間広げ */
+  table th, table td { padding: 12px 16px !important; }
+
+  /* セクション見出しの緑バーも左に少し太く */
+  .section-title { border-left-width: 6px !important; padding-left: 16px !important; }
+
+  /* セクション間の緑点線区切り */
+  .section-head { border-bottom: 1px dotted #5fa840 !important; }
+
+  /* 「ページの先頭へ」ボタン用スタイル(後で a 要素に追加可能) */
+  .pagetop { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(180deg, #88c267 0%, #5fa840 100%); color: #fff !important; padding: 10px 24px; border-radius: 24px; font-size: 13px; text-decoration: none !important; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+  .pagetop:hover { background: linear-gradient(180deg, #5fa840 0%, #4a8e3a 100%); }
+
+  /* お知らせ赤ボックス: より岩佐風に */
+  .important-notice { background: #c8161c !important; border: 3px solid #c8161c !important; padding: 18px 24px !important; line-height: 1.7 !important; font-size: 15px !important; }
+
+  /* breadcrumb 矢印 + 緑色化 */
+  .breadcrumb a { color: #5fa840 !important; text-decoration: none !important; }
+  .breadcrumb a:hover { text-decoration: underline !important; }
+
+  /* 院長メッセージなどの本文段落間隔広げる */
+  .doctor-message-card { line-height: 2.1 !important; }
+  .doctor-message-card br + br { margin-top: 8px; }
+
+  /* 全体的に文字色を黒寄せ(岩佐は #333) */
+  body { color: #2d2d2d !important; }
+
+  @media (max-width: 768px) {
+    .nav-list > li > a { border-radius: 8px !important; padding: 10px 18px !important; }
+  }
+
 </style>
 <script type="application/ld+json">
 {
