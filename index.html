@@ -19,16 +19,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet" />
-<!-- オープニング：同一セッション内は初回のみ表示 -->
-<script>
-  try {
-    if (sessionStorage.getItem('openingShown')) {
-      document.documentElement.classList.add('opening-disabled');
-    } else {
-      sessionStorage.setItem('openingShown', '1');
-    }
-  } catch (e) { /* storage無効時は毎回表示 */ }
-</script>
 <style>
   /* ====== オープニングスプラッシュ ====== */
   .opening-splash {
@@ -340,15 +330,6 @@
 </script>
 </head>
 <body>
-<!-- オープニングスプラッシュ -->
-<div class="opening-splash" id="opening-splash">
-  <div class="opening-text">
-    <span class="opening-char">I</span><span class="opening-char">W</span><span class="opening-char">A</span><span class="opening-char">S</span><span class="opening-char">A</span><span class="opening-space"></span><span class="opening-char">E</span><span class="opening-char">N</span><span class="opening-char">T</span>
-    <span class="opening-underline"></span>
-  </div>
-</div>
-
-
 <header class="header">
   <div class="header-inner">
     <a href="#" class="logo">
@@ -737,17 +718,5 @@
   </a>
 </div>
 
-
-<script>
-  (function() {
-    var s = document.getElementById('opening-splash');
-    if (!s) return;
-    s.addEventListener('animationend', function(e) {
-      if (e.animationName === 'openingFadeOut') {
-        s.classList.add('opening-hidden');
-      }
-    });
-  })();
-</script>
 </body>
 </html>
