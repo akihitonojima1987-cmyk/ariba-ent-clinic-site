@@ -705,6 +705,324 @@
     .hero, .page-hero { margin: 8px !important; padding: 18px !important; }
   }
 
+
+  /* === 1978年創業 継承リトロクリニック(ファミコンベース実用化) === */
+
+  /* 基本: クリーム古紙背景 + 黒文字 */
+  html, body {
+    background: #f5ecd6 !important;
+    background-image: repeating-linear-gradient(0deg, transparent 0 3px, rgba(45,90,28,0.025) 3px 4px) !important;
+    color: #2d2d2d !important;
+    font-family: 'Noto Sans JP', 'DotGothic16', sans-serif !important;
+    font-weight: 400 !important;
+    line-height: 1.95 !important;
+    image-rendering: auto !important;
+    -webkit-font-smoothing: antialiased !important;
+    font-smooth: always !important;
+  }
+  *, *::before, *::after {
+    text-shadow: none !important;
+    animation: none !important;
+  }
+  /* スキャンライン削除 */
+  body::before { display: none !important; content: none !important; }
+
+  /* 見出しは DotGothic16 でレトロ感(色は深緑) */
+  h1, h2, h3, h4, .section-title, .hero-title, .page-hero-title {
+    font-family: 'DotGothic16', 'Noto Sans JP', sans-serif !important;
+    color: #2d5a1c !important;
+    text-shadow: none !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.05em !important;
+    line-height: 1.5 !important;
+  }
+  .section-title {
+    border-left: 6px solid #5fa840 !important;
+    padding-left: 14px !important;
+    background: transparent !important;
+    font-size: clamp(18px, 2.4vw, 22px) !important;
+  }
+  .section-title::before { content: "" !important; display: none !important; }
+
+  /* ヘッダー: 深緑 + ストライプの落ち着いたヴィンテージ */
+  .header {
+    background: #2d5a1c !important;
+    background-image: repeating-linear-gradient(0deg, #2d5a1c 0 4px, #234718 4px 5px) !important;
+    border-bottom: 4px solid #f5ecd6 !important;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.2) !important;
+    backdrop-filter: none !important;
+  }
+  .header-inner { padding: 12px 24px !important; }
+  .logo { padding: 4px 0 !important; }
+  .logo-svg rect { fill: #f5ecd6 !important; stroke: #88c267 !important; }
+  .logo-text {
+    color: #f5ecd6 !important;
+    font-family: 'DotGothic16', 'Noto Sans JP' !important;
+    font-size: 22px !important;
+    font-weight: 400 !important;
+    text-shadow: 1px 1px 0 #1a3010 !important;
+  }
+  .logo-en-sub {
+    color: #c5dfa6 !important;
+    font-size: 9px !important;
+    letter-spacing: 0.2em !important;
+    margin-top: 4px !important;
+  }
+  /* "Est. 1978" バッジをロゴ下に追加 */
+  .logo-en-sub::after {
+    content: "  /  Est. 1978" !important;
+    color: #fcfc54 !important;
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 8px !important;
+    letter-spacing: 0.2em !important;
+    margin-left: 4px !important;
+  }
+
+  /* ナビ: クリーム+緑のクラシック */
+  .nav-list { gap: 6px !important; padding: 0 !important; }
+  .nav-list > li > a {
+    background: #f5ecd6 !important;
+    color: #2d5a1c !important;
+    border: 2px solid #2d5a1c !important;
+    border-bottom-width: 4px !important;
+    border-right-width: 4px !important;
+    padding: 8px 16px !important;
+    font-size: 13px !important;
+    font-family: 'DotGothic16', 'Noto Sans JP' !important;
+    font-weight: 500 !important;
+    text-shadow: none !important;
+  }
+  .nav-list > li > a:hover { background: #5fa840 !important; color: #fff !important; }
+  .nav-list > li > a.active { background: #5fa840 !important; color: #f5ecd6 !important; }
+
+  /* 電話番号: クリーム+濃緑 */
+  .header-tel {
+    background: #f5ecd6 !important;
+    color: #2d5a1c !important;
+    border: 2px solid #2d5a1c !important;
+    border-bottom-width: 4px !important;
+    border-right-width: 4px !important;
+    padding: 6px 14px !important;
+    font-size: 18px !important;
+    font-family: 'DotGothic16', 'Noto Sans JP', monospace !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
+    letter-spacing: 0.02em !important;
+  }
+  .header-tel svg { color: #5fa840 !important; }
+
+  /* WEB予約: 控えめオレンジ */
+  .nav-tel {
+    background: #d97a1f !important;
+    color: #fff !important;
+    border: 2px solid #2d2d2d !important;
+    border-bottom-width: 4px !important;
+    border-right-width: 4px !important;
+    padding: 6px 14px !important;
+    font-size: 13px !important;
+    font-family: 'DotGothic16', 'Noto Sans JP' !important;
+    font-weight: 500 !important;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.3) !important;
+  }
+  .nav-tel:hover { background: #b86519 !important; }
+
+  /* メインコンテンツ: 白カード+深緑枠 */
+  section {
+    background: #ffffff !important;
+    color: #2d2d2d !important;
+    border: 2px solid #2d5a1c !important;
+    border-bottom-width: 4px !important;
+    border-right-width: 4px !important;
+    padding: 28px 24px !important;
+    margin: 16px 24px !important;
+  }
+  .container { color: #2d2d2d !important; }
+
+  /* カード: クリーム背景 */
+  .news-item, .service-card, .feature-card, .info-card, .doctor-profile {
+    background: #f9f3df !important;
+    border: 2px solid #2d5a1c !important;
+    border-bottom-width: 3px !important;
+    border-right-width: 3px !important;
+    color: #2d2d2d !important;
+    padding: 16px 20px !important;
+  }
+
+  /* テーブル: クラシック緑罫線 */
+  table {
+    background: #fff !important;
+    border: 2px solid #2d5a1c !important;
+    color: #2d2d2d !important;
+  }
+  table th, table td {
+    border: 1px solid #2d5a1c !important;
+    padding: 10px 14px !important;
+    font-size: 14px !important;
+    color: #2d2d2d !important;
+    background: #fff !important;
+    font-family: 'Noto Sans JP', sans-serif !important;
+    font-weight: 400 !important;
+    text-shadow: none !important;
+  }
+  table th {
+    background: #2d5a1c !important;
+    color: #f5ecd6 !important;
+    font-weight: 700 !important;
+    font-family: 'DotGothic16', 'Noto Sans JP' !important;
+  }
+  table tr:last-child td { background: #ecf4dd !important; }
+
+  /* バレット: ▶ 控えめ緑 */
+  .container ul:not([class]) li::before {
+    content: "▶" !important;
+    color: #5fa840 !important;
+    font-size: 11px !important;
+    text-shadow: none !important;
+  }
+
+  /* リンク: 深緑+下線 */
+  a {
+    color: #2d5a1c !important;
+    text-decoration: underline !important;
+    text-decoration-color: #5fa840 !important;
+    text-shadow: none !important;
+    background: transparent !important;
+  }
+  a:hover { color: #5fa840 !important; background: transparent !important; }
+
+  /* ボタン */
+  .btn {
+    background: #2d5a1c !important;
+    color: #f5ecd6 !important;
+    border: 2px solid #1a3010 !important;
+    border-bottom-width: 4px !important;
+    border-right-width: 4px !important;
+    padding: 10px 24px !important;
+    font-size: 14px !important;
+    font-family: 'DotGothic16', 'Noto Sans JP' !important;
+    font-weight: 500 !important;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.3) !important;
+  }
+  .btn:hover { background: #5fa840 !important; transform: translate(2px, 2px) !important; border-bottom-width: 2px !important; border-right-width: 2px !important; }
+  .btn-white { background: #f5ecd6 !important; color: #2d5a1c !important; text-shadow: none !important; }
+  .btn-outline-white { background: transparent !important; color: #f5ecd6 !important; border-color: #f5ecd6 !important; text-shadow: none !important; }
+
+  /* CTA */
+  .cta { background: #2d5a1c !important; background-image: repeating-linear-gradient(0deg, #2d5a1c 0 4px, #234718 4px 5px) !important; border: none !important; }
+  .cta h2 { color: #fcfc54 !important; }
+  .cta p { color: #f5ecd6 !important; }
+
+  /* ヒーロー */
+  .hero, .page-hero {
+    background: #fff !important;
+    background-image: none !important;
+    border: 2px solid #2d5a1c !important;
+    border-bottom-width: 4px !important;
+    border-right-width: 4px !important;
+    margin: 16px 24px !important;
+    padding: 32px 28px !important;
+  }
+  .hero-bg { display: none !important; }
+  .hero-title, .page-hero-title {
+    color: #2d5a1c !important;
+    font-size: clamp(22px, 3vw, 28px) !important;
+    margin-bottom: 12px !important;
+  }
+  .hero-title em { color: #c8161c !important; font-style: normal !important; font-weight: 700 !important; }
+  .hero-desc { color: #2d2d2d !important; font-size: 14px !important; line-height: 1.9 !important; }
+
+  /* フッター */
+  .footer {
+    background: #2d5a1c !important;
+    background-image: repeating-linear-gradient(0deg, #2d5a1c 0 4px, #234718 4px 5px) !important;
+    color: #f5ecd6 !important;
+    border-top: 4px solid #fcfc54 !important;
+    margin: 16px !important;
+    padding: 32px 24px 24px !important;
+  }
+  .footer-logo, .footer-address, .footer-nav a, .copyright {
+    color: #f5ecd6 !important;
+    font-family: 'Noto Sans JP', sans-serif !important;
+    text-shadow: none !important;
+  }
+  .copyright { font-size: 11px !important; opacity: 0.85 !important; letter-spacing: 0.1em !important; }
+  .copyright::before { content: "" !important; display: none !important; }
+
+  /* breadcrumb */
+  .breadcrumb {
+    background: #f5ecd6 !important;
+    border: 2px solid #2d5a1c !important;
+    padding: 8px 16px !important;
+    margin: 8px 24px !important;
+    font-size: 12px !important;
+    color: #2d2d2d !important;
+  }
+  .breadcrumb a { color: #2d5a1c !important; }
+
+  /* 重要なお知らせ */
+  .important-notice {
+    background: #c8161c !important;
+    color: #f5ecd6 !important;
+    border: 4px dashed #f5ecd6 !important;
+    text-shadow: none !important;
+    padding: 16px 20px !important;
+  }
+
+  /* スタッフコンパクト */
+  .staff-compact-row, .staff-compact-meta, .staff-compact-name, .staff-compact-role, .staff-compact-furi {
+    color: #2d2d2d !important;
+    font-family: 'Noto Sans JP', sans-serif !important;
+    text-shadow: none !important;
+  }
+  .staff-compact-role {
+    background: #5fa840 !important;
+    color: #fff !important;
+    border: 2px solid #2d5a1c !important;
+    padding: 2px 8px !important;
+    font-size: 11px !important;
+  }
+  .staff-compact-title { color: #2d5a1c !important; border-bottom: 1px dashed #5fa840 !important; font-family: 'DotGothic16', 'Noto Sans JP' !important; }
+
+  /* 院長挨拶 */
+  .doctor-message-card {
+    background: #f9f3df !important;
+    color: #2d2d2d !important;
+    padding: 20px 24px !important;
+    border: 2px solid #5fa840 !important;
+    border-bottom-width: 3px !important;
+    border-right-width: 3px !important;
+    line-height: 2.0 !important;
+    font-size: 14.5px !important;
+    font-family: 'Noto Sans JP', sans-serif !important;
+  }
+  .doctor-info-line { background: transparent !important; border: none !important; }
+  .doctor-info-line .doctor-info-label, .doctor-info-line .doctor-info-value {
+    color: #2d5a1c !important;
+    font-family: 'Noto Sans JP', sans-serif !important;
+    font-size: 13px !important;
+  }
+  .doctor-hero-name { color: #2d5a1c !important; font-family: 'DotGothic16', 'Noto Sans JP' !important; font-weight: 400 !important; font-size: 20px !important; }
+  .doctor-hero-label { color: #5fa840 !important; font-family: 'DotGothic16', 'Noto Sans JP' !important; font-size: 13px !important; }
+  .doctor-hero-furigana { color: #6b6b6b !important; font-family: 'Noto Sans JP', sans-serif !important; }
+
+  /* メニューボタン */
+  .menu-btn span { background: #f5ecd6 !important; }
+
+  /* モバイル */
+  @media (max-width: 768px) {
+    .header-inner { padding: 10px 14px !important; }
+    .logo-text { font-size: 17px !important; }
+    .logo-en-sub { font-size: 8px !important; }
+    .logo-en-sub::after { font-size: 7px !important; display: block; margin-left: 0 !important; margin-top: 2px !important; }
+    .nav-list > li > a { font-size: 12px !important; padding: 6px 12px !important; }
+    .header-tel { font-size: 14px !important; padding: 5px 10px !important; }
+    .nav-tel { font-size: 11px !important; padding: 5px 10px !important; }
+    section { margin: 8px 12px !important; padding: 18px 14px !important; }
+    .hero, .page-hero { margin: 8px 12px !important; padding: 22px 16px !important; }
+    .breadcrumb { margin: 6px 12px !important; padding: 6px 12px !important; }
+    .footer { margin: 8px !important; padding: 24px 16px !important; }
+  }
+
 </style>
 <script type="application/ld+json">
 {
