@@ -1048,6 +1048,27 @@
   }
   .nb-message p:last-child { margin-bottom: 0 !important; }
 
+
+  /* === staff.html 専用: 医師紹介見出しを黒文字に === */
+  .staff .section-title {
+    background: transparent !important;
+    color: #2d2d2d !important;
+    padding: 0 0 10px 0 !important;
+    display: block !important;
+    border-bottom: 2px solid #1c4f7e !important;
+    font-size: 22px !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.1em !important;
+    margin-bottom: 32px !important;
+    font-family: 'Noto Serif JP', serif !important;
+  }
+  .staff .section-title::before {
+    content: "● " !important;
+    color: #1c4f7e !important;
+    display: inline !important;
+    margin-right: 4px !important;
+  }
+
 </style>
 <script type="application/ld+json">
 {
@@ -1179,7 +1200,7 @@
     <div class="nb-block">
       <h3 class="nb-arrow-heading">経　歴</h3>
       <ul class="nb-career">
-        <li>順天堂大学医学部 卒業</li>
+        <li>聖マリアンナ医科大学 卒業</li>
         <li>順天堂大学医学部 耳鼻咽喉科学教室 入局</li>
         <li>関連病院にて研修</li>
         <li>耳鼻咽喉科専門医 取得</li>
