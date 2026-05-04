@@ -227,6 +227,79 @@
   /* ヒーロー部の背景もごく薄い緑がかった色味に */
   .page-hero { background: #ecf4dd !important; }
 
+
+  /* === 岩佐サイト風(構成・字体・雰囲気) 全ページ共通 === */
+
+  /* 全体背景: 薄緑〜クリームの全画面グラデ */
+  html, body { background: #f4f8ec !important; }
+  body { background: linear-gradient(180deg, #f0f5e0 0%, #f4f8ec 30%, #f8f9ec 100%) !important; min-height: 100vh; }
+
+  /* ベース: フォントウェイトを軽くする(レトロ感) */
+  body { font-weight: 400; line-height: 1.95; color: #333; }
+  h1, h2, h3, h4 { font-weight: 500; }
+
+  /* ヘッダー: 緑帯背景 + 下線 */
+  .header { background: linear-gradient(180deg, #e8f3d6 0%, #f4f8ec 100%) !important; backdrop-filter: none !important; border-bottom: 2px solid var(--color-primary) !important; }
+  .header-inner { height: auto !important; padding: 12px 24px !important; }
+  .logo { font-size: 20px !important; font-weight: 600 !important; color: #2d5a1c !important; line-height: 1.2; }
+  .logo span { font-size: 10px !important; letter-spacing: 0.15em !important; color: #6ba94c !important; margin-top: 4px; }
+
+  /* ナビ: 緑タブ風 */
+  .nav-list { gap: 0 !important; }
+  .nav-list > li { border-right: 1px solid #d4e3b8; }
+  .nav-list > li:first-child { border-left: 1px solid #d4e3b8; }
+  .nav-list > li > a { padding: 8px 16px !important; font-size: 13px !important; font-weight: 400 !important; color: #3d6e29 !important; background: #f8fbef; display: block; }
+  .nav-list > li > a:hover, .nav-list > li > a.active { background: var(--color-primary) !important; color: #fff !important; }
+  .nav-list a::after { display: none !important; }
+  .nav-tel { background: #ff8c1a !important; color: #fff !important; border-radius: 0 !important; padding: 8px 16px !important; font-weight: 500 !important; }
+  .nav-tel:hover { background: #e67a00 !important; }
+
+  /* セクション見出し: 「●」緑丸 + 大きめタイトル(岩佐風) */
+  .section-title { border-left: none !important; padding-left: 0 !important; position: relative; }
+  .section-title::before { content: "●"; color: var(--color-primary); font-size: 0.85em; margin-right: 10px; vertical-align: 0.05em; }
+
+  /* 本文項目スタイル: 「●  項目名     内容」のレトロ表組み */
+  .container ul:not([class]) li::before { content: "●" !important; color: var(--color-primary); font-size: 0.7em !important; top: 0.3em !important; }
+
+  /* カード等の角ばり強化 + 細い緑罫線 */
+  .news-item, .service-card, .feature-card, .info-card { border: 1px solid #d4e3b8 !important; background: #ffffffcc !important; }
+
+  /* テーブル: 細い緑罫線 + 緑薄背景ヘッダー */
+  table { border-collapse: collapse; width: 100%; }
+  table th, table td { border: 1px solid #c8dca0 !important; padding: 10px 14px !important; font-size: 13.5px !important; line-height: 1.7 !important; }
+  table th { background: #ecf4dd !important; color: #3d6e29 !important; font-weight: 500 !important; text-align: center; }
+
+  /* CTA 大ボタン: 角タブ風 */
+  .cta { background: #5fa840 !important; }
+  .btn { border-radius: 0 !important; font-weight: 500 !important; }
+  .btn-white { background: #fff !important; color: var(--color-primary) !important; border: 1px solid var(--color-primary) !important; }
+  .btn-outline-white { border: 1px solid #fff !important; }
+
+  /* フッター: 中央寄せ + シンプル線 */
+  .footer { background: #2d5a1c !important; color: #fff !important; padding: 40px 0 20px !important; }
+  .footer-inner { justify-content: center !important; text-align: center !important; flex-direction: column !important; align-items: center !important; gap: 16px !important; }
+  .footer-nav { justify-content: center !important; gap: 16px !important; }
+  .copyright { font-family: "Noto Sans JP", sans-serif !important; opacity: 0.7 !important; }
+
+  /* ヒーロー: より控えめに */
+  .hero, .page-hero { padding: 48px 0 !important; min-height: auto !important; height: auto !important; background: linear-gradient(180deg, #ecf4dd 0%, #f4f8ec 100%) !important; border-bottom: 1px dotted var(--color-primary) !important; }
+  .hero-bg { display: none !important; }
+  .hero-title, .page-hero-title { font-size: clamp(20px, 3vw, 28px) !important; color: #2d5a1c !important; font-weight: 500 !important; }
+  .hero-desc { font-size: 14px !important; color: #555 !important; }
+
+  /* リンク全般を緑系に */
+  a { color: #3d6e29; }
+  a:hover { color: var(--color-primary-light); }
+
+  /* モバイル */
+  @media (max-width: 768px) {
+    .nav-list > li, .nav-list > li:first-child { border: none; }
+    .header-inner { padding: 10px 16px !important; }
+    .logo { font-size: 17px !important; }
+    .section-title { font-size: 17px !important; }
+    .hero-title, .page-hero-title { font-size: 19px !important; }
+  }
+
 </style>
 <script type="application/ld+json">
 {
