@@ -21,9 +21,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --color-primary: #5fa840;
-    --color-primary-light: #88c267;
-    --color-accent: #ecf4dd;
+    --color-primary: #1c4f7e;
+    --color-primary-light: #4a8bb8;
+    --color-accent: #f4f7fa;
     --color-text: #2b2b2b;
     --color-text-light: #6b6b6b;
     --color-bg: #ffffff;
@@ -74,9 +74,9 @@
   .menu-btn.active span:nth-child(3) { top: 16px; transform: rotate(-45deg); }
 
   /* Page Hero */
-  .page-hero { min-height: 480px; padding: 120px 0 80px; display: flex; align-items: center; justify-content: center; background: #ecf4dd; position: relative; overflow: hidden; }
+  .page-hero { min-height: 480px; padding: 120px 0 80px; display: flex; align-items: center; justify-content: center; background: #f4f7fa; position: relative; overflow: hidden; }
   .page-hero::before { content: ""; position: absolute; top: -20%; right: -10%; width: 50%; height: 80%; background: radial-gradient(circle, rgba(74, 139, 184, 0.12) 0%, transparent 60%); border-radius: 0; }
-  .page-hero::after { content: ""; position: absolute; bottom: -30%; left: -10%; width: 50%; height: 80%; background: radial-gradient(circle, rgba(95, 168, 64, 0.08) 0%, transparent 60%); border-radius: 0; }
+  .page-hero::after { content: ""; position: absolute; bottom: -30%; left: -10%; width: 50%; height: 80%; background: radial-gradient(circle, rgba(28, 79, 126, 0.08) 0%, transparent 60%); border-radius: 0; }
   .page-hero-inner { text-align: center; position: relative; z-index: 1; max-width: 880px; padding: 0 24px; }
   .page-hero-label { font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 16px; text-transform: uppercase; }
   .page-hero-title { font-size: clamp(24px, 3.6vw, 36px); font-weight: 500; letter-spacing: 0.08em; color: var(--color-text); line-height: 1.5; }
@@ -306,47 +306,47 @@
   .container ul:not([class]) li { position: relative; padding-left: 18px; line-height: 1.95; }
   .container ul:not([class]) li::before { content: "●"; position: absolute; left: 0; top: 0; color: var(--color-primary); font-size: 10px; line-height: inherit; }
   /* セクション見出しのバーをやや太め(旧岩佐風) */
-  .section-title { border-left-width: 5px !important; padding-left: 14px !important; color: #3d6e29 !important; }
+  .section-title { border-left-width: 5px !important; padding-left: 14px !important; color: #1c4f7e !important; }
   /* リンク色を緑系に統一(青いまま残ってるリンクの修正) */
   .container a:not([class]) { color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
   .container a:not([class]):hover { color: var(--color-primary-light); }
   /* フッターは控えめなグレー(下記は元のまま維持) */
   /* ヒーロー部の背景もごく薄い緑がかった色味に */
-  .page-hero { background: #ecf4dd !important; }
+  .page-hero { background: #f4f7fa !important; }
 
 
 
   /* === 岩佐サイト 実物忠実再現(全ページ共通) === */
 
   /* 全体: 薄黄緑〜クリームのグラデ */
-  html, body { background: #f0f5e0 !important; }
-  body { background: linear-gradient(180deg, #e8f0d3 0%, #f0f5e0 25%, #f5f8eb 100%) !important; min-height: 100vh; font-weight: 400; line-height: 1.95; color: #333; }
+  html, body { background: #ffffff !important; }
+  body { background: linear-gradient(180deg, #e8f0d3 0%, #ffffff 25%, #ffffff 100%) !important; min-height: 100vh; font-weight: 400; line-height: 1.95; color: #333; }
   h1, h2, h3, h4 { font-weight: 600; color: #222; }
 
   /* ヘッダー: 緑グラデの帯 + ロゴ大きく + 電話番号強調 */
-  .header { background: linear-gradient(180deg, #c8e0a0 0%, #d8e8b8 50%, #e8f0d0 100%) !important; backdrop-filter: none !important; border-bottom: 1px solid #a8c878 !important; position: relative !important; }
+  .header { background: linear-gradient(180deg, #2a6fa5 0%, #1c4f7e 50%, #133a5c 100%) !important; backdrop-filter: none !important; border-bottom: 1px solid #d0dde6 !important; position: relative !important; }
   .header-inner { height: auto !important; padding: 16px 24px 0 !important; flex-direction: column !important; align-items: stretch !important; max-width: 1200px; }
-  .logo { font-size: 26px !important; font-weight: 700 !important; color: #2d5a1c !important; line-height: 1.3; align-self: flex-start; padding: 4px 0 12px; letter-spacing: 0.05em; }
-  .logo span { font-size: 11px !important; letter-spacing: 0.18em !important; color: #5fa840 !important; margin-top: 6px; font-weight: 500 !important; }
+  .logo { font-size: 26px !important; font-weight: 700 !important; color: #133a5c !important; line-height: 1.3; align-self: flex-start; padding: 4px 0 12px; letter-spacing: 0.05em; }
+  .logo span { font-size: 11px !important; letter-spacing: 0.18em !important; color: #1c4f7e !important; margin-top: 6px; font-weight: 500 !important; }
   /* 電話番号 */
-  .nav-tel { position: absolute !important; top: 18px !important; right: 24px !important; background: transparent !important; color: #2d5a1c !important; padding: 0 !important; font-size: 22px !important; font-weight: 700 !important; letter-spacing: 0.02em !important; gap: 8px !important; border-radius: 0 !important; }
-  .nav-tel:hover { background: transparent !important; color: #5fa840 !important; }
-  .nav-tel svg { width: 22px !important; height: 22px !important; color: #5fa840 !important; }
+  .nav-tel { position: absolute !important; top: 18px !important; right: 24px !important; background: transparent !important; color: #133a5c !important; padding: 0 !important; font-size: 22px !important; font-weight: 700 !important; letter-spacing: 0.02em !important; gap: 8px !important; border-radius: 0 !important; }
+  .nav-tel:hover { background: transparent !important; color: #1c4f7e !important; }
+  .nav-tel svg { width: 22px !important; height: 22px !important; color: #1c4f7e !important; }
 
   /* ナビ: 緑タブ風(角丸復活) */
   .nav { width: 100%; }
   .nav-list { gap: 6px !important; justify-content: flex-end !important; padding: 8px 0 0 !important; border: none !important; }
   .nav-list > li { border: none !important; }
-  .nav-list > li > a { padding: 10px 22px !important; font-size: 13.5px !important; font-weight: 500 !important; color: #5fa840 !important; background: #ffffffaa !important; border-radius: 8px 8px 0 0 !important; border: 1px solid #a8c878 !important; border-bottom: none !important; display: block !important; transition: none !important; }
-  .nav-list > li > a:hover, .nav-list > li > a.active { background: #5fa840 !important; color: #fff !important; border-color: #5fa840 !important; }
+  .nav-list > li > a { padding: 10px 22px !important; font-size: 13.5px !important; font-weight: 500 !important; color: #1c4f7e !important; background: #ffffffaa !important; border-radius: 8px 8px 0 0 !important; border: 1px solid #d0dde6 !important; border-bottom: none !important; display: block !important; transition: none !important; }
+  .nav-list > li > a:hover, .nav-list > li > a.active { background: #1c4f7e !important; color: #fff !important; border-color: #1c4f7e !important; }
   .nav-list a::after { display: none !important; }
   /* サブメニュー */
-  .submenu { background: #fff !important; border: 1px solid #a8c878 !important; border-radius: 0 0 4px 4px !important; }
+  .submenu { background: #fff !important; border: 1px solid #d0dde6 !important; border-radius: 0 0 4px 4px !important; }
 
   /* セクション見出し: 緑縦バー(▎) + 黒太字 */
-  .section-title { border-left: 5px solid #5fa840 !important; padding-left: 14px !important; color: #222 !important; font-weight: 600 !important; font-size: clamp(18px, 2.2vw, 22px) !important; line-height: 1.5 !important; letter-spacing: 0.05em !important; }
+  .section-title { border-left: 5px solid #1c4f7e !important; padding-left: 14px !important; color: #222 !important; font-weight: 600 !important; font-size: clamp(18px, 2.2vw, 22px) !important; line-height: 1.5 !important; letter-spacing: 0.05em !important; }
   .section-title::before { display: none !important; }
-  .section-head { text-align: left !important; margin-bottom: 24px !important; padding-bottom: 12px; border-bottom: 1px dotted #a8c878; }
+  .section-head { text-align: left !important; margin-bottom: 24px !important; padding-bottom: 12px; border-bottom: 1px dotted #d0dde6; }
 
   /* メインコンテンツ全体: 白背景の枠 */
   main, .main-content, section.about, section.services, section.features, section.info, section.news, section.staff { background: transparent !important; }
@@ -354,44 +354,44 @@
   /* 「○」緑丸バレット(項目ラベル形式) */
   .container ul:not([class]) { list-style: none !important; padding: 0 !important; }
   .container ul:not([class]) li { position: relative !important; padding-left: 22px !important; line-height: 2.1 !important; }
-  .container ul:not([class]) li::before { content: "○" !important; position: absolute !important; left: 0 !important; top: 0 !important; color: #5fa840 !important; font-size: 14px !important; font-weight: 700 !important; }
+  .container ul:not([class]) li::before { content: "○" !important; position: absolute !important; left: 0 !important; top: 0 !important; color: #1c4f7e !important; font-size: 14px !important; font-weight: 700 !important; }
 
   /* カード(ニュース・サービス等)を細い緑枠の半透明白背景に */
-  .news-item, .service-card, .feature-card, .info-card, .doctor-profile { background: #ffffff !important; border: 1px solid #c8dca0 !important; padding: 16px 20px !important; }
+  .news-item, .service-card, .feature-card, .info-card, .doctor-profile { background: #ffffff !important; border: 1px solid #d0dde6 !important; padding: 16px 20px !important; }
 
   /* テーブル: ヘッダー濃緑、罫線細、休診行ライト緑 */
   table { border-collapse: collapse; width: 100%; background: #fff; }
-  table th, table td { border: 1px solid #a8c878 !important; padding: 8px 12px !important; font-size: 13.5px !important; line-height: 1.7 !important; vertical-align: middle !important; }
-  table th { background: #5fa840 !important; color: #fff !important; font-weight: 500 !important; text-align: center !important; }
+  table th, table td { border: 1px solid #d0dde6 !important; padding: 8px 12px !important; font-size: 13.5px !important; line-height: 1.7 !important; vertical-align: middle !important; }
+  table th { background: #1c4f7e !important; color: #fff !important; font-weight: 500 !important; text-align: center !important; }
   /* 休診日のライト緑行(td に「休診日」を含む行を狙う擬似実装はCSSではできないので、tr.holiday や最後のtrで近似) */
-  table tr:last-child td { background: #ecf4dd !important; }
+  table tr:last-child td { background: #f4f7fa !important; }
 
   /* CTA */
-  .cta { background: #5fa840 !important; padding: 48px 0 !important; }
+  .cta { background: #1c4f7e !important; padding: 48px 0 !important; }
   .cta h2 { color: #fff !important; font-weight: 600 !important; }
   .cta p { color: #fff !important; opacity: 0.95 !important; }
   .btn { border-radius: 4px !important; font-weight: 500 !important; padding: 12px 28px !important; }
-  .btn-white { background: #fff !important; color: #2d5a1c !important; border: 1px solid #fff !important; }
+  .btn-white { background: #fff !important; color: #133a5c !important; border: 1px solid #fff !important; }
   .btn-outline-white { background: transparent !important; color: #fff !important; border: 1px solid #fff !important; }
 
   /* フッター: 暗緑シンプル + 中央寄せ */
-  .footer { background: linear-gradient(180deg, #d0e0a0 0%, #b8c880 100%) !important; color: #2d5a1c !important; padding: 48px 0 24px !important; border-top: 1px solid #a8c878 !important; }
-  .footer-logo, .footer-address, .footer-nav a { color: #2d5a1c !important; }
-  .footer-inner { justify-content: center !important; text-align: center !important; flex-direction: column !important; align-items: center !important; gap: 16px !important; padding-bottom: 24px !important; border-bottom: 1px solid #a8c878 !important; }
+  .footer { background: linear-gradient(180deg, #4a8bb8 0%, #1c4f7e 100%) !important; color: #133a5c !important; padding: 48px 0 24px !important; border-top: 1px solid #d0dde6 !important; }
+  .footer-logo, .footer-address, .footer-nav a { color: #133a5c !important; }
+  .footer-inner { justify-content: center !important; text-align: center !important; flex-direction: column !important; align-items: center !important; gap: 16px !important; padding-bottom: 24px !important; border-bottom: 1px solid #d0dde6 !important; }
   .footer-nav { justify-content: center !important; gap: 24px !important; }
   .footer-nav a { font-size: 13px !important; opacity: 0.8 !important; }
   .footer-nav a:hover { opacity: 1; text-decoration: underline; }
-  .copyright { color: #2d5a1c !important; opacity: 0.7 !important; padding-top: 16px !important; font-family: "Noto Sans JP", sans-serif !important; letter-spacing: 0.05em !important; }
+  .copyright { color: #133a5c !important; opacity: 0.7 !important; padding-top: 16px !important; font-family: "Noto Sans JP", sans-serif !important; letter-spacing: 0.05em !important; }
 
   /* ヒーロー: 控えめに */
-  .hero, .page-hero { padding: 32px 0 !important; min-height: auto !important; height: auto !important; background: transparent !important; border-bottom: 1px dotted #a8c878 !important; }
+  .hero, .page-hero { padding: 32px 0 !important; min-height: auto !important; height: auto !important; background: transparent !important; border-bottom: 1px dotted #d0dde6 !important; }
   .hero-bg { display: none !important; }
-  .hero-title, .page-hero-title { font-size: clamp(20px, 2.6vw, 26px) !important; color: #2d5a1c !important; font-weight: 600 !important; }
+  .hero-title, .page-hero-title { font-size: clamp(20px, 2.6vw, 26px) !important; color: #133a5c !important; font-weight: 600 !important; }
   .hero-desc { font-size: 14px !important; color: #555 !important; }
 
   /* 全リンク色を緑系に */
-  a { color: #2d5a1c; }
-  a:hover { color: #5fa840; }
+  a { color: #133a5c; }
+  a:hover { color: #1c4f7e; }
 
   /* 重要なお知らせ用ボックス(red box)スタイル定義(必要箇所で使用) */
   .important-notice { background: #c92a2a; color: #fff; padding: 16px 20px; text-align: center; font-weight: 700; border: 1px solid #c92a2a; margin: 16px 0; line-height: 1.6; }
@@ -401,7 +401,7 @@
   .breadcrumb { background: transparent !important; border: none !important; padding: 12px 0 !important; font-size: 12px !important; }
 
   /* メニューボタンも緑系に */
-  .menu-btn span { background: #2d5a1c !important; }
+  .menu-btn span { background: #133a5c !important; }
 
   /* モバイル */
   @media (max-width: 768px) {
@@ -416,9 +416,9 @@
 
 
   /* === ヘッダー電話番号(岩佐風 大強調) === */
-  .header-tel { display: inline-flex !important; align-items: center !important; gap: 8px !important; font-size: 22px !important; font-weight: 700 !important; color: #2d5a1c !important; letter-spacing: 0.02em !important; padding: 0 !important; background: transparent !important; border-radius: 0 !important; transition: none !important; line-height: 1 !important; }
-  .header-tel:hover { color: #5fa840 !important; opacity: 1 !important; }
-  .header-tel svg { color: #5fa840 !important; }
+  .header-tel { display: inline-flex !important; align-items: center !important; gap: 8px !important; font-size: 22px !important; font-weight: 700 !important; color: #133a5c !important; letter-spacing: 0.02em !important; padding: 0 !important; background: transparent !important; border-radius: 0 !important; transition: none !important; line-height: 1 !important; }
+  .header-tel:hover { color: #1c4f7e !important; opacity: 1 !important; }
+  .header-tel svg { color: #1c4f7e !important; }
   /* nav-tel(WEB予約)の絶対配置を解除して header-tel と並べる */
   .nav-tel { position: static !important; display: inline-flex !important; align-items: center !important; gap: 6px !important; font-size: 13px !important; padding: 8px 14px !important; background: #ff8c1a !important; color: #fff !important; font-weight: 600 !important; border-radius: 4px !important; margin-left: 16px !important; }
   .nav-tel:hover { background: #e67a00 !important; color: #fff !important; opacity: 1 !important; }
@@ -428,8 +428,8 @@
   /* index ヒーロー em の緑強調を控えめに */
   .hero-title em { color: inherit !important; font-style: normal !important; font-weight: 700 !important; }
   /* ロゴの色を確実に濃く */
-  .logo { color: #1f4710 !important; }
-  .logo span { color: #5fa840 !important; }
+  .logo { color: #133a5c !important; }
+  .logo span { color: #1c4f7e !important; }
   @media (max-width: 768px) {
     .header-right { position: static !important; padding: 8px 0 12px; justify-content: flex-end; flex-wrap: wrap; }
     .header-tel { font-size: 17px !important; }
@@ -442,9 +442,9 @@
   .container ul:not([class]) li::before { content: "○" !important; font-size: 13px !important; font-weight: 600 !important; }
 
   /* ナビタブ: ジェル感(グラデ + 光沢) + 上角丸 */
-  .nav-list > li > a { border-radius: 24px 24px 0 0 !important; padding: 12px 26px !important; background: linear-gradient(180deg, #ffffff 0%, #e8f0d0 100%) !important; border: 1px solid #a8c878 !important; border-bottom: none !important; box-shadow: inset 0 1px 0 rgba(255,255,255,0.5) !important; font-size: 14px !important; }
-  .nav-list > li > a:hover { background: linear-gradient(180deg, #88c267 0%, #5fa840 100%) !important; color: #fff !important; }
-  .nav-list > li > a.active { background: linear-gradient(180deg, #5fa840 0%, #4a8e3a 100%) !important; color: #fff !important; }
+  .nav-list > li > a { border-radius: 24px 24px 0 0 !important; padding: 12px 26px !important; background: linear-gradient(180deg, #ffffff 0%, #133a5c 100%) !important; border: 1px solid #d0dde6 !important; border-bottom: none !important; box-shadow: inset 0 1px 0 rgba(255,255,255,0.5) !important; font-size: 14px !important; }
+  .nav-list > li > a:hover { background: linear-gradient(180deg, #4a8bb8 0%, #1c4f7e 100%) !important; color: #fff !important; }
+  .nav-list > li > a.active { background: linear-gradient(180deg, #1c4f7e 0%, #1c4f7e 100%) !important; color: #fff !important; }
 
   /* WEB予約ボタンも角丸復活 */
   .nav-tel { border-radius: 6px !important; }
@@ -453,7 +453,7 @@
   .btn { border-radius: 6px !important; }
 
   /* 緑大帯H3スタイル(自分で追加可能なクラス) */
-  .green-bar-heading { background: linear-gradient(180deg, #6fb858 0%, #5fa840 100%); color: #fff; padding: 10px 18px; border-left: 6px solid #2d5a1c; font-weight: 600; font-size: 16px; letter-spacing: 0.05em; margin: 24px 0 16px; line-height: 1.5; }
+  .green-bar-heading { background: linear-gradient(180deg, #4a8bb8 0%, #1c4f7e 100%); color: #fff; padding: 10px 18px; border-left: 6px solid #133a5c; font-weight: 600; font-size: 16px; letter-spacing: 0.05em; margin: 24px 0 16px; line-height: 1.5; }
 
   /* テーブル行間広げ */
   table th, table td { padding: 12px 16px !important; }
@@ -462,17 +462,17 @@
   .section-title { border-left-width: 6px !important; padding-left: 16px !important; }
 
   /* セクション間の緑点線区切り */
-  .section-head { border-bottom: 1px dotted #5fa840 !important; }
+  .section-head { border-bottom: 1px dotted #1c4f7e !important; }
 
   /* 「ページの先頭へ」ボタン用スタイル(後で a 要素に追加可能) */
-  .pagetop { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(180deg, #88c267 0%, #5fa840 100%); color: #fff !important; padding: 10px 24px; border-radius: 24px; font-size: 13px; text-decoration: none !important; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
-  .pagetop:hover { background: linear-gradient(180deg, #5fa840 0%, #4a8e3a 100%); }
+  .pagetop { display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(180deg, #4a8bb8 0%, #1c4f7e 100%); color: #fff !important; padding: 10px 24px; border-radius: 24px; font-size: 13px; text-decoration: none !important; box-shadow: 0 1px 2px rgba(0,0,0,0.1); }
+  .pagetop:hover { background: linear-gradient(180deg, #1c4f7e 0%, #1c4f7e 100%); }
 
   /* お知らせ赤ボックス: より岩佐風に */
   .important-notice { background: #c8161c !important; border: 3px solid #c8161c !important; padding: 18px 24px !important; line-height: 1.7 !important; font-size: 15px !important; }
 
   /* breadcrumb 矢印 + 緑色化 */
-  .breadcrumb a { color: #5fa840 !important; text-decoration: none !important; }
+  .breadcrumb a { color: #1c4f7e !important; text-decoration: none !important; }
   .breadcrumb a:hover { text-decoration: underline !important; }
 
   /* 院長メッセージなどの本文段落間隔広げる */
@@ -490,15 +490,15 @@
   /* === 岩佐風 SVG ロゴ + 白基調(2026-05-04 後半) === */
   .logo { display: inline-flex !important; align-items: center !important; gap: 14px !important; padding: 4px 0 12px !important; line-height: 1.2; }
   .logo-svg { width: 56px; height: 56px; flex-shrink: 0; }
-  .logo-text { display: inline-flex; flex-direction: column; font-size: 24px !important; font-weight: 700 !important; color: #1f4710 !important; letter-spacing: 0.05em; }
-  .logo-en-sub { font-size: 10px !important; font-weight: 500 !important; color: #5fa840 !important; letter-spacing: 0.18em !important; margin-top: 4px; }
+  .logo-text { display: inline-flex; flex-direction: column; font-size: 24px !important; font-weight: 700 !important; color: #133a5c !important; letter-spacing: 0.05em; }
+  .logo-en-sub { font-size: 10px !important; font-weight: 500 !important; color: #1c4f7e !important; letter-spacing: 0.18em !important; margin-top: 4px; }
 
   /* 白基調: body/セクション/カードを白に */
   html, body { background: #ffffff !important; }
   body { background: #ffffff !important; }
   section { background: transparent !important; }
   .staff, .staff-compact, .news, .about, .services, .features, .info, main, .container { background: transparent !important; }
-  .page-hero, .hero { background: #ffffff !important; border-bottom: 1px dotted #a8c878 !important; }
+  .page-hero, .hero { background: #ffffff !important; border-bottom: 1px dotted #d0dde6 !important; }
   .breadcrumb { background: #fafbf6 !important; }
 
   /* ヘッダーの薄緑帯はそのまま維持(既存 .header に linear-gradient) */
@@ -605,9 +605,9 @@
   .logo-svg { width: 56px; height: 56px; flex-shrink: 0; }
   .logo-svg rect { fill: #fff !important; stroke: var(--kaga-accent-gold) !important; stroke-width: 1.2 !important; }
   /* SVGロゴ内の緑要素を青に変える(rect以外の緑) */
-  .logo-svg path[fill="#5fa840"] { fill: #1c4f7e !important; }
-  .logo-svg path[fill="#88c267"] { fill: #4a8bb8 !important; }
-  .logo-svg text[fill="#5fa840"] { fill: #1c4f7e !important; }
+  .logo-svg path[fill="#1c4f7e"] { fill: #1c4f7e !important; }
+  .logo-svg path[fill="#4a8bb8"] { fill: #4a8bb8 !important; }
+  .logo-svg text[fill="#1c4f7e"] { fill: #1c4f7e !important; }
 
   .logo-text {
     color: #fff !important;
@@ -930,6 +930,36 @@
     .section-title { font-size: 14.5px !important; padding: 10px 18px !important; }
   }
 
+
+  /* === 最終調整(2026-05-04 夜): ロゴ拡大・名前小・院長表示削除 === */
+  .logo-text {
+    font-size: 30px !important;
+    line-height: 1.2 !important;
+  }
+  .logo-en-sub { font-size: 11px !important; margin-top: 6px !important; }
+  .logo-svg { width: 64px !important; height: 64px !important; }
+
+  /* doctor-hero-name をスタッフと同サイズに */
+  .doctor-hero-name {
+    font-size: 15px !important;
+    font-weight: 500 !important;
+    color: #2d2d2d !important;
+    font-family: 'Noto Sans JP', sans-serif !important;
+    letter-spacing: 0.05em !important;
+  }
+  .doctor-hero {
+    border-bottom: none !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 12px !important;
+  }
+  .doctor-hero-label, .doctor-hero-furigana { display: none !important; }
+
+  @media (max-width: 768px) {
+    .logo-text { font-size: 22px !important; }
+    .logo-svg { width: 48px !important; height: 48px !important; }
+    .logo-en-sub { font-size: 10px !important; }
+  }
+
 </style>
 <script type="application/ld+json">
 {
@@ -985,11 +1015,11 @@
   <div class="header-inner">
     <a href="index.html" class="logo">
       <svg class="logo-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="1.5" y="1.5" width="57" height="57" rx="4" fill="#fff" stroke="#a8c878" stroke-width="1"/>
-        <text x="30" y="11" font-family="'Noto Serif JP', serif" font-size="5.5" fill="#5fa840" text-anchor="middle" letter-spacing="0.5" font-weight="700">IWASA CLINIC</text>
+        <rect x="1.5" y="1.5" width="57" height="57" rx="4" fill="#fff" stroke="#d0dde6" stroke-width="1"/>
+        <text x="30" y="11" font-family="'Noto Serif JP', serif" font-size="5.5" fill="#1c4f7e" text-anchor="middle" letter-spacing="0.5" font-weight="700">IWASA CLINIC</text>
         <g transform="translate(30, 33)">
-          <path d="M0,-13 Q-4,-9 -3.5,-3 Q-4,9 0,13 Q4,9 3.5,3 Q4,-9 0,-13 Z" fill="#5fa840"/>
-          <path d="M-13,0 Q-9,-4 -3,-3.5 Q9,-4 13,0 Q9,4 3,3.5 Q-9,4 -13,0 Z" fill="#88c267" opacity="0.9"/>
+          <path d="M0,-13 Q-4,-9 -3.5,-3 Q-4,9 0,13 Q4,9 3.5,3 Q4,-9 0,-13 Z" fill="#1c4f7e"/>
+          <path d="M-13,0 Q-9,-4 -3,-3.5 Q9,-4 13,0 Q9,4 3,3.5 Q-9,4 -13,0 Z" fill="#4a8bb8" opacity="0.9"/>
           <circle cx="0" cy="0" r="1.8" fill="#fff"/>
         </g>
         <text x="30" y="55" font-family="'Noto Serif JP', serif" font-size="4" fill="#777" text-anchor="middle" letter-spacing="0.4">EAR NOSE THROAT</text>
