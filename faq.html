@@ -471,6 +471,28 @@
     .footer { padding: 32px 0 16px !important; }
   }
 
+
+  /* === ヘッダー電話番号(岩佐風 大強調) === */
+  .header-tel { display: inline-flex !important; align-items: center !important; gap: 8px !important; font-size: 22px !important; font-weight: 700 !important; color: #2d5a1c !important; letter-spacing: 0.02em !important; padding: 0 !important; background: transparent !important; border-radius: 0 !important; transition: none !important; line-height: 1 !important; }
+  .header-tel:hover { color: #5fa840 !important; opacity: 1 !important; }
+  .header-tel svg { color: #5fa840 !important; }
+  /* nav-tel(WEB予約)の絶対配置を解除して header-tel と並べる */
+  .nav-tel { position: static !important; display: inline-flex !important; align-items: center !important; gap: 6px !important; font-size: 13px !important; padding: 8px 14px !important; background: #ff8c1a !important; color: #fff !important; font-weight: 600 !important; border-radius: 4px !important; margin-left: 16px !important; }
+  .nav-tel:hover { background: #e67a00 !important; color: #fff !important; opacity: 1 !important; }
+  /* ヘッダー右側を絶対配置で電話番号+WEB予約を並べる */
+  .header { position: relative !important; }
+  .header-right { position: absolute; top: 18px; right: 24px; display: flex; align-items: center; gap: 16px; }
+  /* index ヒーロー em の緑強調を控えめに */
+  .hero-title em { color: inherit !important; font-style: normal !important; font-weight: 700 !important; }
+  /* ロゴの色を確実に濃く */
+  .logo { color: #1f4710 !important; }
+  .logo span { color: #5fa840 !important; }
+  @media (max-width: 768px) {
+    .header-right { position: static !important; padding: 8px 0 12px; justify-content: flex-end; flex-wrap: wrap; }
+    .header-tel { font-size: 17px !important; }
+    .nav-tel { font-size: 12px !important; padding: 6px 12px !important; }
+  }
+
 </style>
 <script type="application/ld+json">
 {
@@ -545,10 +567,16 @@
         <li><a href="faq.html" class="active">よくある質問</a></li>
         <li><a href="index.html#info">アクセス</a></li>
       </ul>
+      <div class="header-right">
+      <a href="tel:0335678733" class="header-tel">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        03-3567-8733
+      </a>
       <a href="https://wakumy.lyd.inc/clinic/hg10976?openExternalBrowser=1" class="nav-tel" target="_blank" rel="noopener">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
         WEB予約
       </a>
+    </div>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="メニュー"><span></span><span></span><span></span></button>
   </div>
