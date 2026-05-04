@@ -499,6 +499,37 @@
     .nav-list > li > a { border-radius: 8px !important; padding: 10px 18px !important; }
   }
 
+
+  /* === 岩佐風 SVG ロゴ + 白基調(2026-05-04 後半) === */
+  .logo { display: inline-flex !important; align-items: center !important; gap: 14px !important; padding: 4px 0 12px !important; line-height: 1.2; }
+  .logo-svg { width: 56px; height: 56px; flex-shrink: 0; }
+  .logo-text { display: inline-flex; flex-direction: column; font-size: 24px !important; font-weight: 700 !important; color: #1f4710 !important; letter-spacing: 0.05em; }
+  .logo-en-sub { font-size: 10px !important; font-weight: 500 !important; color: #5fa840 !important; letter-spacing: 0.18em !important; margin-top: 4px; }
+
+  /* 白基調: body/セクション/カードを白に */
+  html, body { background: #ffffff !important; }
+  body { background: #ffffff !important; }
+  section { background: transparent !important; }
+  .staff, .staff-compact, .news, .about, .services, .features, .info, main, .container { background: transparent !important; }
+  .page-hero, .hero { background: #ffffff !important; border-bottom: 1px dotted #a8c878 !important; }
+  .breadcrumb { background: #fafbf6 !important; }
+
+  /* ヘッダーの薄緑帯はそのまま維持(既存 .header に linear-gradient) */
+  /* フッターも緑グラデ維持 */
+
+  /* カードの背景を完全な白に(薄緑混じりを排除) */
+  .news-item, .service-card, .feature-card, .info-card, .doctor-profile { background: #ffffff !important; border: 1px solid #d4e3b8 !important; }
+
+  /* テーブルも白基調に(休診行は淡緑残す) */
+  table { background: #ffffff !important; }
+
+  /* モバイル: ロゴサイズ縮小 */
+  @media (max-width: 768px) {
+    .logo-svg { width: 44px; height: 44px; }
+    .logo-text { font-size: 18px !important; }
+    .logo-en-sub { font-size: 9px !important; }
+  }
+
 </style>
 <script type="application/ld+json">
 {
@@ -553,8 +584,20 @@
 <header class="header">
   <div class="header-inner">
     <a href="index.html" class="logo">
-      岩佐耳鼻咽喉科
-      <span>IWASA ENT CLINIC</span>
+      <svg class="logo-svg" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <rect x="1.5" y="1.5" width="57" height="57" rx="4" fill="#fff" stroke="#a8c878" stroke-width="1"/>
+        <text x="30" y="11" font-family="'Noto Serif JP', serif" font-size="5.5" fill="#5fa840" text-anchor="middle" letter-spacing="0.5" font-weight="700">IWASA CLINIC</text>
+        <g transform="translate(30, 33)">
+          <path d="M0,-13 Q-4,-9 -3.5,-3 Q-4,9 0,13 Q4,9 3.5,3 Q4,-9 0,-13 Z" fill="#5fa840"/>
+          <path d="M-13,0 Q-9,-4 -3,-3.5 Q9,-4 13,0 Q9,4 3,3.5 Q-9,4 -13,0 Z" fill="#88c267" opacity="0.9"/>
+          <circle cx="0" cy="0" r="1.8" fill="#fff"/>
+        </g>
+        <text x="30" y="55" font-family="'Noto Serif JP', serif" font-size="4" fill="#777" text-anchor="middle" letter-spacing="0.4">EAR NOSE THROAT</text>
+      </svg>
+      <span class="logo-text">
+        岩佐耳鼻咽喉科
+        <span class="logo-en-sub">IWASA ENT CLINIC</span>
+      </span>
     </a>
     <nav class="nav" id="nav">
       <ul class="nav-list">
