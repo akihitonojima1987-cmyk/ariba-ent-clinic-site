@@ -995,6 +995,59 @@
   a.header-tel:hover { color: #1c4f7e !important; background: #f4f7fa !important; }
   a.header-tel svg { color: #1c4f7e !important; stroke: #1c4f7e !important; }
 
+
+  /* === 日本橋茅場町スタイル(医師紹介用) === */
+  .nb-block { margin-bottom: 32px; }
+  .nb-arrow-heading {
+    color: #1c4f7e !important;
+    font-family: 'Noto Sans JP', sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    letter-spacing: 0.4em !important;
+    border-bottom: 1px solid #d0dde6 !important;
+    padding: 0 0 8px 0 !important;
+    margin: 0 0 16px 0 !important;
+    background: transparent !important;
+    display: block !important;
+  }
+  .nb-arrow-heading::before {
+    content: "→ " !important;
+    color: #1c4f7e !important;
+    margin-right: 6px !important;
+  }
+  .nb-content {
+    padding-left: 22px !important;
+    font-size: 15.5px !important;
+    color: #2d2d2d !important;
+    margin: 0 !important;
+    letter-spacing: 0.05em !important;
+  }
+  .nb-career {
+    list-style: none !important;
+    padding-left: 22px !important;
+    margin: 0 !important;
+  }
+  .nb-career li {
+    padding: 5px 0 !important;
+    font-size: 14.5px !important;
+    color: #2d2d2d !important;
+    line-height: 1.7 !important;
+    border: none !important;
+    position: static !important;
+  }
+  .nb-career li::before { display: none !important; content: none !important; }
+  .nb-message {
+    padding-left: 22px !important;
+    margin-top: 8px !important;
+  }
+  .nb-message p {
+    margin: 0 0 16px 0 !important;
+    font-size: 14.5px !important;
+    line-height: 2.0 !important;
+    color: #2d2d2d !important;
+  }
+  .nb-message p:last-child { margin-bottom: 0 !important; }
+
 </style>
 <script type="application/ld+json">
 {
@@ -1113,28 +1166,40 @@
   </div>
 </div>
 
-<!-- Director Greeting (院長挨拶) -->
+<!-- 医師紹介(日本橋茅場町スタイル) -->
 <section class="staff">
   <div class="container">
-    <div class="doctor-profile fade-in">
-      <div class="doctor-hero">
-        <h3 class="doctor-hero-name">野島 愛来</h3>
-      </div>
+    <h2 class="section-title">医師紹介</h2>
 
-      <div class="doctor-section">
-        <div class="doctor-message-card">
-          この度、ご縁あって岩佐耳鼻咽喉科を継承させて頂きました。京橋・宝町界隈のかかりつけ耳鼻咽喉科として、皆様のお役に立てるよう精進して参ります。<br /><br />
-          順天堂大学医学部 耳鼻咽喉科学教室に入局後、関連病院での研修を経て耳鼻咽喉科専門医資格を取得致しました。都内クリニックでの勤務を経て、2026年6月より当院 院長として診療に携わっております。<br /><br />
-          耳・鼻・のどの不調は日々の生活の質に直結する症状です。お子さまから高齢の方まで、耳鼻科領域で何かお困りのことがございましたら、どうぞお気軽にご相談下さい。
-        </div>
-      </div>
+    <div class="nb-block">
+      <h3 class="nb-arrow-heading">院　長</h3>
+      <p class="nb-content">野島　愛来</p>
+    </div>
 
-      <div class="doctor-section">
-        <div class="doctor-info-line">
-          <span class="doctor-info-label">資格：</span>
-          <span class="doctor-info-value">耳鼻咽喉科専門医</span>
-        </div>
+    <div class="nb-block">
+      <h3 class="nb-arrow-heading">経　歴</h3>
+      <ul class="nb-career">
+        <li>順天堂大学医学部 卒業</li>
+        <li>順天堂大学医学部 耳鼻咽喉科学教室 入局</li>
+        <li>関連病院にて研修</li>
+        <li>耳鼻咽喉科専門医 取得</li>
+        <li>都内クリニック 勤務</li>
+        <li>2026年6月　岩佐耳鼻咽喉科 院長就任</li>
+      </ul>
+    </div>
+
+    <div class="nb-block">
+      <h3 class="nb-arrow-heading">院長からのメッセージ</h3>
+      <div class="nb-message">
+        <p>この度、ご縁あって岩佐耳鼻咽喉科を継承させて頂きました。京橋・宝町界隈のかかりつけ耳鼻咽喉科として、皆様のお役に立てるよう精進して参ります。</p>
+        <p>順天堂大学医学部 耳鼻咽喉科学教室に入局後、関連病院での研修を経て耳鼻咽喉科専門医資格を取得致しました。都内クリニックでの勤務を経て、2026年6月より当院 院長として診療に携わっております。</p>
+        <p>耳・鼻・のどの不調は日々の生活の質に直結する症状です。お子さまから高齢の方まで、耳鼻科領域で何かお困りのことがございましたら、どうぞお気軽にご相談下さい。</p>
       </div>
+    </div>
+
+    <div class="nb-block">
+      <h3 class="nb-arrow-heading">資　格</h3>
+      <p class="nb-content">耳鼻咽喉科専門医</p>
     </div>
   </div>
 </section>
