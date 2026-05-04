@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="岩佐耳鼻咽喉科のスタッフ紹介ページ。院長プロフィール、医師・看護師・スタッフをご紹介します。" />
+<meta name="description" content="岩佐耳鼻咽喉科のスタッフ紹介ページ。院長 野島愛来の挨拶、医師 野島曉人をご紹介します。" />
 <link rel="canonical" href="https://ariba-ent.com/staff.html" />
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="ja_JP" />
 <meta property="og:site_name" content="岩佐耳鼻咽喉科" />
 <meta property="og:url" content="https://ariba-ent.com/staff.html" />
 <meta property="og:title" content="スタッフ紹介 | 岩佐耳鼻咽喉科" />
-<meta property="og:description" content="岩佐耳鼻咽喉科のスタッフ紹介ページ。院長プロフィール、医師・看護師・スタッフをご紹介します。" />
+<meta property="og:description" content="岩佐耳鼻咽喉科のスタッフ紹介ページ。院長 野島愛来の挨拶、医師 野島曉人をご紹介します。" />
 <meta property="og:image" content="https://ariba-ent.com/og-image.jpg" />
 <meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="スタッフ紹介 | 岩佐耳鼻咽喉科" />
-<meta name="twitter:description" content="岩佐耳鼻咽喉科のスタッフ紹介ページ。院長プロフィール、医師・看護師・スタッフをご紹介します。" />
+<meta name="twitter:description" content="岩佐耳鼻咽喉科のスタッフ紹介ページ。院長 野島愛来の挨拶、医師 野島曉人をご紹介します。" />
 <title>スタッフ紹介 | 岩佐耳鼻咽喉科</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -218,6 +218,17 @@
   .fade-in { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
 
+
+  /* Director info line (compact 資格 row) */
+  .doctor-info-line { display: flex; align-items: baseline; gap: 16px; padding: 18px 24px; background: var(--color-bg-soft); border-left: 3px solid var(--color-primary); border-radius: 4px; }
+  .doctor-info-line .doctor-info-label { flex-shrink: 0; font-size: 13px; font-weight: 500; letter-spacing: 0.15em; color: var(--color-primary); }
+  .doctor-info-line .doctor-info-value { font-size: 14.5px; color: var(--color-text); }
+
+  /* Compact staff card (野島曉人) */
+  .doctor-profile-compact { padding: 48px 56px; }
+  .doctor-staff-meta { margin-top: 18px; display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap; font-size: 14px; color: var(--color-text-light); letter-spacing: 0.05em; }
+  .doctor-staff-meta-sep { color: var(--color-primary-light); opacity: 0.6; }
+
   /* Responsive */
   @media (max-width: 960px) {
     .director-grid { grid-template-columns: 1fr; gap: 48px; }
@@ -239,6 +250,8 @@
     .doctor-profile { padding: 40px 24px; }
     .doctor-hero { margin-bottom: 36px; padding-bottom: 28px; }
     .doctor-bio-card, .doctor-message-card, .doctor-qual-card { padding: 20px 22px; }
+    .doctor-profile-compact { padding: 32px 24px; }
+    .doctor-info-line { flex-direction: column; gap: 6px; padding: 16px 18px; }
     body { padding-bottom: 64px; }
     .mobile-book-bar {
       display: grid;
@@ -364,120 +377,59 @@
   </div>
 </div>
 
-<!-- Philosophy -->
-<section class="philosophy">
+<!-- Director Greeting (院長挨拶) -->
+<section class="staff">
   <div class="container">
-    <div class="philosophy-inner fade-in">
-      <div class="section-label" style="margin-bottom: 24px;">Our Team</div>
-      <p class="philosophy-quote">
-        患者様に <em>寄り添うこと</em> を<br />
-        チーム全員の共通理念として。
-      </p>
-      <p class="philosophy-desc">
-        耳鼻咽喉科専門医として、患者様お一人おひとりに<br />
-        安心して通っていただけるよう、心を込めて診療にあたります。
-      </p>
+    <div class="section-head fade-in">
+      <p class="section-label">Greeting</p>
+      <h2 class="section-title">院長挨拶</h2>
+      <div class="section-title-bar"></div>
+    </div>
+
+    <div class="doctor-profile fade-in">
+      <div class="doctor-hero">
+        <p class="doctor-hero-label">院長</p>
+        <h3 class="doctor-hero-name">野島 愛来</h3>
+        <p class="doctor-hero-furigana">のじま あいら</p>
+        <span class="doctor-hero-role">耳鼻咽喉科専門医</span>
+      </div>
+
+      <div class="doctor-section">
+        <div class="doctor-message-card">
+          この度、ご縁あって岩佐耳鼻咽喉科を継承させて頂きました。京橋・宝町界隈のかかりつけ耳鼻咽喉科として、皆様のお役に立てるよう精進して参ります。<br /><br />
+          順天堂大学医学部 耳鼻咽喉科学教室に入局後、関連病院での研修を経て耳鼻咽喉科専門医資格を取得致しました。都内クリニックでの勤務を経て、2026年6月より当院 院長として診療に携わっております。<br /><br />
+          耳・鼻・のどの不調は日々の生活の質に直結する症状です。お子さまから高齢の方まで、耳鼻科領域で何かお困りのことがございましたら、どうぞお気軽にご相談下さい。
+        </div>
+      </div>
+
+      <div class="doctor-section">
+        <div class="doctor-info-line">
+          <span class="doctor-info-label">資格</span>
+          <span class="doctor-info-value">耳鼻咽喉科専門医</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Doctors -->
-<section class="staff">
+<!-- Staff Introduction -->
+<section class="staff" style="padding-top: 0;">
   <div class="container">
     <div class="section-head fade-in">
-      <p class="section-label">Doctors</p>
-      <h2 class="section-title">医師紹介</h2>
+      <p class="section-label">Staff</p>
+      <h2 class="section-title">スタッフ紹介</h2>
       <div class="section-title-bar"></div>
     </div>
 
-    <!-- Doctor 1: 野島 曉人 -->
-    <div class="doctor-profile fade-in">
-      <div class="doctor-hero">
+    <div class="doctor-profile doctor-profile-compact fade-in">
+      <div class="doctor-hero" style="margin-bottom: 0; padding-bottom: 0; border-bottom: none;">
         <p class="doctor-hero-label">医師</p>
         <h3 class="doctor-hero-name">野島 曉人</h3>
         <p class="doctor-hero-furigana">のじま あきひと</p>
-        <p class="doctor-hero-en">NOJIMA Akihito</p>
-        <span class="doctor-hero-role">耳鼻咽喉科専門医 / 一般耳鼻科</span>
-      </div>
-
-      <div class="doctor-section">
-        <h4 class="doctor-section-title">略歴</h4>
-        <div class="doctor-bio-card">
-          <ul>
-            <li>日本大学医学部 卒業</li>
-            <li>初期臨床研修ののち、順天堂大学医学部 耳鼻咽喉科学教室 入局</li>
-            <li>関連病院にて研修、耳鼻咽喉科専門医資格を取得</li>
-            <li>江東病院 科長を経て、2026年6月 岩佐耳鼻咽喉科 勤務</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="doctor-quals-grid">
-        <div class="doctor-qual-card">
-          <h4 class="doctor-section-title">資格</h4>
-          <ul>
-            <li>日本耳鼻咽喉科頭頸部外科学会 専門医</li>
-          </ul>
-        </div>
-        <div class="doctor-qual-card">
-          <h4 class="doctor-section-title">所属学会</h4>
-          <ul>
-            <li>日本耳鼻咽喉科頭頸部外科学会</li>
-            <li>日本耳鼻咽喉科臨床学会</li>
-            <li>日本鼻科学会</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="doctor-section">
-        <h4 class="doctor-section-title">メッセージ</h4>
-        <div class="doctor-message-card">
-          地域の皆さまに安心して通っていただけるクリニックを目指し、丁寧な診療を心がけてまいります。耳・鼻・のどに関するお悩みがございましたら、どうぞお気軽にご相談ください。
-        </div>
-      </div>
-    </div>
-
-    <!-- Doctor 2: 野島 愛来 -->
-    <div class="doctor-profile fade-in">
-      <div class="doctor-hero">
-        <p class="doctor-hero-label">医師</p>
-        <h3 class="doctor-hero-name">野島 愛来</h3>
-        <p class="doctor-hero-furigana">のじま あいら</p>
-        <p class="doctor-hero-en">NOJIMA Aira</p>
-        <span class="doctor-hero-role">耳鼻咽喉科専門医 / 一般耳鼻科</span>
-      </div>
-
-      <div class="doctor-section">
-        <h4 class="doctor-section-title">略歴</h4>
-        <div class="doctor-bio-card">
-          <ul>
-            <li>初期臨床研修ののち、順天堂大学医学部 耳鼻咽喉科学教室 入局</li>
-            <li>関連病院にて研修、耳鼻咽喉科専門医資格を取得</li>
-            <li>都内クリニック勤務後、2026年6月 岩佐耳鼻咽喉科 勤務</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="doctor-quals-grid">
-        <div class="doctor-qual-card">
-          <h4 class="doctor-section-title">資格</h4>
-          <ul>
-            <li>日本耳鼻咽喉科頭頸部外科学会 専門医</li>
-          </ul>
-        </div>
-        <div class="doctor-qual-card">
-          <h4 class="doctor-section-title">所属学会</h4>
-          <ul>
-            <li>日本耳鼻咽喉科頭頸部外科学会</li>
-            <li>日本耳鼻咽喉科臨床学会</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="doctor-section">
-        <h4 class="doctor-section-title">メッセージ</h4>
-        <div class="doctor-message-card">
-          耳鼻咽喉科疾患全般の診療を行っております。お一人おひとりのお話に耳を傾け、患者様に寄り添った診療を大切にしております。気になる症状がございましたら、どうぞお気軽にご来院ください。
+        <div class="doctor-staff-meta">
+          <span class="doctor-staff-meta-item">耳鼻咽喉科専門医</span>
+          <span class="doctor-staff-meta-sep">/</span>
+          <span class="doctor-staff-meta-item">江東病院 科長</span>
         </div>
       </div>
     </div>
