@@ -252,6 +252,32 @@
     .hours-table th, .hours-table td { padding: 8px 4px; font-size: 12.5px; }
   }
 
+
+  /* === clinic-overview.html バランス調整 === */
+  /* ページヒーロー控えめに */
+  .page-hero { height: 22vh !important; min-height: 200px !important; max-height: 280px !important; }
+  .page-hero-title { font-size: clamp(22px, 2.6vw, 28px) !important; }
+  .page-hero-label { font-size: 11px !important; letter-spacing: 0.3em !important; margin-bottom: 8px !important; }
+
+  /* セクションヘッダーを左寄せ・控えめに */
+  .section-head { text-align: left !important; margin-bottom: 24px !important; }
+  .section-head .section-label { font-size: 11px !important; letter-spacing: 0.3em !important; margin-bottom: 6px !important; }
+  .section-head .section-title { font-size: 18px !important; font-weight: 600 !important; line-height: 1.4 !important; padding-left: 12px !important; border-left: 3px solid var(--color-primary) !important; }
+  .section-head .section-title-bar { display: none !important; }
+
+  /* セクション余白を控えめに */
+  section[style*="padding: 64px"] { padding: 48px 0 !important; }
+
+  /* テーブルや本文の余白・サイズ調整 */
+  .overview-table { margin-top: 0 !important; }
+  .overview-table th { font-size: 13.5px !important; font-weight: 500 !important; letter-spacing: 0.1em !important; }
+  .overview-table td { font-size: 14.5px !important; }
+
+  .hours-table th, .hours-table td { font-size: 13.5px !important; padding: 10px 6px !important; }
+
+  .greeting-block .greeting-name { font-size: 16px !important; margin-bottom: 18px !important; }
+  .greeting-block p { font-size: 14.5px !important; line-height: 2.0 !important; }
+
 </style>
 <script type="application/ld+json">
 {
@@ -355,12 +381,6 @@
 <!-- 当院のご案内 -->
 <section style="padding: 64px 0; background: var(--color-bg);">
   <div class="container">
-    <div class="section-head fade-in">
-      <p class="section-label">Information</p>
-      <h2 class="section-title">当院のご案内</h2>
-      <div class="section-title-bar"></div>
-    </div>
-
     <table class="overview-table">
       <tr>
         <th>診療科目</th>
