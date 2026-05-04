@@ -21,13 +21,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet" />
 <style>
   :root {
-    --color-primary: #4a8e3a;
-    --color-primary-light: #6fb858;
-    --color-accent: #e8f3e0;
+    --color-primary: #5fa840;
+    --color-primary-light: #88c267;
+    --color-accent: #ecf4dd;
     --color-text: #2b2b2b;
     --color-text-light: #6b6b6b;
     --color-bg: #ffffff;
-    --color-bg-soft: #f5f8f1;
+    --color-bg-soft: #f4f8ec;
     --color-border: #e5e9ed;
     --max-width: 1200px;
     --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -74,9 +74,9 @@
   .menu-btn.active span:nth-child(3) { top: 16px; transform: rotate(-45deg); }
 
   /* Page Hero */
-  .page-hero { min-height: 520px; padding: 120px 0 80px; display: flex; align-items: center; justify-content: center; background: #e8f3e0; position: relative; overflow: hidden; }
+  .page-hero { min-height: 520px; padding: 120px 0 80px; display: flex; align-items: center; justify-content: center; background: #ecf4dd; position: relative; overflow: hidden; }
   .page-hero::before { content: ""; position: absolute; top: -20%; right: -10%; width: 50%; height: 80%; background: radial-gradient(circle, rgba(74, 139, 184, 0.12) 0%, transparent 60%); border-radius: 0; }
-  .page-hero::after { content: ""; position: absolute; bottom: -30%; left: -10%; width: 50%; height: 80%; background: radial-gradient(circle, rgba(74, 142, 58, 0.08) 0%, transparent 60%); border-radius: 0; }
+  .page-hero::after { content: ""; position: absolute; bottom: -30%; left: -10%; width: 50%; height: 80%; background: radial-gradient(circle, rgba(95, 168, 64, 0.08) 0%, transparent 60%); border-radius: 0; }
   .page-hero-inner { text-align: center; position: relative; z-index: 1; }
   .page-hero-label { font-family: "Noto Serif JP", "Yu Mincho", "YuMincho", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 16px; text-transform: uppercase; }
   .page-hero-title { font-size: clamp(28px, 4vw, 42px); font-weight: 500; letter-spacing: 0.1em; color: var(--color-text); }
@@ -99,7 +99,7 @@
   .payment { background: var(--color-bg); }
   .payment-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; max-width: 1000px; margin: 0 auto 32px; }
   .payment-card { background: #fff; border: 1px solid var(--color-border); border-radius: 0; padding: 24px 16px; text-align: center; transition: var(--transition); }
-  .payment-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(74,142,58,0.08); }
+  .payment-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(95,168,64,0.08); }
   .payment-icon { width: 48px; height: 48px; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; color: var(--color-primary); background: var(--color-accent); border-radius: 0; }
   .payment-card h3 { font-size: 14px; font-weight: 500; letter-spacing: 0.05em; margin-bottom: 6px; color: var(--color-primary); }
   .payment-card p { font-size: 11px; color: var(--color-text-light); line-height: 1.7; }
@@ -259,6 +259,22 @@
     .section-title { font-size: 18px !important; padding-left: 12px; border-left-width: 3px; }
     .section-head { margin-bottom: 28px !important; }
   }
+
+
+  /* === 岩佐風カラー&装飾(全ページ共通追加) === */
+  body { background: linear-gradient(180deg, #f4f8ec 0%, #ffffff 200px); }
+  /* リスト ● 緑丸バレット */
+  .container ul:not([class]) { list-style: none; padding: 0; }
+  .container ul:not([class]) li { position: relative; padding-left: 18px; line-height: 1.95; }
+  .container ul:not([class]) li::before { content: "●"; position: absolute; left: 0; top: 0; color: var(--color-primary); font-size: 10px; line-height: inherit; }
+  /* セクション見出しのバーをやや太め(旧岩佐風) */
+  .section-title { border-left-width: 5px !important; padding-left: 14px !important; color: #3d6e29 !important; }
+  /* リンク色を緑系に統一(青いまま残ってるリンクの修正) */
+  .container a:not([class]) { color: var(--color-primary); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  .container a:not([class]):hover { color: var(--color-primary-light); }
+  /* フッターは控えめなグレー(下記は元のまま維持) */
+  /* ヒーロー部の背景もごく薄い緑がかった色味に */
+  .page-hero { background: #ecf4dd !important; }
 
 </style>
 <script type="application/ld+json">
