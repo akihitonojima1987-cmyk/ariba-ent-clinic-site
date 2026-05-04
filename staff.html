@@ -54,7 +54,7 @@
   .nav-list .has-submenu { position: relative; }
   .nav-list .submenu-toggle::before { content: "▾"; font-size: 10px; margin-left: 6px; opacity: 0.55; display: inline-block; vertical-align: middle; transition: transform 0.2s; float: right; margin-top: 1px; }
   .has-submenu:hover .submenu-toggle::before { transform: rotate(-180deg); opacity: 1; }
-  .submenu { position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%); background: #fff; list-style: none; padding: 10px 0; min-width: 200px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); border: 1px solid var(--color-border); border-radius: 4px; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease, top 0.2s ease; z-index: 101; }
+  .submenu { position: absolute; top: calc(100% + 10px); left: 50%; transform: translateX(-50%); background: #fff; list-style: none; padding: 10px 0; min-width: 200px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); border: 1px solid var(--color-border); border-radius: 0; opacity: 0; visibility: hidden; transition: opacity 0.2s ease, visibility 0.2s ease, top 0.2s ease; z-index: 101; }
   .submenu::before { content: ""; position: absolute; top: -7px; left: 50%; transform: translateX(-50%); border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 7px solid #fff; }
   .has-submenu:hover .submenu, .has-submenu:focus-within .submenu { opacity: 1; visibility: visible; top: 100%; }
   .submenu li { display: block; }
@@ -62,7 +62,7 @@
   .submenu a::after { display: none !important; }
   .submenu a:hover { background: #f4f7fa; color: var(--color-primary); }
   .submenu a.active { color: var(--color-primary); font-weight: 500; }
-  .nav-tel { display: flex; align-items: center; gap: 6px; padding: 10px 20px; background: var(--color-primary); color: #fff; border-radius: 30px; font-size: 13px; font-weight: 500; letter-spacing: 0.05em; }
+  .nav-tel { display: flex; align-items: center; gap: 6px; padding: 10px 20px; background: var(--color-primary); color: #fff; border-radius: 0; font-size: 13px; font-weight: 500; letter-spacing: 0.05em; }
   .nav-tel:hover { background: var(--color-primary-light); opacity: 1; }
   .menu-btn { display: none; width: 32px; height: 32px; background: none; border: none; cursor: pointer; position: relative; }
   .menu-btn span { display: block; width: 24px; height: 1px; background: var(--color-text); position: absolute; left: 4px; transition: var(--transition); }
@@ -82,22 +82,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #e9f2f8 0%, #f7f9fb 100%);
+    background: var(--color-bg-soft);
     position: relative;
     overflow: hidden;
-  }
-  .page-hero::before {
-    content: "";
-    position: absolute;
-    top: -20%;
-    right: -10%;
-    width: 50%;
-    height: 80%;
-    background: radial-gradient(circle, rgba(74, 139, 184, 0.12) 0%, transparent 60%);
-    border-radius: 50%;
+    border-bottom: 1px solid var(--color-border);
   }
   .page-hero-inner { text-align: center; position: relative; z-index: 1; }
-  .page-hero-label { font-family: "Cormorant Garamond", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 12px; text-transform: uppercase; }
+  .page-hero-label { display: none; }
   .page-hero-title { font-size: clamp(28px, 4vw, 42px); font-weight: 500; letter-spacing: 0.1em; color: var(--color-text); }
 
   /* Breadcrumb */
@@ -117,12 +108,12 @@
   .director-grid { display: grid; grid-template-columns: 2fr 3fr; gap: 72px; align-items: center; }
   .director-photo {
     aspect-ratio: 4 / 5;
-    background: linear-gradient(135deg, #e9f2f8 0%, #c5dceb 100%);
-    border-radius: 8px;
+    background: var(--color-accent);
+    border-radius: 0;
     position: relative;
     overflow: hidden;
   }
-  .director-photo::after { content: ""; position: absolute; inset: 20px; border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 4px; }
+  .director-photo::after { content: ""; position: absolute; inset: 20px; border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 0; }
   .director-photo-icon { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: rgba(31, 95, 139, 0.3); }
   .director-text .director-name-en { font-family: "Cormorant Garamond", serif; font-size: 14px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 8px; text-transform: uppercase; }
   .director-text h3 { font-size: 28px; font-weight: 500; margin-bottom: 8px; letter-spacing: 0.05em; }
@@ -141,44 +132,42 @@
   .staff { background: var(--color-bg-soft); }
 
   /* Doctor Profile (Centered style, no photo) */
-  .doctor-profile { background: #fff; border-radius: 12px; padding: 64px 56px; margin-bottom: 48px; border: 1px solid var(--color-border); transition: var(--transition); }
+  .doctor-profile { background: #fff; border-radius: 0; padding: 64px 56px; margin-bottom: 48px; border: 1px solid var(--color-border); transition: var(--transition); }
   .doctor-profile:last-child { margin-bottom: 0; }
-  .doctor-profile:hover { box-shadow: 0 10px 40px rgba(31, 95, 139, 0.08); }
+  .doctor-profile:hover { box-shadow: none; }
 
   /* Doctor Hero (Centered name block) */
   .doctor-hero { text-align: center; margin-bottom: 48px; padding-bottom: 40px; border-bottom: 1px solid var(--color-border); }
   .doctor-hero-label { font-family: "Cormorant Garamond", serif; font-size: 13px; letter-spacing: 0.3em; color: var(--color-primary); margin-bottom: 16px; text-transform: uppercase; }
-  .doctor-hero-label::before,
-  .doctor-hero-label::after { content: ""; display: inline-block; width: 24px; height: 1px; background: var(--color-primary); vertical-align: middle; margin: 0 12px; opacity: 0.4; }
-  .doctor-hero-name { font-size: clamp(28px, 4vw, 36px); font-weight: 500; letter-spacing: 0.1em; color: var(--color-text); margin-bottom: 10px; }
+    .doctor-hero-name { font-size: clamp(28px, 4vw, 36px); font-weight: 500; letter-spacing: 0.1em; color: var(--color-text); margin-bottom: 10px; }
   .doctor-hero-furigana { font-size: 13px; letter-spacing: 0.25em; color: var(--color-text-light); margin-bottom: 14px; }
   .doctor-hero-en { font-family: "Cormorant Garamond", serif; font-size: 13px; letter-spacing: 0.25em; color: var(--color-primary-light); margin-bottom: 20px; text-transform: uppercase; }
-  .doctor-hero-role { display: inline-block; padding: 6px 22px; background: var(--color-accent); color: var(--color-primary); border-radius: 30px; font-size: 13px; font-weight: 500; letter-spacing: 0.1em; }
+  .doctor-hero-role { display: inline-block; padding: 5px 16px; background: var(--color-primary); color: #fff; font-size: 13px; font-weight: 400; letter-spacing: 0.15em; }
 
   /* Doctor Section Heading */
   .doctor-section { margin-bottom: 32px; }
   .doctor-section:last-child { margin-bottom: 0; }
   .doctor-section-title { display: flex; align-items: center; gap: 12px; font-size: 15px; font-weight: 500; letter-spacing: 0.15em; color: var(--color-primary); margin-bottom: 16px; }
-  .doctor-section-title::before { content: ""; width: 4px; height: 16px; background: var(--color-primary); border-radius: 2px; }
+  .doctor-section-title::before { content: ""; width: 4px; height: 16px; background: var(--color-primary); border-radius: 0; }
 
   /* Doctor Bio / Message Card */
   .doctor-bio-card,
-  .doctor-message-card { background: var(--color-bg-soft); border-radius: 10px; padding: 28px 32px; font-size: 14.5px; line-height: 2; color: var(--color-text); }
+  .doctor-message-card { background: var(--color-bg-soft); border-radius: 0; padding: 28px 32px; font-size: 14.5px; line-height: 2; color: var(--color-text); }
   .doctor-bio-card ul { list-style: none; padding: 0; margin: 0; }
   .doctor-bio-card ul li { position: relative; padding-left: 20px; line-height: 2; }
-  .doctor-bio-card ul li::before { content: ""; position: absolute; left: 0; top: 1em; transform: translateY(-50%); width: 8px; height: 8px; border-radius: 50%; background: var(--color-primary-light); }
+  .doctor-bio-card ul li::before { content: ""; position: absolute; left: 0; top: 1em; transform: translateY(-50%); width: 8px; height: 8px; border-radius: 0; background: var(--color-primary-light); }
   .doctor-message-card { color: var(--color-text-light); font-size: 15px; }
 
   /* Doctor Quals Grid (資格 + 所属学会 side-by-side) */
   .doctor-quals-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
-  .doctor-qual-card { background: var(--color-bg-soft); border-radius: 10px; padding: 24px 28px; }
+  .doctor-qual-card { background: var(--color-bg-soft); border-radius: 0; padding: 24px 28px; }
   .doctor-qual-card .doctor-section-title { margin-bottom: 14px; }
   .doctor-qual-card ul { list-style: none; padding: 0; margin: 0; }
   .doctor-qual-card ul li { position: relative; padding-left: 18px; font-size: 14px; line-height: 1.9; color: var(--color-text); }
-  .doctor-qual-card ul li::before { content: ""; position: absolute; left: 0; top: 0.85em; transform: translateY(-50%); width: 6px; height: 6px; border-radius: 50%; background: var(--color-primary-light); }
-  .staff-card { background: #fff; border-radius: 8px; overflow: hidden; transition: var(--transition); }
+  .doctor-qual-card ul li::before { content: ""; position: absolute; left: 0; top: 0.85em; transform: translateY(-50%); width: 6px; height: 6px; border-radius: 0; background: var(--color-primary-light); }
+  .staff-card { background: #fff; border-radius: 0; overflow: hidden; transition: var(--transition); }
   .staff-card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(31, 95, 139, 0.08); }
-  .staff-photo { aspect-ratio: 1 / 1; background: linear-gradient(135deg, #e9f2f8 0%, #c5dceb 100%); position: relative; display: flex; align-items: center; justify-content: center; color: rgba(31, 95, 139, 0.4); }
+  .staff-photo { aspect-ratio: 1 / 1; background: var(--color-accent); position: relative; display: flex; align-items: center; justify-content: center; color: rgba(31, 95, 139, 0.4); }
   .staff-body { padding: 20px; text-align: center; }
   .staff-role { font-family: "Cormorant Garamond", serif; font-size: 12px; letter-spacing: 0.2em; color: var(--color-primary); margin-bottom: 4px; text-transform: uppercase; }
   .staff-name { font-size: 16px; font-weight: 500; margin-bottom: 8px; letter-spacing: 0.05em; }
@@ -191,12 +180,23 @@
   .philosophy-quote em { font-style: normal; color: var(--color-primary); }
   .philosophy-desc { font-size: 15px; color: var(--color-text-light); line-height: 2; }
 
+
+  /* Classic block title (加賀風 青ブロック) */
+  .block-title { display: inline-flex; align-items: baseline; gap: 18px; background: var(--color-primary); color: #fff; padding: 16px 36px; margin-bottom: 40px; }
+  .block-title-jp { font-size: 22px; font-weight: 500; letter-spacing: 0.2em; line-height: 1; }
+  .block-title-bar { display: inline-block; width: 1px; height: 16px; background: rgba(255,255,255,0.5); }
+  .block-title-en { font-size: 11px; letter-spacing: 0.3em; opacity: 0.85; font-family: "Cormorant Garamond", serif; text-transform: uppercase; line-height: 1; }
+  @media (max-width: 768px) {
+    .block-title { padding: 14px 24px; gap: 14px; }
+    .block-title-jp { font-size: 18px; }
+  }
+
   /* CTA */
-  .cta { background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%); color: #fff; text-align: center; padding: 96px 0; }
+  .cta { background: var(--color-primary); color: #fff; text-align: center; padding: 96px 0; }
   .cta h2 { font-size: clamp(24px, 3vw, 32px); font-weight: 500; letter-spacing: 0.1em; margin-bottom: 16px; }
   .cta p { font-size: 15px; opacity: 0.9; margin-bottom: 40px; line-height: 2; }
   .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 36px; border-radius: 30px; font-size: 14px; font-weight: 500; letter-spacing: 0.1em; transition: var(--transition); border: 1px solid transparent; cursor: pointer; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 16px 36px; border-radius: 0; font-size: 14px; font-weight: 500; letter-spacing: 0.1em; transition: var(--transition); border: 1px solid transparent; cursor: pointer; }
   .btn-white { background: #fff; color: var(--color-primary); }
   .btn-white:hover { transform: translateY(-2px); opacity: 1; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); }
   .btn-outline-white { background: transparent; color: #fff; border-color: rgba(255, 255, 255, 0.5); }
@@ -220,7 +220,7 @@
 
 
   /* Director info line (compact 資格 row) */
-  .doctor-info-line { display: flex; align-items: baseline; gap: 16px; padding: 18px 24px; background: var(--color-bg-soft); border-left: 3px solid var(--color-primary); border-radius: 4px; }
+  .doctor-info-line { display: flex; align-items: baseline; gap: 16px; padding: 18px 24px; background: var(--color-bg-soft); border-left: 3px solid var(--color-primary); border-radius: 0; }
   .doctor-info-line .doctor-info-label { flex-shrink: 0; font-size: 13px; font-weight: 500; letter-spacing: 0.15em; color: var(--color-primary); }
   .doctor-info-line .doctor-info-value { font-size: 14.5px; color: var(--color-text); }
 
@@ -380,10 +380,10 @@
 <!-- Director Greeting (院長挨拶) -->
 <section class="staff">
   <div class="container">
-    <div class="section-head fade-in">
-      <p class="section-label">Greeting</p>
-      <h2 class="section-title">院長挨拶</h2>
-      <div class="section-title-bar"></div>
+    <div class="block-title fade-in">
+      <span class="block-title-jp">院長挨拶</span>
+      <span class="block-title-bar"></span>
+      <span class="block-title-en">Greeting</span>
     </div>
 
     <div class="doctor-profile fade-in">
@@ -415,10 +415,10 @@
 <!-- Staff Introduction -->
 <section class="staff" style="padding-top: 0;">
   <div class="container">
-    <div class="section-head fade-in">
-      <p class="section-label">Staff</p>
-      <h2 class="section-title">スタッフ紹介</h2>
-      <div class="section-title-bar"></div>
+    <div class="block-title fade-in">
+      <span class="block-title-jp">スタッフ紹介</span>
+      <span class="block-title-bar"></span>
+      <span class="block-title-en">Staff</span>
     </div>
 
     <div class="doctor-profile doctor-profile-compact fade-in">
