@@ -191,6 +191,26 @@
     .mobile-book-bar .mb-tel { background: var(--color-primary); }
     .mobile-book-bar .mb-web { background: var(--color-primary-light); }
   }
+
+  /* === Phase 2: 構造クラシック化(全ページ共通オーバーライド) === */
+  .section-label, .hero-sub, .page-hero-label, .section-title-bar { display: none !important; }
+  .section-head { text-align: left !important; margin-bottom: 36px !important; padding-left: 4px; }
+  .section-title { text-align: left !important; font-size: clamp(20px, 2.6vw, 24px) !important; letter-spacing: 0.1em !important; padding-left: 16px; border-left: 4px solid var(--color-primary); line-height: 1.4 !important; }
+  /* セクション余白を縮小(クラシック) */
+  section { padding: 64px 0 !important; }
+  /* カード等のホバー浮き上がり・影を削除 */
+  .news-item, .service-card, .feature-card, .doctor-profile, .staff-card { box-shadow: none !important; transition: none !important; }
+  .news-item:hover, .service-card:hover, .feature-card:hover, .doctor-profile:hover, .staff-card:hover { transform: none !important; box-shadow: none !important; }
+  /* ヒーロー(index)の英字サブタイトル削除分の余白調整 */
+  .hero-title { margin-top: 0; }
+  /* fade-in アニメーション削除(クラシックは静的) */
+  .fade-in { opacity: 1 !important; transform: none !important; }
+  @media (max-width: 768px) {
+    section { padding: 48px 0 !important; }
+    .section-title { font-size: 18px !important; padding-left: 12px; border-left-width: 3px; }
+    .section-head { margin-bottom: 28px !important; }
+  }
+
 </style>
 <script type="application/ld+json">
 {
