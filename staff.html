@@ -191,6 +191,21 @@
     .block-title-jp { font-size: 18px; }
   }
 
+
+  /* Staff (compact, 控えめ) */
+  .staff-compact { padding: 0 0 96px; background: var(--color-bg); }
+  .staff-compact-title { font-size: 13px; font-weight: 500; letter-spacing: 0.25em; color: var(--color-primary); padding-bottom: 10px; margin-bottom: 18px; border-bottom: 1px solid var(--color-border); }
+  .staff-compact-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 14px; padding: 8px 0; font-size: 13.5px; color: var(--color-text-light); }
+  .staff-compact-role { font-size: 11px; color: var(--color-primary); letter-spacing: 0.2em; padding: 2px 8px; border: 1px solid var(--color-primary-light); }
+  .staff-compact-name { font-size: 15px; font-weight: 500; color: var(--color-text); letter-spacing: 0.05em; }
+  .staff-compact-furi { font-size: 11px; font-weight: 400; color: var(--color-text-light); margin-left: 8px; letter-spacing: 0.1em; }
+  .staff-compact-meta { font-size: 13px; color: var(--color-text-light); letter-spacing: 0.05em; margin-left: auto; }
+  @media (max-width: 768px) {
+    .staff-compact { padding-bottom: 64px; }
+    .staff-compact-row { gap: 8px; }
+    .staff-compact-meta { margin-left: 0; width: 100%; padding-top: 4px; }
+  }
+
   /* CTA */
   .cta { background: var(--color-primary); color: #fff; text-align: center; padding: 96px 0; }
   .cta h2 { font-size: clamp(24px, 3vw, 32px); font-weight: 500; letter-spacing: 0.1em; margin-bottom: 16px; }
@@ -412,26 +427,14 @@
   </div>
 </section>
 
-<!-- Staff Introduction -->
-<section class="staff" style="padding-top: 0;">
+<!-- Staff Introduction (compact) -->
+<section class="staff-compact">
   <div class="container">
-    <div class="block-title fade-in">
-      <span class="block-title-jp">スタッフ紹介</span>
-      <span class="block-title-bar"></span>
-      <span class="block-title-en">Staff</span>
-    </div>
-
-    <div class="doctor-profile doctor-profile-compact fade-in">
-      <div class="doctor-hero" style="margin-bottom: 0; padding-bottom: 0; border-bottom: none;">
-        <p class="doctor-hero-label">医師</p>
-        <h3 class="doctor-hero-name">野島 曉人</h3>
-        <p class="doctor-hero-furigana">のじま あきひと</p>
-        <div class="doctor-staff-meta">
-          <span class="doctor-staff-meta-item">耳鼻咽喉科専門医</span>
-          <span class="doctor-staff-meta-sep">/</span>
-          <span class="doctor-staff-meta-item">江東病院 科長</span>
-        </div>
-      </div>
+    <h3 class="staff-compact-title">スタッフ紹介</h3>
+    <div class="staff-compact-row">
+      <span class="staff-compact-role">医師</span>
+      <span class="staff-compact-name">野島 曉人<span class="staff-compact-furi">(のじま あきひと)</span></span>
+      <span class="staff-compact-meta">耳鼻咽喉科専門医　/　江東病院 科長</span>
     </div>
   </div>
 </section>
