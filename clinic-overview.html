@@ -278,6 +278,18 @@
   .greeting-block .greeting-name { font-size: 16px !important; margin-bottom: 18px !important; }
   .greeting-block p { font-size: 14.5px !important; line-height: 2.0 !important; }
 
+
+  /* === clinic-overview.html ご注意事項 === */
+  .overview-notice { max-width: 760px; margin: 0 auto; }
+  .overview-notice-intro { font-size: 14.5px; color: var(--color-text); margin-bottom: 24px; line-height: 1.9; padding: 14px 18px; background: #fff; border-left: 3px solid var(--color-primary); }
+  .overview-notice-list { list-style: none; padding: 0; margin: 0; }
+  .overview-notice-list li { background: #fff; padding: 16px 20px; margin-bottom: 12px; border-left: 3px solid #c8161c; }
+  .overview-notice-list li strong { font-size: 14px; color: var(--color-text); display: block; margin-bottom: 6px; line-height: 1.6; }
+  .overview-notice-list li p { font-size: 13.5px; color: var(--color-text-light); line-height: 1.95; margin: 0; }
+  .overview-notice-list .x-mark { color: #c8161c; font-weight: 700; margin-right: 6px; }
+  .overview-notice-link { text-align: center; margin-top: 20px; font-size: 13px; color: var(--color-text-light); }
+  .overview-notice-link a { color: var(--color-primary); }
+
 </style>
 <script type="application/ld+json">
 {
@@ -404,10 +416,6 @@
         <th>WEB予約</th>
         <td><a href="https://wakumy.lyd.inc/clinic/hg10976?openExternalBrowser=1" target="_blank" rel="noopener">https://wakumy.lyd.inc/clinic/hg10976</a></td>
       </tr>
-      <tr>
-        <th>沿　　革</th>
-        <td>1978年　開業<br />2026年6月　現院長 野島愛来 継承</td>
-      </tr>
     </table>
   </div>
 </section>
@@ -463,6 +471,35 @@
       <p>この度、ご縁あって岩佐耳鼻咽喉科を継承させて頂きました。京橋・宝町界隈のかかりつけ耳鼻咽喉科として、皆様のお役に立てるよう精進して参ります。</p>
       <p>聖マリアンナ医科大学を卒業後、順天堂大学医学部 耳鼻咽喉科学教室に入局致しました。関連病院での研修を経て耳鼻咽喉科専門医資格を取得し、都内クリニックでの勤務を経て、2026年6月より当院 院長として診療に携わっております。</p>
       <p>耳・鼻・のどの不調は日々の生活の質に直結する症状です。お子さまから高齢の方まで、耳鼻科領域で何かお困りのことがございましたら、どうぞお気軽にご相談下さい。</p>
+    </div>
+  </div>
+</section>
+<!-- ご注意事項 -->
+<section style="padding: 48px 0; background: var(--color-bg-soft);">
+  <div class="container">
+    <div class="section-head fade-in">
+      <p class="section-label">Notice</p>
+      <h2 class="section-title">ご注意事項</h2>
+      <div class="section-title-bar"></div>
+    </div>
+
+    <div class="overview-notice">
+      <p class="overview-notice-intro">
+        当院は<strong>一般的な保険診療</strong>を行うクリニックです。以下の処方は保険対象外のため、お受けできかねます。
+      </p>
+      <ul class="overview-notice-list">
+        <li>
+          <strong><span class="x-mark">×</span> 症状のない方の保湿剤(ヒルドイド・ヘパリン)の処方</strong>
+          <p>予防のための保湿剤(ヒルドイド・ヘパリン)の処方はできません。症状のない方はドラッグストアでのご購入をお願いします。症状がある方には医師が必要と判断した場合に適切な量の処方を行います。特に小児の "ついでに処方" はご遠慮ください。</p>
+        </li>
+        <li>
+          <strong><span class="x-mark">×</span> シミ予防のビタミン剤・トランサミンの処方</strong>
+          <p>当院は一般的な保険診療を行うクリニックです。上記は保険対象外です。</p>
+        </li>
+      </ul>
+      <p class="overview-notice-link">
+        その他「当院で対応できないもの」については <a href="visiting.html#cannot">受診される方へ</a> をご覧ください。
+      </p>
     </div>
   </div>
 </section>
