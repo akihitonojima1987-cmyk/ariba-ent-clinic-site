@@ -1031,12 +1031,8 @@ h1.h2-title{ font-size:30px !important; }
         .cpay-transit img{width:100%;max-width:520px;max-height:none;height:auto;}
         .cpay-note{display:inline-flex;align-items:center;gap:9px;margin-top:22px;padding:9px 16px;background:var(--acbg);border-radius:999px;font-size:13.5px;color:#5b645f;line-height:1.5;}
         .cpay-note img{height:24px;width:auto;flex:none;}
-        /* 開始日の告知バナー。2026-07-30の運用開始後は、この .cpay-start ブロックを削除する。 */
-        .cpay-start{display:inline-flex;align-items:center;gap:10px;margin:0 auto 6px;padding:12px 24px;background:var(--acbg);border:1.5px solid var(--acs);border-radius:12px;color:var(--acd);font-weight:700;font-size:16px;line-height:1.6;}
-        .cpay-start .cal{flex:none;font-size:18px;}
         @media(max-width:600px){
           .sec-cpay .h2-title{font-size:26px!important;}
-          .cpay-start{font-size:14.5px;padding:11px 18px;}
           .cpay-grid{gap:10px;}
           .cpay-tile{width:calc(33.333% - 7px);height:54px;}
           .cpay-transit{width:100%;padding:12px 14px;}
@@ -1046,9 +1042,7 @@ h1.h2-title{ font-size:30px !important; }
       <div class="cpay-wrap">
         <div style="text-align:center;margin-bottom:28px;">
           <h2 class="h2-title" style="font-family:'Shippori Mincho',serif;font-weight:600;font-size:37px;color:#3a423e;margin:0 0 18px;letter-spacing:0.04em;">キャッシュレス決済に対応</h2>
-          <!-- 開始日の告知。2026-07-30の運用開始後はこの1行を削除する。 -->
-          <div class="cpay-start"><span class="cal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:18px;height:18px;display:block;"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg></span>2026年7月30日（木）より、ご利用いただけます</div>
-          <p style="font-size:16px;line-height:1.9;color:#6b746f;margin:14px auto 0;max-width:660px;">各種クレジットカード・電子マネー・交通系ICカードがご利用いただけます。もちろん現金でのお支払いも可能です。</p>
+          <p style="font-size:16px;line-height:1.9;color:#6b746f;margin:0 auto;max-width:660px;">各種クレジットカード・電子マネー・交通系ICカードがご利用いただけます。もちろん現金でのお支払いも可能です。</p>
         </div>
         <div class="cpay-grid">
           <span class="cpay-tile"><img src="pay-visa.png" alt="VISA"></span>
