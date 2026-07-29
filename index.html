@@ -1027,9 +1027,10 @@ h1.h2-title{ font-size:30px !important; }
         .cpay-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;max-width:720px;margin:0 auto;}
         .cpay-tile{width:104px;height:64px;background:#fff;border:1px solid #e6edf4;border-radius:10px;display:flex;align-items:center;justify-content:center;padding:10px;box-shadow:0 1px 3px rgba(40,80,120,.05);}
         .cpay-tile img{max-width:100%;max-height:40px;object-fit:contain;display:block;}
-        .cpay-touch{width:76px;height:64px;flex:none;display:flex;align-items:center;justify-content:center;}
-        .cpay-touch img{max-width:100%;max-height:52px;width:auto;object-fit:contain;display:block;}
-        .cpay-brandbox{display:inline-flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;padding:12px;border:2px dashed #9fb0bd;border-radius:14px;}
+        .cpay-touch{flex:none;display:flex;align-items:center;justify-content:center;width:50px;padding-right:12px;border-right:1px dashed #cdd6dd;}
+        .cpay-touch img{max-width:100%;max-height:38px;width:auto;object-fit:contain;display:block;}
+        .cpay-brandbox{display:inline-flex;flex-wrap:nowrap;align-items:center;gap:12px;padding:12px;border:2px dashed #9fb0bd;border-radius:14px;}
+        .cpay-brands{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:12px;}
         .cpay-2col{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;max-width:232px;margin:14px auto 0;}
         .cpay-cat{margin-top:34px;}
         .cpay-cat:first-of-type{margin-top:0;}
@@ -1043,11 +1044,12 @@ h1.h2-title{ font-size:30px !important; }
           .sec-cpay .h2-title{font-size:26px!important;}
           .cpay-grid{gap:10px;}
           .cpay-tile{width:calc(33.333% - 7px);height:54px;}
-          .cpay-touch{width:100%;height:auto;margin-bottom:2px;}
-          .cpay-touch img{max-height:46px;}
-          .cpay-brandbox{width:100%;gap:7px;padding:10px;}
-          .cpay-brandbox .cpay-tile{width:calc(25% - 6px);height:46px;}
-          .cpay-brandbox .cpay-tile img{max-height:26px;}
+          .cpay-touch{width:44px;padding-right:8px;}
+          .cpay-touch img{max-height:34px;}
+          .cpay-brandbox{width:100%;gap:8px;padding:10px;}
+          .cpay-brands{flex:1;gap:8px;}
+          .cpay-brands .cpay-tile{width:calc(50% - 4px);height:46px;}
+          .cpay-brands .cpay-tile img{max-height:26px;}
           .cpay-cat{margin-top:26px;}
           .cpay-cat-label{font-size:12.5px;margin:0 0 10px;}
           .cpay-cat-label::before,.cpay-cat-label::after{width:20px;}
@@ -1063,12 +1065,14 @@ h1.h2-title{ font-size:30px !important; }
         <div class="cpay-cat">
           <p class="cpay-cat-label">クレジットカード</p>
           <div class="cpay-grid">
-            <span class="cpay-touch"><img src="pay-nfc.png" alt="タッチ決済（コンタクトレス）マーク"></span>
             <span class="cpay-brandbox">
-              <span class="cpay-tile"><img src="pay-visa.png" alt="VISA"></span>
-              <span class="cpay-tile"><img src="pay-mastercard.png" alt="Mastercard"></span>
-              <span class="cpay-tile"><img src="pay-jcb.png" alt="JCB"></span>
-              <span class="cpay-tile"><img src="pay-amex.png" alt="American Express"></span>
+              <span class="cpay-touch"><img src="pay-nfc.png" alt="タッチ決済（コンタクトレス）マーク"></span>
+              <span class="cpay-brands">
+                <span class="cpay-tile"><img src="pay-visa.png" alt="VISA"></span>
+                <span class="cpay-tile"><img src="pay-mastercard.png" alt="Mastercard"></span>
+                <span class="cpay-tile"><img src="pay-jcb.png" alt="JCB"></span>
+                <span class="cpay-tile"><img src="pay-amex.png" alt="American Express"></span>
+              </span>
             </span>
           </div>
           <div class="cpay-grid" style="margin-top:12px;">
