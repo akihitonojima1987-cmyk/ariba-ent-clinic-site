@@ -74,6 +74,13 @@
     .btn-disabled { white-space:normal; text-align:center; line-height:1.7; font-size:14px !important; padding:12px 22px !important; }
     .cta-btns { flex-direction:column; align-items:center; }
     .cta-btns .pill { width:100%; max-width:340px; justify-content:center; white-space:normal; text-align:center; }
+    /* スマホ：見出しの手動<br>や長文で末尾1〜2文字が孤立する「変な改行」を防ぐ（2026-07-31）。
+       対象見出しに .rsv-h を付与し、各セグメントが収まるよう文字サイズと字間を微調整。 */
+    /* 統一レイヤーの h1[style*="Shippori"]/h2[style*="Shippori"]（詳細度0,1,1）に勝つため [style] を足す（0,2,1） */
+    .rsv-h[style] { letter-spacing:0.01em !important; text-wrap:pretty; }
+    h1.rsv-h[style] { font-size:21px !important; }
+    h2.rsv-h[style] { font-size:18px !important; }
+    h3.rsv-h[style] { font-size:16.5px !important; }
   }
 </style>
 
@@ -270,7 +277,7 @@ h1.h2-title{ font-size:30px !important; }
       <div style="position: absolute; inset: 0; background: linear-gradient(150deg, #eff6fc 0%, #dfeaf6 40%, #e6f4ea 72%, #fef4da 100%);"></div>
       <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.82) 100%);"></div>
       <div class="section-pad" style="position: relative; max-width: 860px; margin: 0 auto; padding: calc(72px * var(--k,1)) 28px calc(56px * var(--k,1)); text-align: center;">
-        <h1 class="h1-title" style="font-family: 'Shippori Mincho', serif; font-weight: 700; font-size: 38px; line-height: 1.5; letter-spacing: 0.04em; color: #353d39; margin: 0 0 16px;">当院のご予約は<br>デジスマ診療アプリが便利です</h1>
+        <h1 class="h1-title rsv-h" style="font-family: 'Shippori Mincho', serif; font-weight: 700; font-size: 38px; line-height: 1.5; letter-spacing: 0.04em; color: #353d39; margin: 0 0 16px;">当院のご予約は<br>デジスマ診療アプリが便利です</h1>
         <span class="pill" style="background:#fff; color:var(--acd); border:1.5px solid var(--ac); font-size:14px; padding:10px 22px;"><strong style="font-size:18px;">1</strong>分で簡単アプリ登録</span>
       </div>
     </section>
@@ -308,7 +315,7 @@ h1.h2-title{ font-size:30px !important; }
         <!-- STEP 1 -->
         <div class="step-card" style="margin-bottom:18px;">
           <span class="step-tag">STEP 1</span>
-          <h3 style="font-family:'Shippori Mincho',serif; font-size:19px; color:#3a423e; margin:0 0 12px;">デジスマアプリをダウンロード<span style="font-size:13px; color:#8a928c;">（おすすめ）</span></h3>
+          <h3 class="rsv-h" style="font-family:'Shippori Mincho',serif; font-size:19px; color:#3a423e; margin:0 0 12px;">デジスマアプリをダウンロード<span style="font-size:13px; color:#8a928c;">（おすすめ）</span></h3>
           <div class="dl-grid">
             <div class="dl-col">
               <div style="font-size:12.5px; font-weight:700; color:#6b746f; margin-bottom:8px;">iPhone をお使いの方</div>
@@ -332,24 +339,21 @@ h1.h2-title{ font-size:30px !important; }
         <!-- STEP 2 -->
         <div class="step-card" style="margin-bottom:18px;">
           <span class="step-tag">STEP 2</span>
-          <h3 style="font-family:'Shippori Mincho',serif; font-size:19px; color:#3a423e; margin:0 0 12px;">アプリ、または Web ブラウザから予約ページを開いてご予約ください</h3>
-          <!-- 2026-07-31：予約導線を先行公開（iframe＋ボタン両掲）。デジスマ側の受付開始は2026年8月2日18時のため、それまでは予約枠が表示されない旨の注記を残す。
-               8/2 18時にやること：下の「※ ネット予約の受付開始は…」注記を削除し、お知らせボックス等の未来形表記を現在形に更新する。予約URL・iframe src は Notion「🌐公式サイト引き継ぎ書類 §6 予約導線」参照。 -->
-          <!-- 予約メニュー（iframe埋め込み） -->
-          <div style="margin: 8px 0 16px;">
-            <iframe src="https://embed.digikar-smart.jp/institutions/e6f0c701-e294-4511-8472-298e16a1e5a0/reservation_treatment_menus" title="ネット予約メニュー" loading="lazy" referrerpolicy="no-referrer-when-downgrade" style="width:100%; max-width:400px; height:800px; border:1px solid #e8eef6; border-radius:14px; display:block; margin:0 auto; background:#fff;"></iframe>
-          </div>
+          <h3 class="rsv-h" style="font-family:'Shippori Mincho',serif; font-size:19px; color:#3a423e; margin:0 0 12px;">アプリ、または Web ブラウザから予約ページを開いてご予約ください</h3>
+          <!-- 2026-07-31：予約導線は「予約ページを開く」ボタン（別画面）のみ。iframe埋め込みはスマホで冗長・場所を取るため撤去（2026-07-31）。
+               デジスマ側の受付開始は2026年8月2日18時のため、それまで予約枠が出ない旨の注記を残す。
+               8/2 18時にやること：下の「※ ネット予約の受付開始は…」注記を削除し、お知らせボックス等の未来形表記を現在形に更新する。予約URLは Notion「🌐公式サイト引き継ぎ書類 §6 予約導線」参照。 -->
           <!-- 予約ページを別画面で開くボタン -->
-          <div class="cta-btns" style="text-align:center; margin: 4px 0 12px;">
-            <a href="https://qr.digikar-smart.jp/e6f0c701-e294-4511-8472-298e16a1e5a0/reserve" target="_blank" rel="noopener" class="pill btn-primary" style="font-size:15px; padding:14px 34px;">予約ページを開く（別画面）</a>
+          <div class="cta-btns" style="text-align:center; margin: 8px 0 12px;">
+            <a href="https://qr.digikar-smart.jp/e6f0c701-e294-4511-8472-298e16a1e5a0/reserve" target="_blank" rel="noopener" class="pill btn-primary" style="font-size:15px; padding:14px 34px;">予約ページを開く</a>
           </div>
-          <p style="font-size:13.5px; line-height:1.95; color:#6b746f; margin:0;">上の予約メニュー、または「予約ページを開く」ボタンから、ご希望の日付・時間帯を選んでご予約ください。<br><span style="color:#c0563a; font-weight:700;">※ ネット予約の受付開始は2026年8月2日18時からです。</span>それまでは予約枠が表示されません。</p>
+          <p style="font-size:13.5px; line-height:1.95; color:#6b746f; margin:0;">「予約ページを開く」ボタンから、ご希望の日付・時間帯を選んでご予約ください。<span style="display:block; margin-top:6px; color:#c0563a; font-weight:700;">※ ネット予約の受付開始は2026年8月2日18時からです（それまでは予約枠が表示されません）。</span></p>
         </div>
 
         <!-- STEP 3 -->
         <div class="step-card" style="margin-bottom:22px;">
           <span class="step-tag">STEP 3</span>
-          <h3 style="font-family:'Shippori Mincho',serif; font-size:19px; color:#3a423e; margin:0 0 12px;">予約完了画面から、事前WEB問診にご回答をお願いします</h3>
+          <h3 class="rsv-h" style="font-family:'Shippori Mincho',serif; font-size:19px; color:#3a423e; margin:0 0 12px;">予約完了画面から、事前WEB問診にご回答をお願いします</h3>
           <p style="font-size:13.5px; line-height:1.95; color:#6b746f; margin:0;">ご来院前に問診にお答えいただくと、当日のご案内がスムーズになります。<br>※ 登録メールアドレスに届いたメールからもご回答いただけます。</p>
         </div>
 
@@ -364,7 +368,7 @@ h1.h2-title{ font-size:30px !important; }
     <section style="background: #fff;">
       <div class="section-pad" style="max-width: 1000px; margin: 0 auto; padding: calc(60px * var(--k,1)) 28px;">
         <div style="text-align:center; margin-bottom: 30px;">
-          <h2 style="font-family: 'Shippori Mincho', serif; font-weight: 600; font-size: 24px; line-height:1.7; color:#3a423e; margin:0; letter-spacing:0.04em;">デジスマ診療アプリで予約すれば、<br>受付も待ち時間も、もっとスムーズに。</h2>
+          <h2 class="rsv-h" style="font-family: 'Shippori Mincho', serif; font-weight: 600; font-size: 24px; line-height:1.7; color:#3a423e; margin:0; letter-spacing:0.04em;">デジスマ診療アプリで予約すれば、<br>受付も待ち時間も、もっとスムーズに。</h2>
         </div>
         <div class="merit-grid" style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px;">
           <div class="merit-card">
@@ -433,7 +437,7 @@ h1.h2-title{ font-size:30px !important; }
           <span style="color:#fff; font-size:13.5px; font-weight:700;">✓ 京橋駅 4番出口 徒歩2分</span>
           <span style="color:#fff; font-size:13.5px; font-weight:700;">✓ 東京駅 八重洲南口 徒歩9分</span>
         </div>
-        <h2 style="font-family:'Shippori Mincho',serif; font-weight:600; font-size:24px; line-height:1.7; color:#fff; margin:0 0 12px; letter-spacing:0.05em;">ネット予約は8月2日18時から。<br>それまではご予約なしでご来院いただけます。</h2>
+        <h2 class="rsv-h" style="font-family:'Shippori Mincho',serif; font-weight:600; font-size:24px; line-height:1.7; color:#fff; margin:0 0 12px; letter-spacing:0.05em;">ネット予約は8月2日18時から。<br>それまではご予約なしでご来院いただけます。</h2>
         <p style="font-size:14.5px; color:rgba(255,255,255,0.92); margin:0 0 28px; line-height:1.9;">お電話でのお問い合わせも可能です。予約開始のお知らせは公式LINEでも配信します。</p>
         <div class="cta-btns" style="display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
           <a href="tel:0335678733" class="pill" style="font-size:16px; padding:16px 36px; background:#fff; color:var(--acd);"><span aria-hidden="true" style="color:#0a6f92; display:inline-flex; align-items:center; font-size:1.05em;"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="width:1em;height:1em;flex:none;"><path d="M4 5c0 8.5 6.5 15 15 15l3-4-6-2-2 2c-2.5-1-4.5-3-5.5-5.5l2-2-2-6-4 3Z"/></svg></span> 03-3567-8733</a>
