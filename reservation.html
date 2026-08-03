@@ -81,11 +81,10 @@
     h1.rsv-h[style] { font-size:21px !important; }
     h2.rsv-h[style] { font-size:18px !important; }
     h3.rsv-h[style] { font-size:16.5px !important; }
-    /* スマホはページが長くなりすぎるため、メリット3枚カード（24時間予約／かざすだけ受付／
-       事前WEB問診）を非表示にして見出しの一文だけ残す（2026-08-03）。PCでは3枚とも表示。
-       戻す場合はこの2行を消すだけでよい。 */
-    .merit-grid { display:none !important; }
-    .merit-head { margin-bottom:0 !important; }
+    /* スマホはページが長くなりすぎるため、メリット節（24時間予約／かざすだけ受付／事前WEB問診の
+       3枚カード）ごと非表示にする（2026-08-03）。見出しも同日に削除したため、節を残すと
+       余白だけの空セクションになる。PCでは3枚カードを表示。戻す場合はこの1行を消す。 */
+    .sec-merit { display:none !important; }
   }
 </style>
 
@@ -292,7 +291,9 @@ h1.h2-title{ font-size:30px !important; }
       <div class="section-pad" style="max-width: 860px; margin: 0 auto; padding: 0 28px;">
         <div style="margin-top: -24px; position: relative; background: #fff; border: 1px solid #ecece5; border-left: 5px solid var(--ac); border-radius: 16px; box-shadow: 0 16px 40px rgba(80,100,90,0.10); padding: 22px 26px;">
           <div style="font-family: 'Shippori Mincho', serif; font-size: 18px; color:#3a423e; margin-bottom: 8px;">当院は予約優先制です</div>
-          <p style="margin:0; font-size: 15px; line-height: 1.95; color:#5b645f;">ご予約の方を優先してご案内します。</p>
+          <!-- 2026-08-03：予約枠が埋まってきたため、予約なし来院の注意を追記（院長判断）。
+               「診療をお断りする」と読まれないよう、後日案内は「場合もございます」の表現に留めている。 -->
+          <p style="margin:0; font-size: 15px; line-height: 1.95; color:#5b645f;">ご予約の方を優先してご案内します。ご予約なしでご来院いただいた場合、長いお時間をお待ちいただく可能性がございますので、ご了承ください。混雑の状況によっては、後日のご案内となる場合もございます。</p>
         </div>
       </div>
     </section>
@@ -366,11 +367,12 @@ h1.h2-title{ font-size:30px !important; }
     </section>
 
     <!-- ============ デジスマのメリット ============ -->
-    <section style="background: #fff;">
+    <!-- 2026-08-03：見出し「デジスマ診療アプリで予約すれば、受付も待ち時間も、もっとスムーズに。」は削除。
+         スマホでは3枚カードも非表示にしているため、見出しを消すと節が空になって余白だけ残る。
+         そのため .sec-merit ごとスマホでは非表示にしている（CSSは @media (max-width:860px) 参照）。
+         PCでは3枚カードのみ表示。 -->
+    <section class="sec-merit" style="background: #fff;">
       <div class="section-pad" style="max-width: 1000px; margin: 0 auto; padding: calc(60px * var(--k,1)) 28px;">
-        <div class="merit-head" style="text-align:center; margin-bottom: 30px;">
-          <h2 class="rsv-h" style="font-family: 'Shippori Mincho', serif; font-weight: 600; font-size: 23px; line-height:1.7; color:#3a423e; margin:0; letter-spacing:0.04em;">デジスマ診療アプリで予約すれば、<br>受付も待ち時間も、もっとスムーズに。</h2>
-        </div>
         <div class="merit-grid" style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px;">
           <div class="merit-card">
             <h3 class="rsv-h" style="font-family:'Shippori Mincho',serif; font-size:18px; color:#3a423e; margin:0 0 8px;">24時間いつでも<br>ネット予約</h3>
