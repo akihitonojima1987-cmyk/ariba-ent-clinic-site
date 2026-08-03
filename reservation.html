@@ -81,6 +81,11 @@
     h1.rsv-h[style] { font-size:21px !important; }
     h2.rsv-h[style] { font-size:18px !important; }
     h3.rsv-h[style] { font-size:16.5px !important; }
+    /* スマホはページが長くなりすぎるため、メリット3枚カード（24時間予約／かざすだけ受付／
+       事前WEB問診）を非表示にして見出しの一文だけ残す（2026-08-03）。PCでは3枚とも表示。
+       戻す場合はこの2行を消すだけでよい。 */
+    .merit-grid { display:none !important; }
+    .merit-head { margin-bottom:0 !important; }
   }
 </style>
 
@@ -287,23 +292,15 @@ h1.h2-title{ font-size:30px !important; }
       <div class="section-pad" style="max-width: 860px; margin: 0 auto; padding: 0 28px;">
         <div style="margin-top: -24px; position: relative; background: #fff; border: 1px solid #ecece5; border-left: 5px solid var(--ac); border-radius: 16px; box-shadow: 0 16px 40px rgba(80,100,90,0.10); padding: 22px 26px;">
           <div style="font-family: 'Shippori Mincho', serif; font-size: 18px; color:#3a423e; margin-bottom: 8px;">当院は予約優先制です</div>
-          <p style="margin:0; font-size: 15px; line-height: 1.95; color:#5b645f;">ご予約の方を優先してご案内します。ご予約がなくても、受付時間内（午前 9:45–12:30／午後 14:45–17:30）にご来院いただけます。長い時間お待たせしてしまうと思いますが、ご了承をお願いします。再診の方は診察券を、初診の方はマイナ保険証（マイナンバーカード）または資格確認書をご提示ください。</p>
+          <p style="margin:0; font-size: 15px; line-height: 1.95; color:#5b645f;">ご予約の方を優先してご案内します。</p>
         </div>
       </div>
     </section>
 
-    <!-- ============ ネット予約のご案内 ============ -->
-    <section style="background: #fff;">
-      <div class="section-pad" style="max-width: 860px; margin: 0 auto; padding: calc(52px * var(--k,1)) 28px calc(8px * var(--k,1)); text-align:center;">
-        <h2 class="rsv-h" style="font-family: 'Shippori Mincho', serif; font-weight: 600; font-size: 23px; color:#3a423e; margin:0 0 18px; letter-spacing:0.04em;">ネット予約のご案内</h2>
-        <p style="font-size: 15px; line-height: 2.1; color:#5b645f; margin:0 0 10px; text-align:left;">当院では、患者さまにより快適にご利用いただけるよう、スマートフォンアプリ「<strong>デジスマ診療</strong>」を活用したご予約をおすすめしています。<br>デジスマアプリで予約すると、ご希望の時間帯を選べて待ち時間を短縮でき、スムーズにご受診いただけます。</p>
-        <p style="font-size: 13px; line-height: 1.9; color:#939a93; margin:0; text-align:left;">※ 医療という特性上、診療内容によってはお時間を要する場合もあり、ご予約の時間枠に遅れてしまうこともございます。あらかじめご了承ください。</p>
-        <div style="margin-top:18px; background:var(--acbg); border:1px solid #dbe6f5; border-radius:14px; padding:18px 22px; text-align:left;">
-          <p style="font-size:15px; line-height:1.9; color:#3a423e; margin:0 0 6px; font-weight:700;">アプリのご利用は必須ではありません</p>
-          <p style="font-size:15px; line-height:1.95; color:#5b645f; margin:0;">アプリなしでも、スマートフォンやパソコンの<strong>ブラウザからそのままご予約いただけます</strong>。アプリを入れていただくと、2回目以降のご予約や受付・お会計がよりスムーズになります。</p>
-        </div>
-      </div>
-    </section>
+    <!-- 2026-08-03：旧「ネット予約のご案内」節（デジスマ推奨のリード文＋「アプリのご利用は必須では
+         ありません」ボックス）は、下の「ネット予約の方法」と内容が重複するため削除した。
+         同節にあった「※ 医療という特性上〜」の注記だけは STEP の下へ移設して残している。
+         持ち物（診察券・マイナ保険証）の案内も STEP 3 に集約し、お知らせ枠からは外した。 -->
 
     <!-- ============ ネット予約の方法（STEP 1〜3） ============ -->
     <section style="background: var(--acbg);">
@@ -313,9 +310,37 @@ h1.h2-title{ font-size:30px !important; }
         </div>
 
         <!-- STEP 1 -->
+        <!-- 2026-08-03：STEPを「予約 → WEB問診 → 来院」の3つに簡素化（旧：アプリDL → 予約 → 問診）。
+             アプリの利点は予約完了メールで案内されるため、ページ側の推奨文は置かない。
+             アプリのDLバッジ・QRは残す方針のため、STEPの外の任意ブロックへ移動した。 -->
         <div class="step-card" style="margin-bottom:18px;">
           <span class="step-tag">STEP 1</span>
-          <h3 class="rsv-h" style="font-family:'Shippori Mincho',serif; font-size:18px; color:#3a423e; margin:0 0 12px;">デジスマアプリをダウンロード<span style="font-size:13px; color:#8a928c;">（おすすめ）</span></h3>
+          <h3 class="rsv-h" style="font-family:'Shippori Mincho',serif; font-size:18px; color:#3a423e; margin:0 0 12px;">公式LINE、または公式サイトから診察予約</h3>
+          <!-- 予約導線はこのボタン1つに集約（iframe埋め込みは 2026-07-31 に撤去）。
+               予約URLは Notion「🌐公式サイト引き継ぎ書類 §6 予約導線」参照。 -->
+          <div class="cta-btns" style="text-align:center; margin: 6px 0 12px;">
+            <a href="https://qr.digikar-smart.jp/e6f0c701-e294-4511-8472-298e16a1e5a0/reserve" target="_blank" rel="noopener" class="pill btn-primary" style="font-size:16px; padding:14px 34px;">予約ページを開く</a>
+          </div>
+          <p style="font-size:15px; line-height:1.95; color:#6b746f; margin:0;">上のボタンから予約ページを開き、ご希望の日付・時間帯を選んでご予約ください。<br>公式LINEのトーク画面で「予約」と送っていただくと、同じ予約ページのご案内をお送りします。</p>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step-card" style="margin-bottom:18px;">
+          <span class="step-tag">STEP 2</span>
+          <h3 class="rsv-h" style="font-family:'Shippori Mincho',serif; font-size:18px; color:#3a423e; margin:0 0 12px;">WEB問診にご回答ください</h3>
+          <p style="font-size:15px; line-height:1.95; color:#6b746f; margin:0;">ご予約のあと、そのままWEB問診にお進みいただけます。ご登録のメールアドレスに届く予約完了メールからもご回答いただけます。<br>ご来院前にお答えいただくと、当日のご案内がスムーズです。</p>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step-card" style="margin-bottom:22px;">
+          <span class="step-tag">STEP 3</span>
+          <h3 class="rsv-h" style="font-family:'Shippori Mincho',serif; font-size:18px; color:#3a423e; margin:0 0 12px;">ご予約のお時間にご来院ください</h3>
+          <p style="font-size:15px; line-height:1.95; color:#6b746f; margin:0;">再診の方は診察券を、初診の方はマイナ保険証（マイナンバーカード）または資格確認書をご提示ください。</p>
+        </div>
+
+        <!-- アプリのダウンロード（任意。STEPからは外して最後に置く） -->
+        <div class="step-card">
+          <h3 class="rsv-h" style="font-family:'Shippori Mincho',serif; font-size:18px; color:#3a423e; margin:0 0 12px;">デジスマ診療アプリ<span style="font-size:13px; color:#8a928c;">（任意）</span></h3>
           <div class="dl-grid">
             <div class="dl-col">
               <div style="font-size:13px; font-weight:700; color:#6b746f; margin-bottom:8px;">iPhone をお使いの方</div>
@@ -332,42 +357,18 @@ h1.h2-title{ font-size:30px !important; }
               <img src="qr_googleplay.png" alt="Google Play ダウンロード用QRコード" class="dl-qr" style="width:108px; height:108px; display:block; margin:0 auto; border:1px solid #e6ebf4; border-radius:8px; padding:5px; background:#fff;">
             </div>
           </div>
-          <p style="font-size:13px; line-height:1.85; color:#939a93; margin: 0 0 8px;">スマートフォンでは上のボタンから直接、パソコンでご覧の方はスマホでQRコードを読み取ってダウンロードできます。</p>
-          <p style="font-size:15px; line-height:1.95; color:#6b746f; margin:0;">アプリを開いたら、画面の案内にそってお名前などの本人情報を登録してください。アプリのダウンロード・登録は今からでも行えます。ダウンロードが済んだら STEP 2 へお進みください。<br><span style="color:#939a93;">※ アプリを使わない方は、STEP 2 の予約ページからWebでそのままご予約いただけます（アプリのダウンロードは不要です）。</span></p>
+          <p style="font-size:13px; line-height:1.85; color:#939a93; margin: 0;">スマートフォンでは上のボタンから直接、パソコンでご覧の方はスマホでQRコードを読み取ってダウンロードできます。</p>
         </div>
 
-        <!-- STEP 2 -->
-        <div class="step-card" style="margin-bottom:18px;">
-          <span class="step-tag">STEP 2</span>
-          <h3 class="rsv-h" style="font-family:'Shippori Mincho',serif; font-size:18px; color:#3a423e; margin:0 0 12px;">アプリ、または Web ブラウザから予約ページを開いてご予約ください</h3>
-          <!-- 2026-07-31：予約導線は「予約ページを開く」ボタン（別画面）のみ。iframe埋め込みはスマホで冗長・場所を取るため撤去（2026-07-31）。
-               2026-08-03：予約開始（8/2 18時）済みのため「※ ネット予約の受付開始は…」注記を削除し、
-               お知らせボックス・FAQ・CTA の未来形表記を現在形へ更新した。予約URLは Notion「🌐公式サイト引き継ぎ書類 §6 予約導線」参照。 -->
-          <!-- 予約ページを別画面で開くボタン -->
-          <div class="cta-btns" style="text-align:center; margin: 8px 0 12px;">
-            <a href="https://qr.digikar-smart.jp/e6f0c701-e294-4511-8472-298e16a1e5a0/reserve" target="_blank" rel="noopener" class="pill btn-primary" style="font-size:16px; padding:14px 34px;">予約ページを開く</a>
-          </div>
-          <p style="font-size:15px; line-height:1.95; color:#6b746f; margin:0;">「予約ページを開く」ボタンから、ご希望の日付・時間帯を選んでご予約ください。</p>
-        </div>
-
-        <!-- STEP 3 -->
-        <div class="step-card" style="margin-bottom:22px;">
-          <span class="step-tag">STEP 3</span>
-          <h3 class="rsv-h" style="font-family:'Shippori Mincho',serif; font-size:18px; color:#3a423e; margin:0 0 12px;">予約完了画面から、事前WEB問診にご回答をお願いします</h3>
-          <p style="font-size:15px; line-height:1.95; color:#6b746f; margin:0;">ご来院前に問診にお答えいただくと、当日のご案内がスムーズになります。<br>※ 登録メールアドレスに届いたメールからもご回答いただけます。</p>
-        </div>
-
-        <!-- 補足：アプリが難しい方 -->
-        <div style="background:#fff; border:1px dashed #c9d4e6; border-radius:14px; padding:18px 22px;">
-          <p style="font-size:15px; line-height:2.0; color:#5b645f; margin:0;">アプリの操作が難しい方は、予約ページをスマートフォン・パソコンの<strong>ブラウザからもご利用いただけます</strong>。</p>
-        </div>
+        <!-- 旧「ネット予約のご案内」節から移設した注記（2026-08-03） -->
+        <p style="font-size: 13px; line-height: 1.9; color:#939a93; margin:18px 0 0;">※ 医療という特性上、診療内容によってはお時間を要する場合もあり、ご予約の時間枠に遅れてしまうこともございます。あらかじめご了承ください。</p>
       </div>
     </section>
 
     <!-- ============ デジスマのメリット ============ -->
     <section style="background: #fff;">
       <div class="section-pad" style="max-width: 1000px; margin: 0 auto; padding: calc(60px * var(--k,1)) 28px;">
-        <div style="text-align:center; margin-bottom: 30px;">
+        <div class="merit-head" style="text-align:center; margin-bottom: 30px;">
           <h2 class="rsv-h" style="font-family: 'Shippori Mincho', serif; font-weight: 600; font-size: 23px; line-height:1.7; color:#3a423e; margin:0; letter-spacing:0.04em;">デジスマ診療アプリで予約すれば、<br>受付も待ち時間も、もっとスムーズに。</h2>
         </div>
         <div class="merit-grid" style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px;">
