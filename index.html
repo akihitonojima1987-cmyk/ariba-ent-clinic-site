@@ -298,6 +298,9 @@
     .sec-faq      { order: 7; }
     #services     { order: 8; }
     .sec-hub      { order: 9; }
+    /* 採用バナー（2026-08-11 新設）。order が無いと既定の order:0 でヒーロー直後へ飛び、
+       患者さん向けの導線より前に出てしまう（キャッシュレス節と同じ轍）。最後に置く。 */
+    .sec-recruit  { order: 10; }
     .hero-fv-section { display: none !important; }   /* PC用ヒーローはスマホ非表示。代わりに .mobile-hero を上部に出す（2026-07-18） */
     .sec-features { display: none !important; }       /* 当院の特徴はスマホではヒーローのカルーセルで表示するため、この下段セクションは非表示（2026-07-19） */
 
@@ -631,6 +634,7 @@ h1.h2-title{ font-size:30px !important; }
         <a href="/access"   class="nav-link">アクセス</a>
         <a href="/symptoms" class="nav-link">このような時</a>
         <a href="/faq" class="nav-link">よくある質問</a>
+        <a href="/recruit" class="nav-link">採用情報</a>
         
       </div>
     </nav>
@@ -1153,6 +1157,49 @@ h1.h2-title{ font-size:30px !important; }
       </div>
     </section>
 
+    <!-- ============ 採用情報バナー（2026-08-11 新設）============ -->
+    <!-- ヘッダーナビの「採用情報」と同じ導線を、トップページの本文末にも置く。
+         写真は求人ページと同じ PIXTA 正規版（recruit-hero.jpg）。 -->
+    <section class="sec-recruit" style="background:#ffffff;">
+      <style>
+      .rec-band{ max-width:1080px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr;
+        gap:0; border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+      .rec-band-photo{ min-height:230px; background:url("recruit-hero.jpg") center 35% / cover no-repeat; }
+      .rec-band-body{ padding:34px 36px; }
+      .rec-band-eyebrow{ display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.18em;
+        color:var(--acd); margin-bottom:10px; }
+      h2.rec-band-title{ font-family:'Shippori Mincho',serif !important; font-weight:600 !important;
+        font-size:26px !important; letter-spacing:.06em !important; color:#353d39; margin:0 0 12px; }
+      .rec-band-body p{ font-size:14.5px; line-height:2.0; color:#5b645f; margin:0 0 18px; }
+      .rec-band-tags{ list-style:none; display:flex; flex-wrap:wrap; gap:7px; padding:0; margin:0 0 20px; }
+      .rec-band-tags li{ font-size:12px; font-weight:700; color:var(--acd); background:var(--acbg);
+        border:1px solid var(--acs); border-radius:999px; padding:5px 12px; }
+      @media (max-width:860px){
+        .rec-band{ grid-template-columns:1fr; }
+        .rec-band-photo{ min-height:170px; }
+        .rec-band-body{ padding:26px 22px; }
+        h2.rec-band-title{ font-size:21px !important; }
+      }
+      </style>
+      <div class="section-pad" style="padding: calc(64px * var(--k,1)) 28px;">
+        <div class="rec-band">
+          <div class="rec-band-photo" role="img" aria-label="受付で応対するスタッフ（イメージ）"></div>
+          <div class="rec-band-body">
+            <span class="rec-band-eyebrow">RECRUIT ｜ 採用情報</span>
+            <h2 class="rec-band-title">医療事務・受付（パート）を募集しています</h2>
+            <p>宝町駅すぐ。週1日・1日4時間から相談できる耳鼻咽喉科クリニックです。未経験・ブランクのある方も歓迎しています。</p>
+            <ul class="rec-band-tags">
+              <li>時給 1,500円〜</li>
+              <li>週1日〜OK</li>
+              <li>資格不問・未経験OK</li>
+              <li>交通費支給</li>
+            </ul>
+            <a href="/recruit" class="pill btn-primary" style="font-size:15px; padding:13px 28px;">採用情報を見る →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <!-- ============ 街並みイラスト帯 ============ -->
@@ -1182,7 +1229,7 @@ h1.h2-title{ font-size:30px !important; }
             <a href="/access"   class="foot-link">アクセス・診療時間</a>
             <a href="/symptoms" class="foot-link">このような時</a>
             <a href="/faq"      class="foot-link">よくある質問</a>
-            <a href="/recruit" class="foot-link">求人情報</a>
+            <a href="/recruit" class="foot-link">採用情報</a>
             <a href="/contact" class="foot-link">お問い合わせ</a>
             <a href="/privacy-policy" class="foot-link">プライバシーポリシー</a><a href="/website-policy" class="foot-link">ホームページ運営について</a>
             <a href="/contact" class="foot-link">業者・取引先の方へ（お問い合わせ）</a>
@@ -1214,5 +1261,5 @@ h1.h2-title{ font-size:30px !important; }
   </footer>
 
 </div>
-<button class="hamburger" aria-label="メニュー" aria-expanded="false" onclick="var o=document.body.classList.toggle('menu-open');this.setAttribute('aria-expanded',o);"><span></span><span></span><span></span></button><script>(function(){var h=document.querySelector('.hamburger');if(h)h.setAttribute('aria-expanded',document.body.classList.contains('menu-open')?'true':'false');})();</script><nav class="mobile-menu" onclick="if(event.target.closest('a')){document.body.classList.remove('menu-open');var h=document.querySelector('.hamburger');if(h)h.setAttribute('aria-expanded','false');}"><a href="/">HOME</a><a href="/first-visit">ご来院の方へ</a><a href="/doctor-profile">ドクター紹介</a><a href="/services">診療内容</a><a href="/sublingual-immunotherapy">舌下免疫療法</a><a href="/b-spot">Bスポット療法</a><a href="/access">アクセス・診療時間</a><a href="/symptoms">このような時</a><a href="/faq">よくある質問</a><a href="/contact">お問い合わせ</a><a href="/reservation" class="mm-accent">ご予約について</a><a href="https://lin.ee/XtmFDb7" target="_blank" rel="noopener" class="mm-line">公式LINE</a><a href="tel:0335678733">お電話：03-3567-8733</a></nav><div class="mobile-cta"><a class="mc-tel" href="tel:0335678733"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5c0 8.5 6.5 15 15 15l3-4-6-2-2 2c-2.5-1-4.5-3-5.5-5.5l2-2-2-6-4 3Z"/></svg>電話</a><a class="mc-web" href="/reservation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4M9 13.5l2 2 4-4"/></svg>予約</a><a class="mc-line" href="https://lin.ee/XtmFDb7" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 20l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>LINE</a></div><div class="float-cta"><a href="https://lin.ee/XtmFDb7" target="_blank" rel="noopener" class="fc-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 20l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>LINE予約</a><a href="/reservation" class="fc-web"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4M9 13.5l2 2 4-4"/></svg>Web予約</a></div></body>
+<button class="hamburger" aria-label="メニュー" aria-expanded="false" onclick="var o=document.body.classList.toggle('menu-open');this.setAttribute('aria-expanded',o);"><span></span><span></span><span></span></button><script>(function(){var h=document.querySelector('.hamburger');if(h)h.setAttribute('aria-expanded',document.body.classList.contains('menu-open')?'true':'false');})();</script><nav class="mobile-menu" onclick="if(event.target.closest('a')){document.body.classList.remove('menu-open');var h=document.querySelector('.hamburger');if(h)h.setAttribute('aria-expanded','false');}"><a href="/">HOME</a><a href="/first-visit">ご来院の方へ</a><a href="/doctor-profile">ドクター紹介</a><a href="/services">診療内容</a><a href="/sublingual-immunotherapy">舌下免疫療法</a><a href="/b-spot">Bスポット療法</a><a href="/access">アクセス・診療時間</a><a href="/symptoms">このような時</a><a href="/faq">よくある質問</a><a href="/contact">お問い合わせ</a><a href="/recruit">採用情報</a><a href="/reservation" class="mm-accent">ご予約について</a><a href="https://lin.ee/XtmFDb7" target="_blank" rel="noopener" class="mm-line">公式LINE</a><a href="tel:0335678733">お電話：03-3567-8733</a></nav><div class="mobile-cta"><a class="mc-tel" href="tel:0335678733"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5c0 8.5 6.5 15 15 15l3-4-6-2-2 2c-2.5-1-4.5-3-5.5-5.5l2-2-2-6-4 3Z"/></svg>電話</a><a class="mc-web" href="/reservation"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4M9 13.5l2 2 4-4"/></svg>予約</a><a class="mc-line" href="https://lin.ee/XtmFDb7" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 20l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>LINE</a></div><div class="float-cta"><a href="https://lin.ee/XtmFDb7" target="_blank" rel="noopener" class="fc-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 20l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg>LINE予約</a><a href="/reservation" class="fc-web"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2.5"/><path d="M3.5 9.5h17M8 3v4M16 3v4M9 13.5l2 2 4-4"/></svg>Web予約</a></div></body>
 </html>
