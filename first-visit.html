@@ -436,42 +436,54 @@ h1.h2-title{ font-size:30px !important; }
           .cpay2-lead{font-size:16px;line-height:2.1;color:#5b645f;margin:0 0 26px;}
           .cpay2-block{background:#fff;border-radius:8px;padding:22px 24px;margin-bottom:14px;}
           .cpay2-h{font-size:15px;font-weight:700;color:#3a423e;margin:0 0 14px;}
-          .cpay2-grid{display:flex;flex-wrap:wrap;gap:10px;}
-          .cpay2-tile{width:104px;height:64px;background:#fff;border:1px solid #e6edf4;border-radius:10px;
-            display:flex;align-items:center;justify-content:center;padding:10px;box-shadow:0 1px 3px rgba(40,80,120,.05);}
-          .cpay2-tile img{max-width:100%;max-height:40px;object-fit:contain;display:block;}
+          /* --- 2026-08-14：トップページ #cpay と同じ、Airペイの決済ブランド板に合わせた並び ---
+             ロゴ1枚ずつに白い枠を付けず、同じ高さで1行に並べる。
+             1行目＝タッチ決済(NFC)マーク＋対応する4ブランド／2行目＝Diners・Discover。
+             大きさは --cpay2-logo-h の1か所で管理する（行ごとにバラバラにしない）。 */
+          .cpay2-grid{display:flex;flex-wrap:wrap;align-items:center;gap:var(--cpay2-gap,18px);}
+          .cpay2-tile{flex:none;display:flex;align-items:center;justify-content:center;}
+          .cpay2-tile img{max-width:100%;max-height:var(--cpay2-logo-h,44px);object-fit:contain;display:block;}
           /* AMEX は正方形のマーク（他は横長）。高さを揃えると面積が約6割になり1つだけ小さく見えるため、
              高さを 1.15 倍にして見た目の大きさを他ブランドに近づける（光学補正・2026-08-14）。 */
-          .cpay2-tile.is-square img{max-height:46px;}
-          /* 交通系9ブランドの帯（横長3.7:1）は、他と同じ104pxのタイルに入れると
-             1ブランドあたり9px幅になり読めない。タイル枠を外し、帯として横いっぱいに置く。
-             画像自体に角丸の枠が描かれているので、枠の二重掛けにもならない（2026-08-14）。
-             ※ 下のスマホ用 @media が .cpay2-tile を再指定するため、ここは
-                クラス2つ（.cpay2-tile.cpay2-band）で詳細度を上げないと後勝ちで潰される。 */
-          .cpay2-tile.cpay2-band{width:100%;max-width:520px;height:auto;border:none;background:none;box-shadow:none;padding:0;margin-top:4px;}
-          .cpay2-tile.cpay2-band img{width:100%;max-width:520px;max-height:none;height:auto;}
+          .cpay2-tile.is-square img{max-height:calc(var(--cpay2-logo-h,44px) * 1.15);}
+          .cpay2-touch{flex:none;display:flex;align-items:center;justify-content:center;}
+          .cpay2-touch img{max-width:100%;max-height:calc(var(--cpay2-logo-h,44px) * .82);width:auto;object-fit:contain;display:block;}
+          /* 交通系9ブランドは1枚の帯画像（縦横比3.7:1）。他のロゴと同じ高さにすると
+             1ブランドあたり10px程度になり読めないため、帯として横いっぱいに置く。 */
+          .cpay2-band{width:100%;max-width:520px;height:auto;margin-top:4px;}
+          .cpay2-band img{width:100%;max-width:520px;max-height:none;height:auto;}
           .cpay2-note{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:#6b746f;line-height:1.9;margin-top:12px;}
           .cpay2-note img{height:22px;width:auto;display:block;}
           .cpay2-list{margin:0;padding:0;list-style:none;}
           .cpay2-list li{display:flex;gap:10px;padding:7px 0;font-size:15px;line-height:1.95;color:#5b645f;}
           .cpay2-list li span{color:var(--acd);font-weight:800;flex:none;}
           @media (max-width:600px){
-            .cpay2-tile{width:calc(33.333% - 7px);height:54px;}
-            .cpay2-tile img{max-height:30px;}
-            .cpay2-tile.is-square img{max-height:34.5px;}
+            /* 高さ30pxのとき1行目（NFC＋4ブランド）の実測幅は約237px。
+               このページの内容幅（375px端末で271px）に収まるので折り返さない。 */
+            /* 左右の余白を詰めて、1行目が収まる横幅を確保する（375px端末で271px→287px）。 */
+            .cpay2-block{--cpay2-logo-h:30px;--cpay2-gap:12px;padding:18px 16px;}
             .cpay2-lead{font-size:15px;}
             .cpay2-list li{font-size:14px;}
+          }
+          /* 極端に狭い端末（~280px）向けの下限側の調整。iPhone（375/360px）にはかけない。 */
+          @media (max-width:340px){
+            .cpay2-block{--cpay2-logo-h:26px;--cpay2-gap:9px;}
           }
         </style>
         <p class="cpay2-lead">現金のほか、各種クレジットカード・電子マネー・交通系ICカードがご利用いただけます。</p>
 
         <div class="cpay2-block">
           <p class="cpay2-h">クレジットカード</p>
+          <!-- 1行目＝タッチ決済(NFC)マーク＋対応する4ブランド（Airペイの板と同じ並び）。
+               マークをこの行の先頭に置くこと自体が「この4ブランドはタッチ決済対応」の意味を持つ。 -->
           <div class="cpay2-grid">
+            <span class="cpay2-touch"><img src="pay-nfc.png" alt="タッチ決済（コンタクトレス）マーク"></span>
             <span class="cpay2-tile"><img src="pay-visa.png" alt="VISA"></span>
             <span class="cpay2-tile"><img src="pay-mastercard.png" alt="Mastercard"></span>
             <span class="cpay2-tile"><img src="pay-jcb.png" alt="JCB"></span>
             <span class="cpay2-tile is-square"><img src="pay-amex.png" alt="American Express"></span>
+          </div>
+          <div class="cpay2-grid" style="margin-top:16px;">
             <span class="cpay2-tile"><img src="pay-diners.png" alt="Diners Club"></span>
             <span class="cpay2-tile"><img src="pay-discover.png" alt="Discover"></span>
           </div>
@@ -485,7 +497,7 @@ h1.h2-title{ font-size:30px !important; }
             <span class="cpay2-tile"><img src="pay-quicpay.png" alt="QUICPay"></span>
           </div>
           <div class="cpay2-grid">
-            <span class="cpay2-tile cpay2-band"><img src="pay-transit.png" alt="交通系ICカード（Suica・PASMO・ICOCA ほか）"></span>
+            <span class="cpay2-band"><img src="pay-transit.png" alt="交通系ICカード（Suica・PASMO・ICOCA ほか）"></span>
           </div>
         </div>
 
