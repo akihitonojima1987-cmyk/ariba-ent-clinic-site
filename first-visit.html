@@ -440,6 +440,16 @@ h1.h2-title{ font-size:30px !important; }
           .cpay2-tile{width:104px;height:64px;background:#fff;border:1px solid #e6edf4;border-radius:10px;
             display:flex;align-items:center;justify-content:center;padding:10px;box-shadow:0 1px 3px rgba(40,80,120,.05);}
           .cpay2-tile img{max-width:100%;max-height:40px;object-fit:contain;display:block;}
+          /* AMEX は正方形のマーク（他は横長）。高さを揃えると面積が約6割になり1つだけ小さく見えるため、
+             高さを 1.15 倍にして見た目の大きさを他ブランドに近づける（光学補正・2026-08-14）。 */
+          .cpay2-tile.is-square img{max-height:46px;}
+          /* 交通系9ブランドの帯（横長3.7:1）は、他と同じ104pxのタイルに入れると
+             1ブランドあたり9px幅になり読めない。タイル枠を外し、帯として横いっぱいに置く。
+             画像自体に角丸の枠が描かれているので、枠の二重掛けにもならない（2026-08-14）。
+             ※ 下のスマホ用 @media が .cpay2-tile を再指定するため、ここは
+                クラス2つ（.cpay2-tile.cpay2-band）で詳細度を上げないと後勝ちで潰される。 */
+          .cpay2-tile.cpay2-band{width:100%;max-width:520px;height:auto;border:none;background:none;box-shadow:none;padding:0;margin-top:4px;}
+          .cpay2-tile.cpay2-band img{width:100%;max-width:520px;max-height:none;height:auto;}
           .cpay2-note{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;color:#6b746f;line-height:1.9;margin-top:12px;}
           .cpay2-note img{height:22px;width:auto;display:block;}
           .cpay2-list{margin:0;padding:0;list-style:none;}
@@ -447,6 +457,8 @@ h1.h2-title{ font-size:30px !important; }
           .cpay2-list li span{color:var(--acd);font-weight:800;flex:none;}
           @media (max-width:600px){
             .cpay2-tile{width:calc(33.333% - 7px);height:54px;}
+            .cpay2-tile img{max-height:30px;}
+            .cpay2-tile.is-square img{max-height:34.5px;}
             .cpay2-lead{font-size:15px;}
             .cpay2-list li{font-size:14px;}
           }
@@ -459,7 +471,7 @@ h1.h2-title{ font-size:30px !important; }
             <span class="cpay2-tile"><img src="pay-visa.png" alt="VISA"></span>
             <span class="cpay2-tile"><img src="pay-mastercard.png" alt="Mastercard"></span>
             <span class="cpay2-tile"><img src="pay-jcb.png" alt="JCB"></span>
-            <span class="cpay2-tile"><img src="pay-amex.png" alt="American Express"></span>
+            <span class="cpay2-tile is-square"><img src="pay-amex.png" alt="American Express"></span>
             <span class="cpay2-tile"><img src="pay-diners.png" alt="Diners Club"></span>
             <span class="cpay2-tile"><img src="pay-discover.png" alt="Discover"></span>
           </div>
@@ -471,7 +483,9 @@ h1.h2-title{ font-size:30px !important; }
           <div class="cpay2-grid">
             <span class="cpay2-tile"><img src="pay-id.png" alt="iD"></span>
             <span class="cpay2-tile"><img src="pay-quicpay.png" alt="QUICPay"></span>
-            <span class="cpay2-tile"><img src="pay-transit.png" alt="交通系ICカード（Suica・PASMO・ICOCA ほか）"></span>
+          </div>
+          <div class="cpay2-grid">
+            <span class="cpay2-tile cpay2-band"><img src="pay-transit.png" alt="交通系ICカード（Suica・PASMO・ICOCA ほか）"></span>
           </div>
         </div>
 
