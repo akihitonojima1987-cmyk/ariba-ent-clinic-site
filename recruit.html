@@ -573,7 +573,9 @@ h1.rc-h1{ font-family:'Shippori Mincho',serif !important; font-weight:700 !impor
       .rc-msg p{ font-size:14.5px; line-height:2.1; color:#5b645f; margin:0 0 16px; }
       .rc-msg .sign{ font-size:14px; color:#333b37; font-weight:700; margin-top:22px; }
       @media (max-width:860px){ .rc-msg{ grid-template-columns:1fr; gap:20px; }
-        .rc-msg-photo{ max-width:180px; } .rc-msg h3{ font-size:19px !important; } }
+        /* 1カラムになると写真は横幅いっぱいの行に1つだけ置かれる。max-width だけだと
+           行の左端に張り付くので、margin:0 auto で中央に置く（2026-08-15 修正）。 */
+        .rc-msg-photo{ max-width:180px; margin:0 auto; } .rc-msg h3{ font-size:19px !important; } }
       </style>
       <div class="rc-wrap">
         <h2 class="rc-sec-title">院長より</h2>
