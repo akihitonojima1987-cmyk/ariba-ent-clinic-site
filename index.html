@@ -641,7 +641,11 @@ h1.h2-title{ font-size:30px !important; }
         <div class="mh-slide2" style="background-image: url('hero-slide2.jpg'); background-position: center 45%;">
           <div class="mh-scrim"></div>
           <div class="mh-badge"><span class="mh-badge-label">Feature</span><span class="mh-badge-num">02</span></div>
-          <div class="mh-copy"><p class="mh-title" style="font-size:16px;line-height:1.5;">都営浅草線 宝町駅 徒歩1分<br>日比谷線 八丁堀駅 徒歩8分<br>5駅利用可能で通いやすい</p></div>
+          <!-- 2026-08-15：2行目を「日比谷線 八丁堀駅 徒歩8分」から「銀座線 京橋駅 徒歩2分」へ。
+               スマホで最初に見えるスライドなのに、徒歩1分の隣に徒歩8分の駅を並べていて
+               「近い」という一番の強みが薄まっていたため（院長指摘「駅名ありすぎ」）。
+               八丁堀・銀座一丁目・東京駅は #access と /access に残してあるので情報は落ちていない。 -->
+          <div class="mh-copy"><p class="mh-title" style="font-size:16px;line-height:1.5;">都営浅草線 宝町駅 徒歩1分<br>銀座線 京橋駅 徒歩2分<br>5駅利用可能で通いやすい</p></div>
         </div>
         <div class="mh-slide2" style="background-image: url('feature-bspot.jpg'); background-position: center;">
           <div class="mh-scrim"></div>
@@ -964,6 +968,29 @@ h1.h2-title{ font-size:30px !important; }
 
         <!-- ============ アクセス・診療時間（地図・時間表はトップにそのまま掲載） ============ -->
     <section id="access" class="sec-access" style="background: #ffffff;">
+      <style>
+        /* --- 最寄り駅の並べ方（2026-08-15）---
+           5駅を「／」でつないだ1段落にしていたため、スマホ(375px)で6行の
+           べた書きになり「どの駅から来ればいいのか」が読み取れなかった（院長指摘「駅名ありすぎ」）。
+           駅は消さず（八丁堀・東京駅などからの検索流入があるため）、
+           ・徒歩◯分を左の丸バッジにして「近さ」を先に見せる
+           ・近い2駅（宝町・京橋）だけを行として立て、残り3駅は小さく1行にまとめる
+           という優先順位づけで読みやすくする。 */
+        .acc-routes{display:flex;flex-direction:column;gap:9px;margin:0 0 14px;}
+        .acc-route{display:flex;align-items:flex-start;gap:10px;}
+        .acc-route-min{flex:none;min-width:66px;text-align:center;padding:3px 9px;border-radius:999px;
+          background:var(--acbg);color:var(--acd);font-size:13px;font-weight:700;line-height:1.6;white-space:nowrap;}
+        .acc-route.is-main .acc-route-min{background:var(--acd);color:#fff;}
+        .acc-route-body{font-size:15.5px;line-height:1.7;color:#5b645f;}
+        .acc-route-body b{font-weight:700;color:#3a423e;font-size:16.5px;}
+        .acc-route-sub{display:block;font-size:13px;color:#8a918b;line-height:1.7;}
+        .acc-route-others{font-size:13px;line-height:1.9;color:#8a918b;padding-top:9px;border-top:1px dashed #e4e6e1;}
+        @media(max-width:600px){
+          .acc-route-min{min-width:60px;font-size:12.5px;padding:2px 8px;}
+          .acc-route-body{font-size:14.5px;}
+          .acc-route-body b{font-size:15.5px;}
+        }
+      </style>
       <div class="section-pad" style="max-width: 1080px; margin: 0 auto; padding: calc(72px * var(--k,1)) 28px;">
         <div style="text-align: center; margin-bottom: 40px;">
           <h2 class="h2-title" style="font-family: 'Shippori Mincho', serif; font-weight: 600; font-size: 37px; color: #3a423e; margin: 0; letter-spacing: 0.04em;">アクセス・診療時間</h2>
@@ -1000,7 +1027,18 @@ h1.h2-title{ font-size:30px !important; }
               <div style="font-size: 16px; color: #4a534e; line-height: 1.8;">午前 9:45–12:30 ／ 午後 14:45–17:30<br><span style="font-size: 14px; color: #939a93;">受付は診療開始15分前から、診療終了30分前までです。受付時間内にご来院ください。</span></div>
             </div>
             <p style="font-size: 17px; line-height: 1.9; color: #4a534e; margin: 0 0 6px;">〒104-0031 東京都中央区京橋2-12-4 光和ビル2F</p>
-            <p style="font-size: 16px; line-height: 1.9; color: #6b746f; margin: 0 0 6px;">都営浅草線「宝町駅」A6・A7出口 徒歩1分／東京メトロ銀座線「京橋駅」4番出口 徒歩2分／東京メトロ有楽町線「銀座一丁目駅」7番出口 徒歩8分／東京メトロ日比谷線「八丁堀駅」A3出口 徒歩8分／JR「東京駅」八重洲南口 徒歩12分</p>
+            <div class="acc-routes">
+              <div class="acc-route is-main">
+                <span class="acc-route-min">徒歩1分</span>
+                <span class="acc-route-body"><b>宝町駅</b>（都営浅草線）A6・A7出口
+                  <span class="acc-route-sub">A6出口を出てすぐ左手、1階が薬局のビルの2Fです</span></span>
+              </div>
+              <div class="acc-route">
+                <span class="acc-route-min">徒歩2分</span>
+                <span class="acc-route-body"><b>京橋駅</b>（東京メトロ銀座線）4番出口</span>
+              </div>
+              <p class="acc-route-others">このほか 銀座一丁目駅 徒歩8分／八丁堀駅 徒歩8分／東京駅 徒歩12分</p>
+            </div>
             <p style="font-size: 18.5px; font-weight: 700; color: #3a423e; margin: 0 0 20px; font-variant-numeric: tabular-nums;">TEL 03-3567-8733</p>
             <a href="/access" class="pill btn-primary" style="font-size: 15px; padding: 12px 26px;">持ち物・お支払い・連携医療機関を詳しく →</a>
           </div>
