@@ -288,19 +288,25 @@
     main { display: flex; flex-direction: column; }
     .mobile-hero  { order: 0; }
     .top-info-bar { order: 1; }
-    .sec-symptom  { order: 2; }
-    .sec-features { order: 3; }
-    .sec-news     { order: 4; }
-    .sec-access   { order: 5; }
+    .sec-symptom  { order: 3; }
+    .sec-features { order: 4; }
+    .sec-news     { order: 5; }
+    /* ペイシェントハラスメント対応の告知（2026-08-18：旧「重要なお知らせ」の枠を転用）。
+       order を付けずに入れると既定の order:0 でヒーロー直後へ飛び、
+       電話番号＋診療時間表（.top-info-bar）を1画面目の外へ押し出す（実測 y=377→744）。
+       PCと同じく「お知らせ」の直後に置く。スマホは .sec-features が非表示のため、
+       この位置でも 2.2 画面目に出る＝下げても読まれなくならない。 */
+    .sec-harass   { order: 6; }
+    .sec-access   { order: 7; }
     /* キャッシュレス決済（2026-07-23 新設）に order が無く、既定の order:0 扱いで
        スマホでは最上部（ヒーローより前）に飛んでいた。PCと同じくアクセスの次に置く（2026-07-24 修正） */
-    .sec-cpay     { order: 6; }
-    .sec-faq      { order: 7; }
-    #services     { order: 8; }
-    .sec-hub      { order: 9; }
+    .sec-cpay     { order: 8; }
+    .sec-faq      { order: 9; }
+    #services     { order: 10; }
+    .sec-hub      { order: 11; }
     /* 採用バナー（2026-08-11 新設）。order が無いと既定の order:0 でヒーロー直後へ飛び、
        患者さん向けの導線より前に出てしまう（キャッシュレス節と同じ轍）。最後に置く。 */
-    .sec-recruit  { order: 10; }
+    .sec-recruit  { order: 12; }
     .hero-fv-section { display: none !important; }   /* PC用ヒーローはスマホ非表示。代わりに .mobile-hero を上部に出す（2026-07-18） */
     .sec-features { display: none !important; }       /* 当院の特徴はスマホではヒーローのカルーセルで表示するため、この下段セクションは非表示（2026-07-19） */
 
@@ -459,7 +465,7 @@ h1.h2-title{ font-size:30px !important; }
 *{ box-shadow:none !important; }                      /* いったん全消し */
 /* 押せる手がかり・浮いている必要があるものだけ最小限戻す */
 .btn-primary,.btn-head,.btn-line,.cta-light,
-.nav-dd-menu,#notice-modal > div{
+.nav-dd-menu{   /* #notice-modal > div はポップアップ撤去（2026-08-15）に伴い削除 */
   box-shadow:0 2px 6px rgba(40,70,110,.18) !important; }
 /* 角丸を1値に統一（元は 10/12/14/16/18/20px がページごとにバラバラ） */
 [style*="border-radius: 20px"],[style*="border-radius:20px"],
@@ -496,42 +502,13 @@ h1.h2-title{ font-size:30px !important; }
 <!-- オープニングの全画面スプラッシュ（サイト刷新の告知）は 2026-08-11 に撤去。
      公開から2か月が経ち、初回訪問のたびに1.5秒ページが隠れる不利のほうが大きくなったため。 -->
 
-<!-- ============ 重要なお知らせ ポップアップ（参考：こころみクリニック） ============ -->
-<div id="notice-modal" style="position: fixed; inset: 0; z-index: 300; background: rgba(30,34,32,0.55); display: none; align-items: center; justify-content: center; padding: 20px;">
-  <div style="background: #fff; border-radius: 18px; max-width: 460px; width: 100%; box-shadow: 0 20px 60px rgba(0,0,0,0.25); overflow: hidden;">
-    <div style="display: flex; align-items: center; justify-content: space-between; padding: 20px 24px; border-bottom: 1px solid #eceae4;">
-      <h2 style="font-family: 'Shippori Mincho', serif; font-size: 19px; font-weight: 600; color: #3a423e; margin: 0;">重要なお知らせ</h2>
-      <button type="button" id="notice-modal-close" aria-label="閉じる" style="background: none; border: none; font-size: 22px; color: #9aa39c; cursor: pointer; line-height: 1; padding: 4px;">✕</button>
-    </div>
-    <div style="margin: 18px 24px 22px; padding: 18px 20px; max-height: 46vh; overflow-y: auto; background: #f7f8f6; border-radius: 12px;">
-      <p style="font-size: 14.5px; font-weight: 700; color: #3a423e; margin: 0 0 8px;">院長交代のお知らせ</p>
-      <p style="font-size: 14.5px; line-height: 1.9; color: #4a534e; margin: 0;">岩佐英之先生の診療は、2026年5月31日をもちまして終了いたしました。2026年6月1日より新体制で診療を行っております。</p>
-      <!-- 名称変更（2026-07-17 追加）。定款変更認可がまだのため、新名称は書かず日付と「予定」だけを告知する。
-           ※新名称をここに直接書くと、build_deploy_site.py の置換ルールで現名称に化ける（このコメント自体も置換対象）。 -->
-      <p style="font-size: 14.5px; font-weight: 700; color: #3a423e; margin: 18px 0 8px; padding-top: 16px; border-top: 1px solid #e4e6e1;">名称変更のお知らせ</p>
-      <p style="font-size: 14.5px; line-height: 1.9; color: #4a534e; margin: 0;">2026年11月1日（予定）より、当院の名称を変更いたします。新しい名称および正式な切り替え日は、決まり次第あらためて当ホームページでお知らせいたします。</p>
-    </div>
-  </div>
-</div>
-<script>
-(function(){
-  var modal = document.getElementById('notice-modal');
-  function closeNotice(){
-    modal.style.display = 'none';
-    sessionStorage.setItem('noticeModalClosed', '1');
-  }
-  if (!sessionStorage.getItem('noticeModalClosed')) {
-    modal.style.display = 'flex';
-  }
-  document.getElementById('notice-modal-close').addEventListener('click', closeNotice);
-  modal.addEventListener('click', function(e){
-    if (e.target === modal) closeNotice();
-  });
-  document.addEventListener('keydown', function(e){
-    if (e.key === 'Escape') closeNotice();
-  });
-})();
-</script>
+<!-- 全画面ポップアップ「重要なお知らせ」は 2026-08-15 に撤去。
+     セッションごとに画面全体を覆い、✕を押さないと先へ進めなかったため
+     （同じ理由で 2026-08-11 にリニューアル告知スプラッシュも撤去済み）。
+     参考：金沢文庫駅前三須ハート内科クリニック（https://www.kanazawabunko-misu-heart-cl.com/）は
+     同種の内容（予約優先制のお願い）をポップアップにせず常設セクションとして置いている。
+     当院も一度 .sec-notice へ移設したが、告知（院長交代・名称変更）自体が役目を終えたため
+     2026-08-18 に撤去し、その枠を .sec-harass（ペイシェントハラスメント）へ転用した。 -->
 
 <div>
 
@@ -826,6 +803,51 @@ h1.h2-title{ font-size:30px !important; }
               <p class="news-body">内視鏡検査用のビデオプロセッサ「PENTAX Medical EPK-3000」を新しく導入いたしました。</p>
             </details>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ペイシェントハラスメントへの対応（2026-08-18 新設） ============
+         参考：立教通り皮フ科形成外科（rikkyo-dps.com）の .top_harassment（全幅の独立ブロック）。
+         枠は 2026-08-15 に置いた「重要なお知らせ」のもので、告知（院長交代・名称変更）は
+         役目を終えたため撤去し、この枠を転用した（2026-08-18 院長判断）。
+         位置は「お知らせ」の直後＝2.6画面目。ヒーロー直後（2.1画面目）だと新患の第一印象を
+         防御的な文言が占めるため1段下げた。立教通りは65%地点だが、当院はページが3倍長く
+         （9,310px vs 3,150px）同じ%だと9画面目＝実質読まれないので採らない（2026-08-18 実測）。
+         スマホは上の order（.sec-harass:order 6）でPCと同じく「お知らせ」の直後に出る（実測 2.2 画面目）。
+         ※「医師会と連携」とは書かない。当院は中央区医師会に入会していないため。 -->
+    <section class="sec-harass" style="background: #ffffff;">
+      <style>
+        .sec-harass-wrap{max-width:1180px;margin:0 auto;padding:40px 28px 40px;}
+        .sec-harass-box{border:1px solid var(--line,#e2e6e3);border-radius:8px;background:#fbfdff;
+          padding:22px 24px;display:flex;align-items:center;gap:22px;}
+        .sec-harass-body{flex:1 1 auto;min-width:0;}
+        .sec-harass-h{display:flex;align-items:center;gap:9px;margin:0 0 10px;flex-wrap:wrap;}
+        .sec-harass-h span{display:inline-block;background:var(--acd);color:#fff;font-size:11.5px;
+          font-weight:700;letter-spacing:.06em;padding:3px 10px;border-radius:999px;flex:none;}
+        .sec-harass-h h2{font-family:'Shippori Mincho',serif;font-size:18px;font-weight:600;
+          color:#3a423e;margin:0;letter-spacing:.04em;}
+        .sec-harass-b{font-size:14.5px;line-height:1.95;color:#4a534e;margin:0;}
+        .sec-harass-link{flex:none;display:inline-flex;align-items:center;gap:7px;
+          background:var(--acd);color:#fff;font-size:14.5px;font-weight:700;
+          padding:12px 22px;border-radius:999px;white-space:nowrap;letter-spacing:.02em;}
+        @media(max-width:820px){
+          .sec-harass-wrap{padding:26px 20px 26px;}
+          .sec-harass-box{flex-direction:column;align-items:stretch;gap:16px;padding:18px 18px;}
+          .sec-harass-h h2{font-size:16px;}
+          .sec-harass-b{font-size:13.5px;line-height:1.9;}
+          .sec-harass-link{justify-content:center;}
+        }
+      </style>
+      <div class="sec-harass-wrap">
+        <div class="sec-harass-box">
+          <div class="sec-harass-body">
+            <div class="sec-harass-h"><span>お願い</span><h2>ペイシェントハラスメントへの対応</h2></div>
+            <p class="sec-harass-b">当院は、患者さまとスタッフの安全を守るため、暴言・暴力・過度な要求などの迷惑行為に対して、行政機関・警察・弁護士と連携し、組織として毅然と対応します。悪質な場合は診療をお断りし、法的措置をとることがあります。</p>
+          </div>
+          <a href="/patient-harassment" class="sec-harass-link">詳しく見る
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;flex:none;"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
+          </a>
         </div>
       </div>
     </section>
@@ -1267,6 +1289,7 @@ h1.h2-title{ font-size:30px !important; }
             <a href="/recruit" class="foot-link">採用情報</a>
             <a href="/contact" class="foot-link">お問い合わせ</a>
             <a href="/privacy-policy" class="foot-link">プライバシーポリシー</a><a href="/website-policy" class="foot-link">ホームページ運営について</a>
+        <a href="/patient-harassment" class="foot-link">ペイシェントハラスメントへの対応</a>
             <a href="/contact" class="foot-link">業者・取引先の方へ（お問い合わせ）</a>
           </div>
         </div>
