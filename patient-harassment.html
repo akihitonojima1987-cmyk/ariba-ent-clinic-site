@@ -54,6 +54,17 @@
   .pp .ph-warn { font-size: 14px; line-height: 1.95; color: #4a534e;
     border-left: 3px solid #c9695e; background: #fdf6f4;
     padding: 15px 20px; margin: 18px 0; border-radius: 0 8px 8px 0; }
+  /* 関係機関のポスター。画像は配布元のPDFから自前で書き出したもの（他院サーバーは参照しない）。
+     リンク先は厚労省・東京都の公式PDFなので、差し替えがあっても常に最新が開く。 */
+  .pp .ph-posters { display: flex; gap: 22px; margin: 18px 0 4px; }
+  .pp .ph-poster { flex: 1 1 0; min-width: 0; display: block; }
+  .pp .ph-poster img { width: 100%; height: auto; display: block; border: 1px solid var(--line);
+    border-radius: 8px; transition: border-color .2s; }
+  .pp .ph-poster:hover img { border-color: var(--ac); }
+  .pp .ph-poster-cap { display: block; font-size: 12.5px; line-height: 1.7; color: #6b746e;
+    margin-top: 9px; }
+  .pp .ph-poster-cap strong { display: block; font-size: 13.5px; color: #3a423e; margin-bottom: 2px; }
+  @media (max-width: 560px) { .pp .ph-posters { flex-direction: column; gap: 26px; } }
   .pp .ph-note { font-size: 13.5px; line-height: 1.95; color: #56605b;
     background: #faf9f6; border: 1px solid var(--line); border-radius: 8px;
     padding: 14px 18px; margin: 16px 0; }
@@ -336,6 +347,19 @@ h1.h2-title{ font-size:30px !important; }
           <li>悪質と判断した場合は、<strong>以後の受診をお断りする</strong>ほか、顧問弁護士を通じて、<strong>刑事上・民事上の法的措置</strong>をとります。</li>
           <li>職員がこうした行為に一人で耐えることは求めません。当院は事業者として、職員の就業環境を守る責任を果たします。</li>
         </ul>
+
+        <h2>関係機関のポスター</h2>
+        <p>当院の方針は、当院だけの決めごとではありません。国と東京都が同じ考え方を示しています。以下は各機関が公開しているポスターです。画像をクリックすると、それぞれの公式サイトのPDFが開きます。</p>
+        <div class="ph-posters">
+          <a class="ph-poster" href="https://www.nocushara.metro.tokyo.lg.jp/assets/pdf/nocushara-poster-01.pdf" target="_blank" rel="noopener">
+            <img src="poster-tokyo-kasuhara.jpg" alt="東京都カスタマーハラスメント防止条例の普及啓発ポスター" loading="lazy" width="460" height="651">
+            <span class="ph-poster-cap"><strong>東京都カスタマー・ハラスメント防止条例</strong>東京都 産業労働局 雇用就業部 労働環境課</span>
+          </a>
+          <a class="ph-poster" href="https://www.mhlw.go.jp/content/11900000/poster_casuhara_B2_s.pdf" target="_blank" rel="noopener">
+            <img src="poster-mhlw-kasuhara.jpg" alt="STOP！カスタマーハラスメント 政府7府省庁連名のポスター" loading="lazy" width="460" height="649">
+            <span class="ph-poster-cap"><strong>STOP！カスタマーハラスメント</strong>国土交通省・経済産業省・消費者庁・厚生労働省・法務省・警察庁・農林水産省</span>
+          </a>
+        </div>
 
         <h2>ご意見・ご要望の窓口</h2>
         <p>診療内容や院内の運営についてお気づきの点は、受付までお声がけください。内容を確認のうえ、必要な改善に努めます。</p>
